@@ -457,6 +457,7 @@ button[type="submit"],
 
 /* — Tarjeta pregunta — */
 #question-card {
+  scroll-margin-top: 84px;
   background: var(--card);
   border: 2px solid var(--ink);
   border-radius: var(--r-lg);

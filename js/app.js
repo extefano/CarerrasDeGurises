@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => el.toast.classList.remove('show'), 2600);
   }
+  // Helpers show/hide: manejan clase + atributo hidden (el HTML usa hidden)
+  const show = (n) => { if (n) { n.classList.remove('hidden'); n.removeAttribute('hidden'); } };
+  const hide = (n) => { if (n) { n.classList.add('hidden'); n.setAttribute('hidden', ''); } };
   function showView(name) {
     for (const v of ['setup', 'game', 'victory']) {
       const node = $('view-' + v);
@@ -214,7 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const list = cells();
     if (!list.length) { toast('Falta la ruleta en el HTML (.roulette-cell).'); return; }
     if (el.btnSpin) el.btnSpin.disabled = true;
-    el.questionCard?.classList.add('hidden');
+    hide(el.questionCard);
+    hide(el.btnNext);
     list.forEach((c) => c.classList.remove('selected', 'spinning'));
     let pos = Math.floor(Math.random() * list.length), delay = 80;
     const t0 = performance.now();
@@ -240,22 +244,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const meta = CATEGORIES[cat] || { color: '#999', icon: '❓' };
     if (el.qCategory) { el.qCategory.textContent = meta.icon + ' ' + cat; el.qCategory.style.background = meta.color; }
     if (el.qText) el.qText.textContent = q.pregunta;
-    el.questionCard?.classList.remove('hidden');
-    el.btnNext?.classList.add('hidden');
+    show(el.questionCard);
+    hide(el.btnNext);
     if (q.tipo === 'opciones') {
-      el.qOptions?.classList.remove('hidden');
-      el.qOpen?.classList.add('hidden');
+      show(el.qOptions);
+      hide(el.qOpen);
       renderOptions(q);
     } else {
-      el.qOptions?.classList.add('hidden');
+      hide(el.qOptions);
       if (el.qOptions) el.qOptions.innerHTML = '';
-      el.qOpen?.classList.remove('hidden');
-      if (el.qAnswer) { el.qAnswer.textContent = q.respuesta; el.qAnswer.classList.add('hidden'); }
-      el.btnReveal?.classList.remove('hidden');
-      el.btnHit?.classList.add('hidden');
-      el.btnMiss?.classList.add('hidden');
+      show(el.qOpen);
+      if (el.qAnswer) { el.qAnswer.textContent = q.respuesta; hide(el.qAnswer); }
+      show(el.btnReveal);
+      hide(el.btnHit);
+      hide(el.btnMiss);
     }
-    el.questionCard?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    requestAnimationFrame(() => {
+      el.questionCard?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      el.qText?.setAttribute('tabindex', '-1');
+      el.qText?.focus({ preventScroll: true });
+    });
   }
   function renderOptions(q) {
     if (!el.qOptions) return;
@@ -277,13 +285,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     if (ok) { btn.classList.add('correct'); toast('¡Correcto! +1 punto 🏆'); addPoint(); }
     else { btn.classList.add('wrong'); toast('Incorrecto. Era: ' + q.respuesta); }
-    el.btnNext?.classList.remove('hidden');
+    show(el.btnNext);
+    el.btnNext?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
   function revealOpen() {
-    el.qAnswer?.classList.remove('hidden');
-    el.btnReveal?.classList.add('hidden');
-    el.btnHit?.classList.remove('hidden');
-    el.btnMiss?.classList.remove('hidden');
+    show(el.qAnswer);
+    hide(el.btnReveal);
+    show(el.btnHit);
+    show(el.btnMiss);
   }
   // Puntos / victoria
   function addPoint() {
@@ -322,7 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Turnos / reinicios
   function resetRoundUI() {
     State.currentQ = null; State.currentCat = null;
-    el.questionCard?.classList.add('hidden');
+    hide(el.questionCard);
+    hide(el.btnNext);
     cells().forEach((c) => c.classList.remove('selected', 'spinning'));
     if (el.btnSpin) el.btnSpin.disabled = false;
   }
@@ -364,11 +374,13 @@ document.addEventListener('DOMContentLoaded', () => {
     el.btnReveal?.addEventListener('click', revealOpen);
     el.btnHit?.addEventListener('click', () => {
       toast('¡Correcto! +1 punto 🏆'); addPoint();
-      el.btnHit.classList.add('hidden'); el.btnMiss?.classList.add('hidden'); el.btnNext?.classList.remove('hidden');
+      hide(el.btnHit); hide(el.btnMiss); show(el.btnNext);
+      el.btnNext?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
     el.btnMiss?.addEventListener('click', () => {
       toast('Registrado como fallo. Siguiente turno.');
-      el.btnHit?.classList.add('hidden'); el.btnMiss.classList.add('hidden'); el.btnNext?.classList.remove('hidden');
+      hide(el.btnHit); hide(el.btnMiss); show(el.btnNext);
+      el.btnNext?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
     el.btnRestart?.addEventListener('click', restart);
     el.btnNewPlayers?.addEventListener('click', newPlayers);

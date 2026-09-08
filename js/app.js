@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   async function loadQuestions() {
     try {
-      const res = await fetch('./data/preguntas.json');
+      const res = await fetch('./data/preguntas.json?v=900');
       if (!res.ok) throw new Error('HTTP ' + res.status);
       ALL_QUESTIONS = normalizeQuestions(await res.json());
       if (!ALL_QUESTIONS.length) throw new Error('vacío');

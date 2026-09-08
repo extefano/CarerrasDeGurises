@@ -861,6 +861,109 @@ button[type="submit"],
   #scoreboard { align-items: center; }
 }
 
+/* — Mantequita 🧈 — */
+.roulette-cell[data-categoria="Mantequita"] {
+  border-left-color: #FFD54F;
+  background: #FFF8DC;
+}
+.roulette-cell.pickable {
+  cursor: pointer;
+  outline: 3px solid var(--ok);
+  outline-offset: 2px;
+  animation: pulseSpin 0.6s ease-in-out infinite alternate;
+}
+#mantequita-note {
+  background: #FFF8DC;
+  border: 2px dashed #FFD54F;
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* — Timer ⏱️ — */
+.q-timer {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0 4px;
+  font-weight: 900;
+}
+.q-timer.danger #q-timer-label { color: var(--err-dark); }
+.timer-track {
+  height: 10px;
+  background: #F1E7CC;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+.timer-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--esp), var(--geo));
+  border-radius: inherit;
+  transition: width 1s linear;
+}
+.q-timer.danger .timer-bar {
+  background: linear-gradient(90deg, var(--err), var(--err-dark));
+}
+
+/* — Powerups + monedas — */
+.powerups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 12px 0;
+}
+.btn-power {
+  min-height: 48px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-md);
+  box-shadow: 2px 2px 0 var(--ink);
+  padding: 8px 6px;
+  width: 100%;
+}
+.btn-power:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.btn-power .cost { color: var(--primary-dark); }
+.coins-hint {
+  text-align: center;
+  font-weight: 800;
+}
+.opt-btn.eliminated {
+  opacity: 0.35;
+  text-decoration: line-through;
+  pointer-events: none;
+}
+
+/* — Modales piquete / llamar — */
+#modal-call, #modal-piquete {
+  border: 2px solid var(--ink);
+  border-radius: var(--r-lg);
+  background: #fff;
+  color: var(--ink);
+  padding: 18px 16px;
+  width: min(440px, calc(100vw - 32px));
+  box-shadow: var(--shadow-lg);
+  margin: auto;
+}
+#modal-call::backdrop, #modal-piquete::backdrop {
+  background: rgba(26, 26, 46, 0.6);
+}
+#piquete-list {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+#piquete-list .btn { width: 100%; min-height: 52px; }
+
 /* — Movimiento reducido — */
 @media (prefers-reduced-motion: reduce) {
   *,

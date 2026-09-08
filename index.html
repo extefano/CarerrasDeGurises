@@ -6,7 +6,7 @@
   <meta name="description" content="Carrera de Gurises: juego de preguntas y respuestas por categorías. Girá la ruleta, respondé y sumá puntos o medallas." />
   <meta name="theme-color" content="#4f46e5" />
   <title>Carrera de Gurises 🎲</title>
-  <link rel="stylesheet" href="./css/styles.css?v=5" />
+  <link rel="stylesheet" href="./css/styles.css?v=6" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -58,6 +58,21 @@
           </p>
         </fieldset>
 
+        <fieldset class="card">
+          <legend>Tiempo por pregunta ⏱️</legend>
+          <label for="time-limit" class="field-label">Límite de tiempo</label>
+          <select id="time-limit" name="time-limit">
+            <option value="0" selected>Sin límite</option>
+            <option value="15">15 segundos</option>
+            <option value="30">30 segundos</option>
+            <option value="60">60 segundos</option>
+          </select>
+          <p class="note">
+            ⏱️ Si se acaba el tiempo cuenta como fallo y corta tu racha.
+            🔥 1er acierto = 0 🪙, cada acierto seguido extra = +1 🪙 para comprar powerups.
+          </p>
+        </fieldset>
+
         <button type="submit" class="btn btn-primary btn-large btn-block">¡Empezar a jugar! 🚀</button>
       </form>
     </section>
@@ -85,13 +100,26 @@
             <button type="button" class="roulette-cell" data-categoria="Manga"><span aria-hidden="true">📖</span><span>Manga</span></button>
             <button type="button" class="roulette-cell" data-categoria="Anime"><span aria-hidden="true">⛩️</span><span>Anime</span></button>
             <button type="button" class="roulette-cell" data-categoria="Videojuegos"><span aria-hidden="true">🎮</span><span>Videojuegos</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Mantequita"><span aria-hidden="true">🧈</span><span>Mantequita</span></button>
           </div>
+          <p class="note" id="mantequita-note" hidden>🧈 ¡Mantequita! Tocá una categoría para elegir 👇</p>
           <button type="button" id="btn-spin" class="btn btn-primary btn-large btn-block">¡Girar! 🎡</button>
         </section>
 
         <section id="question-card" class="card" hidden aria-live="polite" aria-labelledby="q-text">
           <span id="q-category" class="badge"></span>
+          <div id="q-timer" class="q-timer" hidden aria-live="polite">
+            <span id="q-timer-label">⏱️ 30s</span>
+            <div class="timer-track" aria-hidden="true"><div id="q-timer-bar" class="timer-bar"></div></div>
+          </div>
           <p id="q-text"></p>
+          <div id="powerups" class="powerups" aria-label="Powerups">
+            <button type="button" id="pw-fifty" class="btn btn-power" title="50/50: quita 2 opciones incorrectas">➗ 50/50</button>
+            <button type="button" id="pw-remove" class="btn btn-power" title="Sacar una opción incorrecta">➖ Sacar 1</button>
+            <button type="button" id="pw-call" class="btn btn-power" title="Llamar a un familiar: 60s de consulta, pausa el timer">📞 Familiar</button>
+            <button type="button" id="pw-piquete" class="btn btn-power" title="El Piquete: un rival responde su categoría más débil">🔪 Piquete</button>
+          </div>
+          <p id="coins-hint" class="note coins-hint" aria-live="polite"></p>
           <div id="q-options" role="group" aria-label="Opciones de respuesta">
             <!-- JS genera botones de opción múltiple -->
           </div>
@@ -131,13 +159,32 @@
     </form>
   </dialog>
 
+  <!-- MODAL LLAMAR -->
+  <dialog id="modal-call" aria-labelledby="call-title">
+    <h2 id="call-title">📞 Llamá a un familiar</h2>
+    <p>Tenés <strong id="call-countdown">60</strong>s para consultar.<br />El timer de la pregunta está en pausa.</p>
+    <form method="dialog">
+      <button type="submit" id="btn-close-call" class="btn btn-secondary btn-block">Volver a la pregunta ✅</button>
+    </form>
+  </dialog>
+
+  <!-- MODAL PIQUETE -->
+  <dialog id="modal-piquete" aria-labelledby="piquete-title">
+    <h2 id="piquete-title">🔪 El Piquete</h2>
+    <p>Elegí a qué rival mandar a su categoría más débil:</p>
+    <ul id="piquete-list"></ul>
+    <form method="dialog">
+      <button type="submit" class="btn btn-secondary btn-block">Cancelar ✖️</button>
+    </form>
+  </dialog>
+
   <!-- TOAST -->
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
   <footer>
-    <small>🎲 Carrera de Gurises · Hecho con ❤️ para jugar en familia</small>
+    <small>🎲 Carrera de Gurises · Hecho con ❤️ para jugar en (fat)milia</small>
   </footer>
 
-  <script src="./js/app.js?v=5" defer></script>
+  <script src="./js/app.js?v=6" defer></script>
 </body>
 </html>

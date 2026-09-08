@@ -610,20 +610,34 @@ button[type="submit"],
 
 #btn-next { margin-top: 12px; }
 
-/* — Scoreboard modal — */
+/* — Scoreboard modal: dialog sólido opaco + backdrop oscuro — */
 #scoreboard {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  display: none;
-  align-items: flex-end;
-  justify-content: center;
-  background: rgba(26, 26, 46, 0.55);
-  padding: 16px;
+  border: 2px solid var(--ink);
+  border-radius: var(--r-lg);
+  background: #FFFFFF;
+  background-color: #FFFFFF;
+  color: var(--ink);
+  padding: 18px 16px 16px;
+  width: min(440px, calc(100vw - 32px));
+  max-height: 82dvh;
+  overflow: auto;
+  box-shadow: var(--shadow-lg);
+  margin: auto;
 }
 
-#scoreboard.open { display: flex; }
-#scoreboard[open] { display: flex; }
+#scoreboard::backdrop {
+  background: rgba(26, 26, 46, 0.6);
+}
+
+/* fallback cuando se usa como div (.open) sin showModal */
+#scoreboard.open {
+  display: block;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  z-index: 60;
+}
 
 #scoreboard .sheet {
   width: 100%;
@@ -646,6 +660,50 @@ button[type="submit"],
   padding: 0;
   display: grid;
   gap: 10px;
+}
+
+/* filas generadas por JS (score-row) — tarjeta sólida legible */
+.score-row {
+  display: grid;
+  grid-template-columns: 20px 1fr auto;
+  gap: 4px 10px;
+  align-items: center;
+  background: #FFFDF5;
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px 12px;
+  color: var(--ink);
+}
+
+.score-row.current {
+  border-color: var(--ok);
+  box-shadow: 0 0 0 2px var(--ok);
+}
+
+.score-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+.score-name {
+  font-weight: 800;
+  font-size: 0.98rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-pts {
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-medals {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
 }
 
 /* filas jugador + barra progreso + avatar */

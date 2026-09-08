@@ -4,6 +4,7 @@
    ========================================================== */
 
 :root {
+  color-scheme: light;
   /* — Categorías exactas (contrato) — */
   --geo: #2196F3;   /* Geografía */
   --hist: #FFC107;  /* Historia (texto oscuro) */

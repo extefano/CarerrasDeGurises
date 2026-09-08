@@ -259,11 +259,12 @@ document.addEventListener('DOMContentLoaded', () => {
       hide(el.btnHit);
       hide(el.btnMiss);
     }
-    requestAnimationFrame(() => {
-      el.questionCard?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      el.qText?.setAttribute('tabindex', '-1');
-      el.qText?.focus({ preventScroll: true });
-    });
+    // Scroll determinista a la pregunta (un solo scroll, sin focus que compita)
+    setTimeout(() => {
+      if (!el.questionCard) return;
+      const top = el.questionCard.getBoundingClientRect().top + window.scrollY - 76;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    }, 60);
   }
   function renderOptions(q) {
     if (!el.qOptions) return;

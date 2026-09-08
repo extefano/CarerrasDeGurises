@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Carrera de Gurises: juego de preguntas y respuestas por categorías. Girá la ruleta, respondé y sumá puntos o medallas." />
+  <meta name="theme-color" content="#4f46e5" />
+  <title>Carrera de Gurises 🎲</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+  <main id="main-content">
+    <!-- VISTA 1: CONFIGURACIÓN -->
+    <section id="view-setup" class="view active" data-view="setup" aria-labelledby="setup-title">
+      <header class="hero">
+        <p class="hero-emoji" aria-hidden="true">🎲</p>
+        <h1 id="setup-title">Carrera de Gurises</h1>
+        <p class="subtitle">El juego de preguntas bien guri: girá, respondé y ganá 🏁</p>
+      </header>
+
+      <form id="setup-form" novalidate>
+        <fieldset class="card">
+          <legend>Cantidad de jugadores (1 a 10)</legend>
+          <div class="stepper" role="group" aria-label="Cantidad de jugadores">
+            <button type="button" id="btn-minus" class="btn btn-stepper" data-action="dec" aria-label="Quitar un jugador">−</button>
+            <span id="player-count" role="status" aria-live="polite" aria-label="Cantidad de jugadores seleccionada">2</span>
+            <button type="button" id="btn-plus" class="btn btn-stepper" data-action="inc" aria-label="Agregar un jugador">+</button>
+          </div>
+          <div id="players-config" aria-live="polite">
+            <!-- JS genera aquí inputs de nombre + color por jugador -->
+          </div>
+        </fieldset>
+
+        <fieldset class="card">
+          <legend>Modo de victoria</legend>
+          <label class="radio-option">
+            <input type="radio" name="win-mode" value="puntos" checked />
+            <span>Por puntos ⭐</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="win-mode" value="medallas" />
+            <span>Por medallas 🏅</span>
+          </label>
+
+          <label for="points-goal" class="field-label">Meta de puntos</label>
+          <select id="points-goal" name="points-goal">
+            <option value="5">5 puntos</option>
+            <option value="10" selected>10 puntos</option>
+            <option value="15">15 puntos</option>
+            <option value="20">20 puntos</option>
+          </select>
+
+          <p class="note" id="medals-note">
+            🏅 <strong>Modo medallas:</strong> ganá una medalla por cada categoría acertada.
+            Quien complete todas las categorías primero, gana la carrera.
+          </p>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary btn-large btn-block">¡Empezar a jugar! 🚀</button>
+      </form>
+    </section>
+
+    <!-- VISTA 2: JUEGO -->
+    <div id="view-game" class="view" data-view="game" hidden>
+      <header class="game-header">
+        <div id="turn-indicator" aria-live="polite" aria-atomic="true">
+          <span id="turn-avatar" class="avatar" aria-hidden="true"></span>
+          <span class="turn-text">Turno de <strong id="turn-name">Jugador 1</strong></span>
+        </div>
+        <button type="button" id="btn-score" class="btn btn-secondary" aria-haspopup="dialog">📊 <span>Puntajes</span></button>
+      </header>
+
+      <div class="game-body">
+        <section id="roulette-section" aria-labelledby="roulette-title">
+          <h2 id="roulette-title">Girá la ruleta</h2>
+          <div id="roulette" class="roulette-grid" role="group" aria-label="Ruleta de categorías">
+            <button type="button" class="roulette-cell" data-categoria="Geografía"><span aria-hidden="true">🌍</span><span>Geografía</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Historia"><span aria-hidden="true">🏛️</span><span>Historia</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Artes y Letras"><span aria-hidden="true">🎨</span><span>Artes y Letras</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Ciencias y Naturaleza"><span aria-hidden="true">🔬</span><span>Ciencias y Naturaleza</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Deportes"><span aria-hidden="true">⚽</span><span>Deportes</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Espectáculos"><span aria-hidden="true">🎬</span><span>Espectáculos</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Manga"><span aria-hidden="true">📖</span><span>Manga</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Anime"><span aria-hidden="true">⛩️</span><span>Anime</span></button>
+            <button type="button" class="roulette-cell" data-categoria="Videojuegos"><span aria-hidden="true">🎮</span><span>Videojuegos</span></button>
+          </div>
+          <button type="button" id="btn-spin" class="btn btn-primary btn-large btn-block">¡Girar! 🎡</button>
+        </section>
+
+        <section id="question-card" class="card" hidden aria-live="polite" aria-labelledby="q-text">
+          <span id="q-category" class="badge"></span>
+          <p id="q-text"></p>
+          <div id="q-options" role="group" aria-label="Opciones de respuesta">
+            <!-- JS genera botones de opción múltiple -->
+          </div>
+          <div id="q-open">
+            <button type="button" id="btn-reveal" class="btn btn-secondary">Ver respuesta 👀</button>
+            <p id="q-answer" hidden></p>
+            <div class="hit-miss-row">
+              <button type="button" id="btn-hit" class="btn btn-success">Acertó ✅</button>
+              <button type="button" id="btn-miss" class="btn btn-danger">Falló ❌</button>
+            </div>
+          </div>
+        </section>
+
+        <button type="button" id="btn-next" class="btn btn-primary btn-large btn-block" hidden>Siguiente turno ➡️</button>
+      </div>
+    </div>
+
+    <!-- VISTA 3: VICTORIA -->
+    <section id="view-victory" class="view" data-view="victory" aria-labelledby="winner-name" hidden>
+      <p class="hero-emoji" aria-hidden="true">🏆</p>
+      <h2>¡Tenemos ganador!</h2>
+      <p id="winner-name" class="winner-name" aria-live="polite"></p>
+      <p id="winner-stats" class="winner-stats"></p>
+      <div class="victory-actions">
+        <button type="button" id="btn-restart" class="btn btn-primary btn-large">Jugar de nuevo 🔁</button>
+        <button type="button" id="btn-new-players" class="btn btn-secondary btn-large">Cambiar jugadores 👥</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL PUNTAJES -->
+  <dialog id="scoreboard" aria-labelledby="scoreboard-title">
+    <h2 id="scoreboard-title">📊 Puntajes</h2>
+    <ul id="score-list"></ul>
+    <form method="dialog">
+      <button type="submit" id="btn-close-score" class="btn btn-secondary btn-block">Cerrar ✖️</button>
+    </form>
+  </dialog>
+
+  <!-- TOAST -->
+  <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <footer>
+    <small>🎲 Carrera de Gurises · Hecho con ❤️ para jugar en familia</small>
+  </footer>
+
+  <script src="./js/app.js" defer></script>
+</body>
+</html>

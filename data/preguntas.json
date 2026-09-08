@@ -1,0 +1,4958 @@
+[
+  {
+    "id": 1,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Argentina?",
+    "opciones": [
+      "Buenos Aires",
+      "Córdoba",
+      "Rosario",
+      "Mendoza"
+    ],
+    "respuesta_correcta": "Buenos Aires",
+    "dificultad": "facil"
+  },
+  {
+    "id": 2,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es el continente más grande del mundo?",
+    "respuesta_correcta": "Asia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 3,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es el océano más grande del mundo?",
+    "opciones": [
+      "Pacífico",
+      "Atlántico",
+      "Índico",
+      "Ártico"
+    ],
+    "respuesta_correcta": "Pacífico",
+    "dificultad": "facil"
+  },
+  {
+    "id": 4,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué río cruza Egipto de sur a norte?",
+    "respuesta_correcta": "Nilo",
+    "dificultad": "facil"
+  },
+  {
+    "id": 5,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué país europeo tiene forma de bota en el mapa?",
+    "opciones": [
+      "Italia",
+      "España",
+      "Grecia",
+      "Portugal"
+    ],
+    "respuesta_correcta": "Italia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 6,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Uruguay?",
+    "respuesta_correcta": "Montevideo",
+    "dificultad": "facil"
+  },
+  {
+    "id": 7,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué cordillera recorre el oeste de Sudamérica?",
+    "opciones": [
+      "Andes",
+      "Alpes",
+      "Pirineos",
+      "Himalaya"
+    ],
+    "respuesta_correcta": "Andes",
+    "dificultad": "facil"
+  },
+  {
+    "id": 8,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de España?",
+    "respuesta_correcta": "Madrid",
+    "dificultad": "facil"
+  },
+  {
+    "id": 9,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿En qué país se encuentra la Torre Eiffel?",
+    "opciones": [
+      "Francia",
+      "Italia",
+      "España",
+      "Bélgica"
+    ],
+    "respuesta_correcta": "Francia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 10,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Chile?",
+    "respuesta_correcta": "Santiago",
+    "dificultad": "facil"
+  },
+  {
+    "id": 11,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la isla más grande del mundo?",
+    "opciones": [
+      "Groenlandia",
+      "Madagascar",
+      "Borneo",
+      "Sumatra"
+    ],
+    "respuesta_correcta": "Groenlandia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 12,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué océano separa América de Europa y África?",
+    "respuesta_correcta": "Atlántico",
+    "dificultad": "facil"
+  },
+  {
+    "id": 13,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿En qué país viven los canguros en libertad?",
+    "opciones": [
+      "Australia",
+      "Nueva Zelanda",
+      "Sudáfrica",
+      "Canadá"
+    ],
+    "respuesta_correcta": "Australia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 14,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la montaña más alta del mundo?",
+    "respuesta_correcta": "Everest",
+    "dificultad": "facil"
+  },
+  {
+    "id": 15,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Brasil?",
+    "opciones": [
+      "Brasilia",
+      "Río de Janeiro",
+      "San Pablo",
+      "Salvador"
+    ],
+    "respuesta_correcta": "Brasilia",
+    "dificultad": "facil"
+  },
+  {
+    "id": 16,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es el desierto cálido más grande del mundo?",
+    "respuesta_correcta": "Sahara",
+    "dificultad": "facil"
+  },
+  {
+    "id": 17,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿En qué continente se encuentra Brasil?",
+    "opciones": [
+      "América",
+      "Europa",
+      "África",
+      "Asia"
+    ],
+    "respuesta_correcta": "América",
+    "dificultad": "facil"
+  },
+  {
+    "id": 18,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Canadá?",
+    "opciones": [
+      "Ottawa",
+      "Toronto",
+      "Vancouver",
+      "Montreal"
+    ],
+    "respuesta_correcta": "Ottawa",
+    "dificultad": "media"
+  },
+  {
+    "id": 19,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es el río más largo de Sudamérica?",
+    "respuesta_correcta": "Amazonas",
+    "dificultad": "media"
+  },
+  {
+    "id": 20,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Japón?",
+    "opciones": [
+      "Tokio",
+      "Kioto",
+      "Osaka",
+      "Pekín"
+    ],
+    "respuesta_correcta": "Tokio",
+    "dificultad": "media"
+  },
+  {
+    "id": 21,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué mar se encuentra entre Europa y África?",
+    "respuesta_correcta": "Mediterráneo",
+    "dificultad": "media"
+  },
+  {
+    "id": 22,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es el país más extenso del mundo?",
+    "opciones": [
+      "Rusia",
+      "Canadá",
+      "China",
+      "Estados Unidos"
+    ],
+    "respuesta_correcta": "Rusia",
+    "dificultad": "media"
+  },
+  {
+    "id": 23,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital del Perú?",
+    "respuesta_correcta": "Lima",
+    "dificultad": "media"
+  },
+  {
+    "id": 24,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de México?",
+    "opciones": [
+      "Ciudad de México",
+      "Guadalajara",
+      "Monterrey",
+      "Cancún"
+    ],
+    "respuesta_correcta": "Ciudad de México",
+    "dificultad": "media"
+  },
+  {
+    "id": 25,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cómo se llama el lago entre Perú y Bolivia, considerado el navegable más alto del mundo?",
+    "respuesta_correcta": "Titicaca",
+    "dificultad": "media"
+  },
+  {
+    "id": 26,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué río pasa por París?",
+    "opciones": [
+      "Sena",
+      "Loira",
+      "Ródano",
+      "Támesis"
+    ],
+    "respuesta_correcta": "Sena",
+    "dificultad": "media"
+  },
+  {
+    "id": 27,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Colombia?",
+    "respuesta_correcta": "Bogotá",
+    "dificultad": "media"
+  },
+  {
+    "id": 28,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿En qué desierto del norte de Chile casi nunca llueve?",
+    "opciones": [
+      "Atacama",
+      "Sahara",
+      "Gobi",
+      "Patagónico"
+    ],
+    "respuesta_correcta": "Atacama",
+    "dificultad": "media"
+  },
+  {
+    "id": 29,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Portugal?",
+    "respuesta_correcta": "Lisboa",
+    "dificultad": "media"
+  },
+  {
+    "id": 30,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué país tiene una hoja de arce en su bandera?",
+    "opciones": [
+      "Canadá",
+      "Estados Unidos",
+      "Reino Unido",
+      "Australia"
+    ],
+    "respuesta_correcta": "Canadá",
+    "dificultad": "media"
+  },
+  {
+    "id": 31,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cómo se llama el estrecho entre España y Marruecos?",
+    "respuesta_correcta": "Gibraltar",
+    "dificultad": "media"
+  },
+  {
+    "id": 32,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué volcán activo se encuentra en Sicilia, Italia?",
+    "opciones": [
+      "Etna",
+      "Vesubio",
+      "Stromboli",
+      "Teide"
+    ],
+    "respuesta_correcta": "Etna",
+    "dificultad": "media"
+  },
+  {
+    "id": 33,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué cordillera separa España de Francia?",
+    "respuesta_correcta": "Pirineos",
+    "dificultad": "media"
+  },
+  {
+    "id": 34,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué país se extiende entre Europa y Asia y su ciudad más famosa es Estambul?",
+    "opciones": [
+      "Turquía",
+      "Grecia",
+      "Egipto",
+      "Irán"
+    ],
+    "respuesta_correcta": "Turquía",
+    "dificultad": "media"
+  },
+  {
+    "id": 35,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Australia?",
+    "opciones": [
+      "Canberra",
+      "Sídney",
+      "Melbourne",
+      "Perth"
+    ],
+    "respuesta_correcta": "Canberra",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 36,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué río pasa por Viena y Budapest?",
+    "respuesta_correcta": "Danubio",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 37,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la montaña más alta de África?",
+    "opciones": [
+      "Kilimanjaro",
+      "Monte Kenia",
+      "Atlas",
+      "Ruwenzori"
+    ],
+    "respuesta_correcta": "Kilimanjaro",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 38,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es el lago más profundo del mundo, ubicado en Rusia?",
+    "respuesta_correcta": "Baikal",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 39,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la capital de Islandia?",
+    "opciones": [
+      "Reikiavik",
+      "Oslo",
+      "Helsinki",
+      "Tallin"
+    ],
+    "respuesta_correcta": "Reikiavik",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 40,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es el monte más alto de Japón?",
+    "respuesta_correcta": "Fuji",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 41,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es el país más pequeño del mundo?",
+    "opciones": [
+      "Vaticano",
+      "Mónaco",
+      "Malta",
+      "Liechtenstein"
+    ],
+    "respuesta_correcta": "Vaticano",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 42,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué estrecho separa Asia de América?",
+    "respuesta_correcta": "Bering",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 43,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Qué montes separan Europa de Asia en Rusia?",
+    "opciones": [
+      "Urales",
+      "Alpes",
+      "Pirineos",
+      "Apeninos"
+    ],
+    "respuesta_correcta": "Urales",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 44,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Nueva Zelanda?",
+    "respuesta_correcta": "Wellington",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 45,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cómo se llama el lago salado entre Israel y Jordania, el punto más bajo de la Tierra?",
+    "opciones": [
+      "Mar Muerto",
+      "Mar Rojo",
+      "Mar Negro",
+      "Mar Caspio"
+    ],
+    "respuesta_correcta": "Mar Muerto",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 46,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Marruecos?",
+    "respuesta_correcta": "Rabat",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 47,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿Cuál es la península más grande del mundo?",
+    "opciones": [
+      "Arábiga",
+      "Ibérica",
+      "Itálica",
+      "Balcánica"
+    ],
+    "respuesta_correcta": "Arábiga",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 48,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Cuál es la capital de Etiopía?",
+    "respuesta_correcta": "Adís Abeba",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 49,
+    "categoria": "Geografía",
+    "tipo": "opciones",
+    "pregunta": "¿En qué río se encuentran las Cataratas del Iguazú, entre Argentina y Brasil?",
+    "opciones": [
+      "Iguazú",
+      "Paraná",
+      "Uruguay",
+      "Paraguay"
+    ],
+    "respuesta_correcta": "Iguazú",
+    "dificultad": "dificil"
+  },
+  {
+    "id": 50,
+    "categoria": "Geografía",
+    "tipo": "abierta",
+    "pregunta": "¿Qué golfo baña las costas de México, Estados Unidos y Cuba?",
+    "respuesta_correcta": "Golfo de México",
+    "dificultad": "dificil"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 51,
+    "pregunta": "¿En qué año llegó Cristóbal Colón a América?",
+    "respuesta_correcta": "1492",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 52,
+    "opciones": [
+      "Egipto",
+      "México",
+      "Perú",
+      "Grecia"
+    ],
+    "pregunta": "¿En qué país se encuentran las pirámides de Guiza?",
+    "respuesta_correcta": "Egipto",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 53,
+    "pregunta": "¿Cómo se llamaba el emperador francés derrotado en la batalla de Waterloo en 1815?",
+    "respuesta_correcta": "Napoleón Bonaparte",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 54,
+    "opciones": [
+      "La romana",
+      "La griega",
+      "La egipcia",
+      "La maya"
+    ],
+    "pregunta": "¿Qué civilización construyó el Coliseo de Roma?",
+    "respuesta_correcta": "La romana",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 55,
+    "pregunta": "¿En qué año comenzó la Primera Guerra Mundial?",
+    "respuesta_correcta": "1914",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 56,
+    "opciones": [
+      "George Washington",
+      "Abraham Lincoln",
+      "Thomas Jefferson",
+      "Franklin Roosevelt"
+    ],
+    "pregunta": "¿Quién fue el primer presidente de Estados Unidos?",
+    "respuesta_correcta": "George Washington",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 57,
+    "pregunta": "¿Qué muro que dividía una capital europea cayó en 1989?",
+    "respuesta_correcta": "Muro de Berlín",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 58,
+    "opciones": [
+      "China",
+      "Roma",
+      "Egipto",
+      "Grecia"
+    ],
+    "pregunta": "¿Qué civilización construyó la Gran Muralla?",
+    "respuesta_correcta": "China",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 59,
+    "pregunta": "¿En qué país ocurrió la Revolución de 1789?",
+    "respuesta_correcta": "Francia",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 60,
+    "opciones": [
+      "1969",
+      "1959",
+      "1979",
+      "1949"
+    ],
+    "pregunta": "¿En qué año llegó el ser humano a la Luna por primera vez?",
+    "respuesta_correcta": "1969",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 61,
+    "pregunta": "¿Qué océano cruzó Cristóbal Colón para llegar a América?",
+    "respuesta_correcta": "Océano Atlántico",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 62,
+    "opciones": [
+      "Inca",
+      "Azteca",
+      "Maya",
+      "Egipcia"
+    ],
+    "pregunta": "¿A qué civilización pertenecen las ruinas de Machu Picchu?",
+    "respuesta_correcta": "Inca",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 63,
+    "pregunta": "¿Quién fue el líder venezolano conocido como el Libertador de América?",
+    "respuesta_correcta": "Simón Bolívar",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 64,
+    "opciones": [
+      "Hiroshima",
+      "Nagasaki",
+      "Tokio",
+      "Kioto"
+    ],
+    "pregunta": "¿En qué ciudad japonesa explotó la primera bomba atómica en 1945?",
+    "respuesta_correcta": "Hiroshima",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 65,
+    "pregunta": "¿En qué año terminó la Segunda Guerra Mundial?",
+    "respuesta_correcta": "1945",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 66,
+    "opciones": [
+      "México",
+      "Perú",
+      "Egipto",
+      "Italia"
+    ],
+    "pregunta": "¿En qué país se encuentran las ruinas mayas de Chichén Itzá?",
+    "respuesta_correcta": "México",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "facil",
+    "id": 67,
+    "pregunta": "¿Quién fue el líder sudafricano que puso fin al apartheid y fue presidente en 1994?",
+    "respuesta_correcta": "Nelson Mandela",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 68,
+    "opciones": [
+      "1776",
+      "1789",
+      "1810",
+      "1865"
+    ],
+    "pregunta": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+    "respuesta_correcta": "1776",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 69,
+    "pregunta": "¿En qué año triunfó la Revolución rusa que derrocó al zar?",
+    "respuesta_correcta": "1917",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 70,
+    "opciones": [
+      "Augusto",
+      "Julio César",
+      "Nerón",
+      "Trajano"
+    ],
+    "pregunta": "¿Quién fue el primer emperador de Roma?",
+    "respuesta_correcta": "Augusto",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 71,
+    "pregunta": "¿En qué ciudad se firmó el tratado que puso fin a la Primera Guerra Mundial en 1919?",
+    "respuesta_correcta": "Versalles",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 72,
+    "opciones": [
+      "Bizantino",
+      "Romano de Occidente",
+      "Mongol",
+      "Persa"
+    ],
+    "pregunta": "¿Qué imperio cayó en 1453 cuando los otomanos tomaron Constantinopla?",
+    "respuesta_correcta": "Bizantino",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 73,
+    "pregunta": "¿Cómo se llamaba el revolucionario argentino conocido como el Che?",
+    "respuesta_correcta": "Ernesto Che Guevara",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 74,
+    "opciones": [
+      "1816",
+      "1810",
+      "1825",
+      "1806"
+    ],
+    "pregunta": "¿En qué año declaró su independencia Argentina en el Congreso de Tucumán?",
+    "respuesta_correcta": "1816",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 75,
+    "pregunta": "¿Qué general cartaginés cruzó los Alpes con elefantes para atacar Roma?",
+    "respuesta_correcta": "Aníbal Barca",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 76,
+    "opciones": [
+      "Guerra del Peloponeso",
+      "Guerras Púnicas",
+      "Guerra de Troya",
+      "Guerra de los Cien Años"
+    ],
+    "pregunta": "¿Qué guerra enfrentó a Atenas y Esparta en la antigüedad?",
+    "respuesta_correcta": "Guerra del Peloponeso",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 77,
+    "pregunta": "¿En qué país se originaron los Juegos Olímpicos en la antigüedad?",
+    "respuesta_correcta": "Grecia",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 78,
+    "opciones": [
+      "OTAN",
+      "ONU",
+      "Unión Europea",
+      "Pacto de Varsovia"
+    ],
+    "pregunta": "¿Qué alianza militar occidental se creó en 1949?",
+    "respuesta_correcta": "OTAN",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 79,
+    "pregunta": "¿Qué civilización mesoamericana creó el calendario de cuenta larga y la escritura jeroglífica?",
+    "respuesta_correcta": "Maya",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 80,
+    "opciones": [
+      "Francisco Fernando de Austria",
+      "Carlos I de Austria",
+      "Guillermo II de Alemania",
+      "Nicolás II de Rusia"
+    ],
+    "pregunta": "¿Quién fue el archiduque asesinado en Sarajevo en 1914?",
+    "respuesta_correcta": "Francisco Fernando de Austria",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 81,
+    "pregunta": "¿En qué año se fundó la Organización de las Naciones Unidas?",
+    "respuesta_correcta": "1945",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 82,
+    "opciones": [
+      "Emiliano Zapata",
+      "Benito Juárez",
+      "Porfirio Díaz",
+      "Lázaro Cárdenas"
+    ],
+    "pregunta": "¿Qué líder campesino mexicano fue una figura central de la Revolución mexicana junto a Pancho Villa?",
+    "respuesta_correcta": "Emiliano Zapata",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 83,
+    "pregunta": "¿Qué volcán destruyó la ciudad de Pompeya en el año 79?",
+    "respuesta_correcta": "Vesubio",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "media",
+    "id": 84,
+    "opciones": [
+      "1910",
+      "1810",
+      "1920",
+      "1900"
+    ],
+    "pregunta": "¿En qué año comenzó la Revolución mexicana?",
+    "respuesta_correcta": "1910",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 85,
+    "opciones": [
+      "476",
+      "395",
+      "410",
+      "565"
+    ],
+    "pregunta": "¿En qué año cayó el Imperio romano de Occidente con la deposición de Rómulo Augústulo?",
+    "respuesta_correcta": "476",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 86,
+    "pregunta": "¿Cómo se llama el código legal creado por el rey de Babilonia hacia 1754 a. C.?",
+    "respuesta_correcta": "Código de Hammurabi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 87,
+    "opciones": [
+      "Austerlitz",
+      "Waterloo",
+      "Borodino",
+      "Trafalgar"
+    ],
+    "pregunta": "¿En qué batalla de 1805 derrotó Napoleón a rusos y austriacos?",
+    "respuesta_correcta": "Austerlitz",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 88,
+    "pregunta": "¿En qué año se separó Panamá de Colombia?",
+    "respuesta_correcta": "1903",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 89,
+    "opciones": [
+      "Nicolás II",
+      "Alejandro III",
+      "Pedro el Grande",
+      "Iván el Terrible"
+    ],
+    "pregunta": "¿Quién fue el último zar de Rusia?",
+    "respuesta_correcta": "Nicolás II",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 90,
+    "pregunta": "¿Qué tratado de 1494 dividió las tierras del Nuevo Mundo entre España y Portugal?",
+    "respuesta_correcta": "Tratado de Tordesillas",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 91,
+    "opciones": [
+      "Cuzco",
+      "Quito",
+      "Lima",
+      "Tiahuanaco"
+    ],
+    "pregunta": "¿Qué ciudad fue la capital del Imperio inca?",
+    "respuesta_correcta": "Cuzco",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 92,
+    "pregunta": "¿En qué año se libró la batalla de Ayacucho que aseguró la independencia sudamericana?",
+    "respuesta_correcta": "1824",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 93,
+    "opciones": [
+      "Constantino",
+      "Augusto",
+      "Diocleciano",
+      "Teodosio"
+    ],
+    "pregunta": "¿Qué emperador romano legalizó el cristianismo con el Edicto de Milán en 313?",
+    "respuesta_correcta": "Constantino",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 94,
+    "pregunta": "¿Cómo se llamó en clave la operación del desembarco de Normandía en 1944?",
+    "respuesta_correcta": "Operación Overlord",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 95,
+    "opciones": [
+      "1991",
+      "1989",
+      "1985",
+      "1995"
+    ],
+    "pregunta": "¿En qué año se disolvió la Unión Soviética?",
+    "respuesta_correcta": "1991",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 96,
+    "pregunta": "¿Qué explorador portugués inició la primera expedición que circunnavegó la Tierra?",
+    "respuesta_correcta": "Fernando de Magallanes",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 97,
+    "opciones": [
+      "Guerra de los Treinta Años",
+      "Guerra de los Cien Años",
+      "Guerra de Sucesión",
+      "Guerra Franco-Prusiana"
+    ],
+    "pregunta": "¿Qué guerra terminó con la Paz de Westfalia en 1648?",
+    "respuesta_correcta": "Guerra de los Treinta Años",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 98,
+    "pregunta": "¿En qué año se inauguró el Canal de Panamá?",
+    "respuesta_correcta": "1914",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 99,
+    "opciones": [
+      "Sumeria",
+      "Babilonia",
+      "Asiria",
+      "Persa"
+    ],
+    "pregunta": "¿Qué civilización mesopotámica inventó la escritura cuneiforme?",
+    "respuesta_correcta": "Sumeria",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Historia",
+    "dificultad": "dificil",
+    "id": 100,
+    "pregunta": "¿Quién era el presidente de Chile al momento del golpe de Estado de 1973?",
+    "respuesta_correcta": "Salvador Allende",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 101,
+    "opciones": [
+      "Miguel de Cervantes",
+      "Lope de Vega",
+      "Francisco de Quevedo",
+      "Calderón de la Barca"
+    ],
+    "pregunta": "¿Quién escribió la novela Don Quijote de la Mancha?",
+    "respuesta_correcta": "Miguel de Cervantes",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 102,
+    "pregunta": "¿Quién escribió la tragedia Romeo y Julieta?",
+    "respuesta_correcta": "William Shakespeare",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 103,
+    "opciones": [
+      "Pablo Picasso",
+      "Leonardo da Vinci",
+      "Vincent van Gogh",
+      "Salvador Dalí"
+    ],
+    "pregunta": "¿Quién pintó el cuadro La Mona Lisa?",
+    "respuesta_correcta": "Leonardo da Vinci",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 104,
+    "pregunta": "¿Quién escribió la novela Cien años de soledad?",
+    "respuesta_correcta": "Gabriel García Márquez",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 105,
+    "opciones": [
+      "Ludwig van Beethoven",
+      "Wolfgang Amadeus Mozart",
+      "Johann Sebastian Bach",
+      "Frédéric Chopin"
+    ],
+    "pregunta": "¿Quién compuso la Quinta Sinfonía?",
+    "respuesta_correcta": "Ludwig van Beethoven",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 106,
+    "pregunta": "¿Quién pintó el cuadro La noche estrellada?",
+    "respuesta_correcta": "Vincent van Gogh",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 107,
+    "opciones": [
+      "William Shakespeare",
+      "Molière",
+      "Johann Wolfgang von Goethe",
+      "Henrik Ibsen"
+    ],
+    "pregunta": "¿Quién escribió la obra de teatro Hamlet?",
+    "respuesta_correcta": "William Shakespeare",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 108,
+    "pregunta": "¿Quién compuso la obra Las cuatro estaciones?",
+    "respuesta_correcta": "Antonio Vivaldi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 109,
+    "opciones": [
+      "Salvador Dalí",
+      "Pablo Picasso",
+      "Joan Miró",
+      "Diego Velázquez"
+    ],
+    "pregunta": "¿Quién pintó el mural Guernica?",
+    "respuesta_correcta": "Pablo Picasso",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 110,
+    "pregunta": "¿Quién es el autor de la Odisea?",
+    "respuesta_correcta": "Homero",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 111,
+    "opciones": [
+      "Antoine de Saint-Exupéry",
+      "Julio Verne",
+      "Victor Hugo",
+      "Albert Camus"
+    ],
+    "pregunta": "¿Quién escribió El Principito?",
+    "respuesta_correcta": "Antoine de Saint-Exupéry",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 112,
+    "pregunta": "¿Quién pintó el mural La última cena?",
+    "respuesta_correcta": "Leonardo da Vinci",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 113,
+    "opciones": [
+      "Piotr Ilich Chaikovski",
+      "Igor Stravinski",
+      "Serguéi Rajmáninov",
+      "Dmitri Shostakóvich"
+    ],
+    "pregunta": "¿Quién compuso el ballet El lago de los cisnes?",
+    "respuesta_correcta": "Piotr Ilich Chaikovski",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 114,
+    "pregunta": "¿Cómo se llama el escudero de Don Quijote en la novela de Cervantes?",
+    "respuesta_correcta": "Sancho Panza",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 115,
+    "opciones": [
+      "Ludwig van Beethoven",
+      "Wolfgang Amadeus Mozart",
+      "Frédéric Chopin",
+      "Franz Liszt"
+    ],
+    "pregunta": "¿Quién compuso la pieza para piano Para Elisa?",
+    "respuesta_correcta": "Ludwig van Beethoven",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 116,
+    "pregunta": "¿Quién es el autor de las fábulas La liebre y la tortuga y La cigarra y la hormiga?",
+    "respuesta_correcta": "Esopo",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "facil",
+    "id": 117,
+    "opciones": [
+      "Francisco de Goya",
+      "Diego Velázquez",
+      "El Greco",
+      "Bartolomé Murillo"
+    ],
+    "pregunta": "¿Quién pintó el cuadro Las Meninas?",
+    "respuesta_correcta": "Diego Velázquez",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 118,
+    "opciones": [
+      "Jane Austen",
+      "Charlotte Brontë",
+      "Virginia Woolf",
+      "Emily Brontë"
+    ],
+    "pregunta": "¿Quién escribió la novela Orgullo y prejuicio?",
+    "respuesta_correcta": "Jane Austen",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 119,
+    "pregunta": "¿Quién escribió La Divina Comedia?",
+    "respuesta_correcta": "Dante Alighieri",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 120,
+    "opciones": [
+      "Sandro Botticelli",
+      "Rafael",
+      "Tiziano",
+      "Caravaggio"
+    ],
+    "pregunta": "¿Quién pintó El nacimiento de Venus?",
+    "respuesta_correcta": "Sandro Botticelli",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 121,
+    "pregunta": "¿Quién compuso el oratorio El Mesías?",
+    "respuesta_correcta": "Georg Friedrich Händel",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 122,
+    "opciones": [
+      "Impresionismo",
+      "Cubismo",
+      "Surrealismo",
+      "Barroco"
+    ],
+    "pregunta": "¿A qué movimiento artístico perteneció Claude Monet?",
+    "respuesta_correcta": "Impresionismo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 123,
+    "pregunta": "¿Quién escribió la novela Pedro Páramo?",
+    "respuesta_correcta": "Juan Rulfo",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 124,
+    "opciones": [
+      "Julio Cortázar",
+      "Jorge Luis Borges",
+      "Mario Vargas Llosa",
+      "Ernesto Sabato"
+    ],
+    "pregunta": "¿Quién escribió la novela Rayuela?",
+    "respuesta_correcta": "Julio Cortázar",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 125,
+    "pregunta": "¿Quién pintó el cuadro La persistencia de la memoria, conocido por los relojes blandos?",
+    "respuesta_correcta": "Salvador Dalí",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 126,
+    "opciones": [
+      "Wolfgang Amadeus Mozart",
+      "Ludwig van Beethoven",
+      "Giuseppe Verdi",
+      "Richard Wagner"
+    ],
+    "pregunta": "¿Quién compuso la ópera La flauta mágica?",
+    "respuesta_correcta": "Wolfgang Amadeus Mozart",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 127,
+    "pregunta": "¿Quién escribió la obra de teatro La casa de Bernarda Alba?",
+    "respuesta_correcta": "Federico García Lorca",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 128,
+    "opciones": [
+      "Gustav Klimt",
+      "Egon Schiele",
+      "Oskar Kokoschka",
+      "Alfons Mucha"
+    ],
+    "pregunta": "¿Quién pintó el cuadro El beso?",
+    "respuesta_correcta": "Gustav Klimt",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 129,
+    "pregunta": "¿Quién escribió el cuento El Aleph?",
+    "respuesta_correcta": "Jorge Luis Borges",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 130,
+    "opciones": [
+      "Maurice Ravel",
+      "Claude Debussy",
+      "Erik Satie",
+      "Camille Saint-Saëns"
+    ],
+    "pregunta": "¿Quién compuso la pieza orquestal Bolero?",
+    "respuesta_correcta": "Maurice Ravel",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 131,
+    "pregunta": "¿Quién pintó el cuadro El grito?",
+    "respuesta_correcta": "Edvard Munch",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 132,
+    "opciones": [
+      "Fiódor Dostoievski",
+      "León Tolstói",
+      "Antón Chéjov",
+      "Nikolái Gógol"
+    ],
+    "pregunta": "¿Quién escribió la novela Crimen y castigo?",
+    "respuesta_correcta": "Fiódor Dostoievski",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 133,
+    "pregunta": "¿Quién compuso la ópera El barbero de Sevilla?",
+    "respuesta_correcta": "Gioachino Rossini",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "media",
+    "id": 134,
+    "opciones": [
+      "Surrealismo",
+      "Impresionismo",
+      "Cubismo",
+      "Expresionismo"
+    ],
+    "pregunta": "¿A qué movimiento artístico perteneció Salvador Dalí?",
+    "respuesta_correcta": "Surrealismo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 135,
+    "opciones": [
+      "Umberto Eco",
+      "Italo Calvino",
+      "José Saramago",
+      "Günter Grass"
+    ],
+    "pregunta": "¿Quién escribió la novela El nombre de la rosa?",
+    "respuesta_correcta": "Umberto Eco",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 136,
+    "pregunta": "¿Quién compuso el ciclo de óperas El anillo del nibelungo?",
+    "respuesta_correcta": "Richard Wagner",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 137,
+    "opciones": [
+      "Rafael",
+      "Miguel Ángel",
+      "Leonardo da Vinci",
+      "Donatello"
+    ],
+    "pregunta": "¿Quién pintó el fresco La escuela de Atenas?",
+    "respuesta_correcta": "Rafael",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 138,
+    "pregunta": "¿Quién escribió la novela El lobo estepario?",
+    "respuesta_correcta": "Hermann Hesse",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 139,
+    "opciones": [
+      "James Joyce",
+      "Virginia Woolf",
+      "Marcel Proust",
+      "Franz Kafka"
+    ],
+    "pregunta": "¿Quién escribió la novela Ulises?",
+    "respuesta_correcta": "James Joyce",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 140,
+    "pregunta": "¿Quién pintó el tríptico El jardín de las delicias?",
+    "respuesta_correcta": "El Bosco",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 141,
+    "opciones": [
+      "Wolfgang Amadeus Mozart",
+      "Joseph Haydn",
+      "Antonio Salieri",
+      "Franz Schubert"
+    ],
+    "pregunta": "¿Quién compuso el Réquiem en re menor que quedó inconcluso a su muerte?",
+    "respuesta_correcta": "Wolfgang Amadeus Mozart",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 142,
+    "pregunta": "¿Quién escribió la novela El túnel?",
+    "respuesta_correcta": "Ernesto Sabato",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 143,
+    "opciones": [
+      "Jan van Eyck",
+      "Rogier van der Weyden",
+      "Hans Memling",
+      "Hugo van der Goes"
+    ],
+    "pregunta": "¿Quién pintó el cuadro El matrimonio Arnolfini?",
+    "respuesta_correcta": "Jan van Eyck",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 144,
+    "pregunta": "¿Quién compuso el poema sinfónico Así habló Zaratustra?",
+    "respuesta_correcta": "Richard Strauss",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 145,
+    "opciones": [
+      "Albert Camus",
+      "Jean-Paul Sartre",
+      "André Gide",
+      "Simone de Beauvoir"
+    ],
+    "pregunta": "¿Quién escribió la novela El extranjero?",
+    "respuesta_correcta": "Albert Camus",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 146,
+    "pregunta": "¿Quién pintó el cuadro La ronda de noche?",
+    "respuesta_correcta": "Rembrandt",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 147,
+    "opciones": [
+      "Carl Orff",
+      "Carl Maria von Weber",
+      "Anton Bruckner",
+      "Gustav Mahler"
+    ],
+    "pregunta": "¿Quién compuso la cantata escénica Carmina Burana?",
+    "respuesta_correcta": "Carl Orff",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 148,
+    "pregunta": "¿Quién escribió la novela corta La metamorfosis?",
+    "respuesta_correcta": "Franz Kafka",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 149,
+    "pregunta": "¿Quién pintó el cuadro El entierro del conde de Orgaz?",
+    "respuesta_correcta": "El Greco",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Artes y Letras",
+    "dificultad": "dificil",
+    "id": 150,
+    "pregunta": "¿Quién compuso la obra El clave bien temperado?",
+    "respuesta_correcta": "Johann Sebastian Bach",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 151,
+    "opciones": [
+      "Mercurio",
+      "Venus",
+      "Tierra",
+      "Marte"
+    ],
+    "pregunta": "¿Cuál es el planeta más cercano al Sol?",
+    "respuesta_correcta": "Mercurio",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 152,
+    "pregunta": "¿Cuántos planetas forman el sistema solar?",
+    "respuesta_correcta": "8",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 153,
+    "opciones": [
+      "Oxígeno",
+      "Dióxido de carbono",
+      "Nitrógeno",
+      "Hidrógeno"
+    ],
+    "pregunta": "¿Qué gas absorben las plantas para realizar la fotosíntesis?",
+    "respuesta_correcta": "Dióxido de carbono",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 154,
+    "pregunta": "¿Cómo se llama la estrella más cercana a la Tierra?",
+    "respuesta_correcta": "El Sol",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 155,
+    "opciones": [
+      "Júpiter",
+      "Saturno",
+      "Neptuno",
+      "Tierra"
+    ],
+    "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+    "respuesta_correcta": "Júpiter",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 156,
+    "pregunta": "¿Qué órgano del cuerpo humano bombea la sangre a todo el cuerpo?",
+    "respuesta_correcta": "El corazón",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 157,
+    "opciones": [
+      "106",
+      "206",
+      "306",
+      "412"
+    ],
+    "pregunta": "¿Cuántos huesos tiene aproximadamente el esqueleto de un humano adulto?",
+    "respuesta_correcta": "206",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 158,
+    "pregunta": "¿Qué gas necesitan los seres humanos para respirar y vivir?",
+    "respuesta_correcta": "Oxígeno",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 159,
+    "opciones": [
+      "Sólido",
+      "Líquido",
+      "Gaseoso",
+      "Plasma"
+    ],
+    "pregunta": "¿En qué estado se encuentra el agua a 100 °C a nivel del mar?",
+    "respuesta_correcta": "Gaseoso",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 160,
+    "pregunta": "¿Qué planeta es conocido como el planeta rojo?",
+    "respuesta_correcta": "Marte",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 161,
+    "opciones": [
+      "La raíz",
+      "El tallo",
+      "La hoja",
+      "La flor"
+    ],
+    "pregunta": "¿En qué parte principal de la planta ocurre mayormente la fotosíntesis?",
+    "respuesta_correcta": "La hoja",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 162,
+    "pregunta": "¿Cuántas patas tiene un insecto adulto?",
+    "respuesta_correcta": "6",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 163,
+    "opciones": [
+      "El corazón",
+      "Los pulmones",
+      "Los riñones",
+      "El hígado"
+    ],
+    "pregunta": "¿Qué órganos del cuerpo humano se encargan principalmente de la respiración?",
+    "respuesta_correcta": "Los pulmones",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 164,
+    "pregunta": "¿Cuál es la fórmula química del agua?",
+    "respuesta_correcta": "H2O",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 165,
+    "opciones": [
+      "Murciélago",
+      "Colibrí",
+      "Pingüino",
+      "Avestruz"
+    ],
+    "pregunta": "¿Cuál es el único mamífero capaz de volar?",
+    "respuesta_correcta": "Murciélago",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 166,
+    "pregunta": "¿Cómo se llama la fuerza que atrae los objetos hacia la Tierra?",
+    "respuesta_correcta": "La gravedad",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "facil",
+    "id": 167,
+    "opciones": [
+      "Marte",
+      "Saturno",
+      "Mercurio",
+      "Venus"
+    ],
+    "pregunta": "¿Qué planeta es famoso por sus anillos visibles?",
+    "respuesta_correcta": "Saturno",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 168,
+    "opciones": [
+      "Mercurio",
+      "Venus",
+      "Tierra",
+      "Marte"
+    ],
+    "pregunta": "¿Cuál es el tercer planeta desde el Sol?",
+    "respuesta_correcta": "Tierra",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 169,
+    "pregunta": "¿Cómo se llama el pigmento verde que permite a las plantas hacer la fotosíntesis?",
+    "respuesta_correcta": "La clorofila",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 170,
+    "opciones": [
+      "Glóbulos rojos",
+      "Glóbulos blancos",
+      "Plaquetas",
+      "Neuronas"
+    ],
+    "pregunta": "¿Qué células de la sangre transportan principalmente el oxígeno?",
+    "respuesta_correcta": "Glóbulos rojos",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 171,
+    "pregunta": "¿A qué temperatura se congela el agua a nivel del mar?",
+    "respuesta_correcta": "0 °C",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 172,
+    "opciones": [
+      "Mercurio",
+      "Venus",
+      "Marte",
+      "Júpiter"
+    ],
+    "pregunta": "¿Cuál es el planeta más caliente del sistema solar?",
+    "respuesta_correcta": "Venus",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 173,
+    "pregunta": "¿Cómo se llaman las moléculas que contienen la información genética de los seres vivos?",
+    "respuesta_correcta": "El ADN",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 174,
+    "opciones": [
+      "El corazón",
+      "El hígado",
+      "La piel",
+      "El pulmón"
+    ],
+    "pregunta": "¿Cuál es el órgano más grande del cuerpo humano?",
+    "respuesta_correcta": "La piel",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 175,
+    "pregunta": "¿Cuál es el símbolo químico del oro?",
+    "respuesta_correcta": "Au",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 176,
+    "opciones": [
+      "Elefante africano",
+      "Ballena azul",
+      "Tiburón ballena",
+      "Jirafa"
+    ],
+    "pregunta": "¿Cuál es el animal más grande del mundo?",
+    "respuesta_correcta": "Ballena azul",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 177,
+    "pregunta": "¿Qué gas liberan las plantas como producto de la fotosíntesis?",
+    "respuesta_correcta": "Oxígeno",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 178,
+    "opciones": [
+      "Fobos",
+      "Europa",
+      "La Luna",
+      "Titán"
+    ],
+    "pregunta": "¿Cómo se llama el satélite natural de la Tierra?",
+    "respuesta_correcta": "La Luna",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 179,
+    "pregunta": "¿Cuántos dientes permanentes tiene un adulto humano normalmente?",
+    "respuesta_correcta": "32",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 180,
+    "opciones": [
+      "La combustión de carbón",
+      "La fusión nuclear",
+      "La fisión nuclear",
+      "La energía eólica"
+    ],
+    "pregunta": "¿De dónde proviene principalmente la energía del Sol?",
+    "respuesta_correcta": "La fusión nuclear",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 181,
+    "pregunta": "¿Cómo se llama la parte de la flor que tras la fecundación da origen al fruto?",
+    "respuesta_correcta": "El ovario",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 182,
+    "opciones": [
+      "Los productores",
+      "Los consumidores",
+      "Los descomponedores",
+      "Los depredadores"
+    ],
+    "pregunta": "¿Qué organismos se encargan de descomponer la materia muerta en un ecosistema?",
+    "respuesta_correcta": "Los descomponedores",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 183,
+    "pregunta": "¿Cuál es aproximadamente la velocidad de la luz en el vacío?",
+    "respuesta_correcta": "300.000 km/s",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "media",
+    "id": 184,
+    "pregunta": "¿Cómo se llama el proceso por el cual las plantas pierden agua en forma de vapor por las hojas?",
+    "respuesta_correcta": "La transpiración",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 185,
+    "opciones": [
+      "Saturno",
+      "Urano",
+      "Neptuno",
+      "Plutón"
+    ],
+    "pregunta": "¿Cuál es el planeta más lejano del Sol?",
+    "respuesta_correcta": "Neptuno",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 186,
+    "pregunta": "¿Cómo se llama el orgánulo celular que produce la energía de la célula?",
+    "respuesta_correcta": "La mitocondria",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 187,
+    "opciones": [
+      "0",
+      "7",
+      "14",
+      "1"
+    ],
+    "pregunta": "¿Cuál es el valor del pH neutro a 25 °C?",
+    "respuesta_correcta": "7",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 188,
+    "pregunta": "¿Cómo se llama la unidad básica de la vida?",
+    "respuesta_correcta": "La célula",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 189,
+    "opciones": [
+      "Júpiter",
+      "Marte",
+      "Urano",
+      "Venus"
+    ],
+    "pregunta": "¿Qué planeta gira de lado, con una inclinación de unos 98 grados?",
+    "respuesta_correcta": "Urano",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 190,
+    "pregunta": "¿Qué células de la sangre defienden al cuerpo contra las infecciones?",
+    "respuesta_correcta": "Los glóbulos blancos",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 191,
+    "opciones": [
+      "Venus",
+      "Marte",
+      "Mercurio",
+      "Júpiter"
+    ],
+    "pregunta": "¿En qué planeta se encuentra el Monte Olimpo, el volcán más alto del sistema solar?",
+    "respuesta_correcta": "Marte",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 192,
+    "pregunta": "¿Cuál es el símbolo químico del sodio?",
+    "respuesta_correcta": "Na",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 193,
+    "opciones": [
+      "El vacío",
+      "El aire",
+      "El agua",
+      "Ninguno, viaja igual"
+    ],
+    "pregunta": "¿En qué medio viaja más rápido el sonido entre los siguientes?",
+    "respuesta_correcta": "El agua",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 194,
+    "pregunta": "¿Cuál es el hueso más largo del cuerpo humano?",
+    "respuesta_correcta": "El fémur",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 195,
+    "opciones": [
+      "León",
+      "Guepardo",
+      "Antílope",
+      "Caballo"
+    ],
+    "pregunta": "¿Cuál es el animal terrestre más rápido?",
+    "respuesta_correcta": "Guepardo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 196,
+    "pregunta": "¿Cómo se llama el cambio de estado de agua líquida a vapor?",
+    "respuesta_correcta": "La evaporación",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 197,
+    "opciones": [
+      "La troposfera",
+      "La capa de ozono",
+      "La mesosfera",
+      "La exosfera"
+    ],
+    "pregunta": "¿Qué capa de la atmósfera protege a la Tierra de la radiación ultravioleta?",
+    "respuesta_correcta": "La capa de ozono",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 198,
+    "pregunta": "¿Cuántos cromosomas tiene una célula humana normal?",
+    "respuesta_correcta": "46",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 199,
+    "opciones": [
+      "La Gran Mancha Roja",
+      "El Anillo de Fuego",
+      "La Mancha Polar",
+      "El Gran Agujero Negro"
+    ],
+    "pregunta": "¿Cómo se llama la gran tormenta anticiclónica de Júpiter?",
+    "respuesta_correcta": "La Gran Mancha Roja",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Ciencias y Naturaleza",
+    "dificultad": "dificil",
+    "id": 200,
+    "pregunta": "¿Cuántas cámaras tiene el corazón humano?",
+    "respuesta_correcta": "4",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 201,
+    "opciones": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "pregunta": "¿Cuántos jugadores de cada equipo hay en el campo en un partido de fútbol reglamentario?",
+    "respuesta_correcta": "11",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 202,
+    "pregunta": "¿Cada cuántos años se celebran los Juegos Olímpicos de verano modernos?",
+    "respuesta_correcta": "Cada 4 años",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 203,
+    "opciones": [
+      "China",
+      "Japón",
+      "Corea del Sur",
+      "Brasil"
+    ],
+    "pregunta": "¿De qué país es originario el judo?",
+    "respuesta_correcta": "Japón",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 204,
+    "pregunta": "¿Cuánto dura un partido reglamentario de fútbol sin prórroga ni descuentos?",
+    "respuesta_correcta": "90 minutos",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 205,
+    "opciones": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "pregunta": "¿Cuántos jugadores de cada equipo hay en la cancha en un partido de baloncesto?",
+    "respuesta_correcta": "5",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 206,
+    "pregunta": "¿Qué distancia oficial tiene una carrera de maratón?",
+    "respuesta_correcta": "42,195 kilómetros",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 207,
+    "opciones": [
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    "pregunta": "¿Cuántos jugadores de cada equipo juegan en la cancha en voleibol?",
+    "respuesta_correcta": "6",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 208,
+    "pregunta": "¿Qué longitud tiene una piscina olímpica reglamentaria?",
+    "respuesta_correcta": "50 metros",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 209,
+    "opciones": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "pregunta": "¿Cuántos jugadores de cada equipo defienden en el campo en béisbol?",
+    "respuesta_correcta": "9",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 210,
+    "pregunta": "¿Cómo se llama el cuadrilátero elevado donde se boxea?",
+    "respuesta_correcta": "Ring",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 211,
+    "opciones": [
+      "El capitán",
+      "El delantero",
+      "El portero",
+      "El defensa central"
+    ],
+    "pregunta": "¿Quién es el único jugador de fútbol que puede tocar el balón con las manos dentro de su área?",
+    "respuesta_correcta": "El portero",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 212,
+    "pregunta": "¿Cuántos torneos de Grand Slam hay en tenis cada año?",
+    "respuesta_correcta": "4",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 213,
+    "opciones": [
+      "Atenas",
+      "Esparta",
+      "Olimpia",
+      "Corinto"
+    ],
+    "pregunta": "¿En qué ciudad de la Antigua Grecia se celebraban los Juegos Olímpicos antiguos?",
+    "respuesta_correcta": "Olimpia",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 214,
+    "pregunta": "¿A qué altura del suelo está la canasta de baloncesto reglamentaria?",
+    "respuesta_correcta": "3,05 metros",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 215,
+    "opciones": [
+      "9 metros",
+      "11 metros",
+      "12 metros",
+      "16 metros"
+    ],
+    "pregunta": "¿A qué distancia de la portería se lanza un penalti en fútbol?",
+    "respuesta_correcta": "11 metros",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 216,
+    "pregunta": "¿Qué objeto divide la cancha de voleibol en dos mitades?",
+    "respuesta_correcta": "La red",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "facil",
+    "id": 217,
+    "opciones": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "pregunta": "¿Cuántos puntos vale un triple anotado en baloncesto?",
+    "respuesta_correcta": "3",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 218,
+    "opciones": [
+      "2 años",
+      "3 años",
+      "4 años",
+      "5 años"
+    ],
+    "pregunta": "¿Cada cuántos años se celebra la Copa Mundial de fútbol?",
+    "respuesta_correcta": "4 años",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 219,
+    "pregunta": "¿Qué país fue sede y campeón del primer Mundial de fútbol en 1930?",
+    "respuesta_correcta": "Uruguay",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 220,
+    "opciones": [
+      "Australia, Roland Garros, Wimbledon y US Open",
+      "Madrid, Roma, Londres y París",
+      "Montecarlo, Barcelona, Buenos Aires y Tokio",
+      "Indian Wells, Miami, Cincinnati y Shanghái"
+    ],
+    "pregunta": "¿Cuáles son los cuatro torneos de Grand Slam de tenis?",
+    "respuesta_correcta": "Australia, Roland Garros, Wimbledon y US Open",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 221,
+    "pregunta": "¿Quién inventó el baloncesto en 1891 en Springfield?",
+    "respuesta_correcta": "James Naismith",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 222,
+    "opciones": [
+      "15",
+      "21",
+      "25",
+      "30"
+    ],
+    "pregunta": "¿A cuántos puntos se juega cada set de voleibol, excepto el quinto?",
+    "respuesta_correcta": "25",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 223,
+    "pregunta": "¿Cuáles son los cuatro estilos oficiales de la natación competitiva?",
+    "respuesta_correcta": "Libre, espalda, braza y mariposa",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 224,
+    "opciones": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "pregunta": "¿Cuántas bases hay que recorrer en béisbol para anotar una carrera?",
+    "respuesta_correcta": "4",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 225,
+    "pregunta": "¿Cuánto dura cada asalto en boxeo profesional y qué protección es obligatoria en las manos?",
+    "respuesta_correcta": "3 minutos y guantes",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 226,
+    "opciones": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "pregunta": "¿Cuántos corredores forman un equipo de relevo 4x100 en atletismo?",
+    "respuesta_correcta": "4",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 227,
+    "pregunta": "¿Qué significa que el árbitro muestre tarjeta roja a un jugador de fútbol?",
+    "respuesta_correcta": "Expulsión del jugador",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 228,
+    "opciones": [
+      "11",
+      "13",
+      "15",
+      "20"
+    ],
+    "pregunta": "¿Cuántos jugadores de cada equipo juegan en rugby union?",
+    "respuesta_correcta": "15",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 229,
+    "pregunta": "¿Cuántos juegos hay que ganar, con diferencia de dos, para llevarse un set de tenis?",
+    "respuesta_correcta": "6 juegos",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 230,
+    "opciones": [
+      "Césped",
+      "Tatami",
+      "Parqué",
+      "Arena"
+    ],
+    "pregunta": "¿Sobre qué superficie combaten los judocas?",
+    "respuesta_correcta": "Tatami",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 231,
+    "pregunta": "¿En qué ciudad y año se celebraron los primeros Juegos Olímpicos modernos?",
+    "respuesta_correcta": "Atenas 1896",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 232,
+    "opciones": [
+      "Maillot verde",
+      "Maillot amarillo",
+      "Maillot rojo",
+      "Maillot blanco"
+    ],
+    "pregunta": "¿Qué prenda viste el líder de la clasificación general del Tour de Francia?",
+    "respuesta_correcta": "Maillot amarillo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 233,
+    "pregunta": "¿Qué se concede en fútbol cuando el balón sale por la línea de fondo tras tocar en un defensor?",
+    "respuesta_correcta": "Saque de esquina",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "media",
+    "id": 234,
+    "opciones": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "pregunta": "¿Cuántos puntos vale un tiro libre anotado en baloncesto?",
+    "respuesta_correcta": "1",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 235,
+    "opciones": [
+      "1857 en Sheffield",
+      "1863 en Londres",
+      "1896 en Atenas",
+      "1904 en París"
+    ],
+    "pregunta": "¿En qué año y ciudad se fundó la Football Association que dio origen al fútbol moderno?",
+    "respuesta_correcta": "1863 en Londres",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 236,
+    "pregunta": "¿Quién impulsó la reinstauración de los Juegos Olímpicos modernos y fundó el COI en 1894?",
+    "respuesta_correcta": "Pierre de Coubertin",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 237,
+    "opciones": [
+      "Jigoro Kano en 1882",
+      "Morihei Ueshiba en 1930",
+      "Gichin Funakoshi en 1922",
+      "James Naismith en 1891"
+    ],
+    "pregunta": "¿Quién fundó el judo y en qué año?",
+    "respuesta_correcta": "Jigoro Kano en 1882",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 238,
+    "pregunta": "¿Quién inventó el voleibol en 1895 y cómo lo llamó al principio?",
+    "respuesta_correcta": "William G. Morgan, Mintonette",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 239,
+    "opciones": [
+      "Reglas de Londres",
+      "Reglas de Queensberry",
+      "Reglas de Broughton",
+      "Reglas de Las Vegas"
+    ],
+    "pregunta": "¿Cómo se llaman las reglas base del boxeo moderno publicadas en 1867?",
+    "respuesta_correcta": "Reglas de Queensberry",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 240,
+    "pregunta": "¿En qué año se corrió el primer Tour de Francia y quién lo ganó?",
+    "respuesta_correcta": "1903, Maurice Garin",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 241,
+    "opciones": [
+      "William Webb Ellis",
+      "James Naismith",
+      "Jules Rimet",
+      "Thomas Arnold"
+    ],
+    "pregunta": "¿Quién, según la tradición, tomó el balón con las manos en 1823 dando origen al rugby?",
+    "respuesta_correcta": "William Webb Ellis",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 242,
+    "pregunta": "¿Dónde y cuándo se jugó el primer torneo oficial de tenis reconocido como Wimbledon?",
+    "respuesta_correcta": "Wimbledon, Londres, en 1877",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 243,
+    "opciones": [
+      "Maratón en 490 a.C.",
+      "Salamina en 480 a.C.",
+      "Troya en 1200 a.C.",
+      "Olimpia en 776 a.C."
+    ],
+    "pregunta": "¿En qué batalla y año se inspira la leyenda de Filípides que dio origen a la maratón?",
+    "respuesta_correcta": "Maratón en 490 a.C.",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 244,
+    "pregunta": "¿Qué distancia hay entre bases consecutivas en un campo de béisbol reglamentario?",
+    "respuesta_correcta": "90 pies",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 245,
+    "opciones": [
+      "7",
+      "8",
+      "10",
+      "12"
+    ],
+    "pregunta": "¿Cuántas pruebas tiene el decatlón de atletismo?",
+    "respuesta_correcta": "10",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 246,
+    "pregunta": "¿En qué colegio y ciudad inventó Naismith el baloncesto con cestas de melocotones?",
+    "respuesta_correcta": "Springfield College, Springfield",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 247,
+    "pregunta": "¿De qué antiguo juego francés con la palma de la mano deriva el tenis moderno?",
+    "respuesta_correcta": "Jeu de paume",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 248,
+    "pregunta": "¿Cuál es considerado el club de fútbol más antiguo del mundo, fundado en 1857?",
+    "respuesta_correcta": "Sheffield FC",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 249,
+    "opciones": [
+      "Los cinco continentes",
+      "Los cinco deportes originales",
+      "Las cinco primeras sedes",
+      "Los cinco fundadores del COI"
+    ],
+    "pregunta": "¿Qué representan los cinco anillos olímpicos?",
+    "respuesta_correcta": "Los cinco continentes",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Deportes",
+    "dificultad": "dificil",
+    "id": 250,
+    "pregunta": "¿Cuántas pruebas tiene el heptatlón femenino de atletismo?",
+    "respuesta_correcta": "7 pruebas",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 251,
+    "opciones": [
+      "James Cameron",
+      "Steven Spielberg",
+      "George Lucas",
+      "Ridley Scott"
+    ],
+    "pregunta": "¿Quién dirigió la película Titanic (1997)?",
+    "respuesta_correcta": "James Cameron",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 252,
+    "opciones": [
+      "Queen",
+      "The Beatles",
+      "Pink Floyd",
+      "Led Zeppelin"
+    ],
+    "pregunta": "¿Qué banda británica interpreta la canción Bohemian Rhapsody?",
+    "respuesta_correcta": "Queen",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 253,
+    "opciones": [
+      "Johnny Depp",
+      "Orlando Bloom",
+      "Brad Pitt",
+      "Tom Cruise"
+    ],
+    "pregunta": "¿Qué actor interpreta al capitán Jack Sparrow en Piratas del Caribe?",
+    "respuesta_correcta": "Johnny Depp",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 254,
+    "pregunta": "¿Quién dirigió las películas E.T., Tiburón y Jurassic Park?",
+    "respuesta_correcta": "Steven Spielberg",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 255,
+    "opciones": [
+      "El Rey León",
+      "Aladdín",
+      "Dumbo",
+      "Bambi"
+    ],
+    "pregunta": "¿En qué película animada aparece el león Simba?",
+    "respuesta_correcta": "El Rey León",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 256,
+    "pregunta": "¿Qué banda británica interpreta Yesterday, Let It Be y Hey Jude?",
+    "respuesta_correcta": "The Beatles",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 257,
+    "opciones": [
+      "Batman",
+      "Superman",
+      "Spider-Man",
+      "Iron Man"
+    ],
+    "pregunta": "¿Qué superhéroe protege la ciudad de Gotham?",
+    "respuesta_correcta": "Batman",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 258,
+    "pregunta": "¿Cómo se llama el vaquero protagonista de Toy Story?",
+    "respuesta_correcta": "Woody",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 259,
+    "opciones": [
+      "Michael Jackson",
+      "Elvis Presley",
+      "Prince",
+      "Freddie Mercury"
+    ],
+    "pregunta": "¿Qué cantante es conocido como el Rey del Pop?",
+    "respuesta_correcta": "Michael Jackson",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 260,
+    "pregunta": "¿Qué princesa de Disney pierde una zapatilla de cristal en el baile?",
+    "respuesta_correcta": "Cenicienta",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 261,
+    "opciones": [
+      "Harry Potter",
+      "Percy Jackson",
+      "Frodo Bolsón",
+      "Peter Pan"
+    ],
+    "pregunta": "¿Qué joven mago asiste al colegio Hogwarts?",
+    "respuesta_correcta": "Harry Potter",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 262,
+    "pregunta": "¿Qué grupo sueco cantó Dancing Queen y Mamma Mia?",
+    "respuesta_correcta": "ABBA",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 263,
+    "opciones": [
+      "Titanic",
+      "Avatar",
+      "Pearl Harbor",
+      "El Náufrago"
+    ],
+    "pregunta": "¿Qué película épica de 1997 trata sobre el hundimiento del barco de 1912?",
+    "respuesta_correcta": "Titanic",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 264,
+    "pregunta": "¿Quién popularizó la canción La Bamba en 1958?",
+    "respuesta_correcta": "Ritchie Valens",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 265,
+    "opciones": [
+      "Los Simpson",
+      "Los Picapiedra",
+      "Los Supersónicos",
+      "Los Rugrats"
+    ],
+    "pregunta": "¿Qué familia amarilla de televisión vive en Springfield?",
+    "respuesta_correcta": "Los Simpson",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 266,
+    "pregunta": "¿Qué cantante colombiana interpreta Waka Waka?",
+    "respuesta_correcta": "Shakira",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "facil",
+    "id": 267,
+    "pregunta": "¿Qué superhéroe dice que un gran poder conlleva una gran responsabilidad?",
+    "respuesta_correcta": "Spider-Man",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 268,
+    "opciones": [
+      "Francis Ford Coppola",
+      "Martin Scorsese",
+      "Stanley Kubrick",
+      "Robert Altman"
+    ],
+    "pregunta": "¿Quién dirigió la película El Padrino (1972)?",
+    "respuesta_correcta": "Francis Ford Coppola",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 269,
+    "pregunta": "¿Qué actor protagonizó Forrest Gump (1994)?",
+    "respuesta_correcta": "Tom Hanks",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 270,
+    "opciones": [
+      "Eagles",
+      "The Doors",
+      "Creedence Clearwater Revival",
+      "Bon Jovi"
+    ],
+    "pregunta": "¿Qué banda estadounidense canta Hotel California?",
+    "respuesta_correcta": "Eagles",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 271,
+    "pregunta": "¿Quién compuso la Novena Sinfonía con el Himno a la Alegría?",
+    "respuesta_correcta": "Ludwig van Beethoven",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 272,
+    "opciones": [
+      "Audrey Hepburn",
+      "Marilyn Monroe",
+      "Elizabeth Taylor",
+      "Grace Kelly"
+    ],
+    "pregunta": "¿Qué actriz protagonizó Desayuno con diamantes (1961)?",
+    "respuesta_correcta": "Audrey Hepburn",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 273,
+    "pregunta": "¿Quién dirigió Pulp Fiction (1994)?",
+    "respuesta_correcta": "Quentin Tarantino",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 274,
+    "opciones": [
+      "La novicia rebelde",
+      "El mago de Oz",
+      "Cantando bajo la lluvia",
+      "My Fair Lady"
+    ],
+    "pregunta": "¿Qué musical clásico cuenta la historia de la familia Von Trapp en Austria?",
+    "respuesta_correcta": "La novicia rebelde",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 275,
+    "pregunta": "¿Qué cantante es conocido como el Rey del Rock?",
+    "respuesta_correcta": "Elvis Presley",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 276,
+    "opciones": [
+      "Forrest Gump",
+      "Pulp Fiction",
+      "El Rey León",
+      "Cadena perpetua"
+    ],
+    "pregunta": "¿Qué película ganó el Óscar a mejor película en 1994?",
+    "respuesta_correcta": "Forrest Gump",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 277,
+    "pregunta": "¿Qué compositor italiano escribió las óperas La Traviata y Aída?",
+    "respuesta_correcta": "Giuseppe Verdi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 278,
+    "opciones": [
+      "Arnold Schwarzenegger",
+      "Sylvester Stallone",
+      "Bruce Willis",
+      "Jean-Claude Van Damme"
+    ],
+    "pregunta": "¿Qué actor interpreta a Terminator?",
+    "respuesta_correcta": "Arnold Schwarzenegger",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 279,
+    "pregunta": "¿Qué cantante mexicano es conocido como el Rey de la canción ranchera?",
+    "respuesta_correcta": "Vicente Fernández",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 280,
+    "opciones": [
+      "The Big Bang Theory",
+      "Friends",
+      "How I Met Your Mother",
+      "The Office"
+    ],
+    "pregunta": "¿En qué serie de televisión aparece el físico Sheldon Cooper?",
+    "respuesta_correcta": "The Big Bang Theory",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 281,
+    "pregunta": "¿Quién escribió la obra de teatro Romeo y Julieta?",
+    "respuesta_correcta": "William Shakespeare",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 282,
+    "opciones": [
+      "Violonchelo",
+      "Violín",
+      "Piano",
+      "Contrabajo"
+    ],
+    "pregunta": "¿Qué instrumento toca el famoso músico Yo-Yo Ma?",
+    "respuesta_correcta": "Violonchelo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 283,
+    "pregunta": "¿Quién dirigió Star Wars: Episodio IV - Una nueva esperanza (1977)?",
+    "respuesta_correcta": "George Lucas",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "media",
+    "id": 284,
+    "pregunta": "¿Qué cantante acompañó a Luis Fonsi en la canción Despacito?",
+    "respuesta_correcta": "Daddy Yankee",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 285,
+    "opciones": [
+      "Orson Welles",
+      "Alfred Hitchcock",
+      "John Ford",
+      "Billy Wilder"
+    ],
+    "pregunta": "¿Quién dirigió y protagonizó Ciudadano Kane (1941)?",
+    "respuesta_correcta": "Orson Welles",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 286,
+    "pregunta": "¿Qué compositor barroco escribió Las Cuatro Estaciones?",
+    "respuesta_correcta": "Antonio Vivaldi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 287,
+    "opciones": [
+      "Ben-Hur",
+      "Espartaco",
+      "Los Diez Mandamientos",
+      "Cleopatra"
+    ],
+    "pregunta": "¿Qué película de 1959 fue la primera en ganar 11 premios Óscar?",
+    "respuesta_correcta": "Ben-Hur",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 288,
+    "pregunta": "¿Qué soprano griega era conocida como La Divina?",
+    "respuesta_correcta": "Maria Callas",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 289,
+    "opciones": [
+      "Akira Kurosawa",
+      "Yasujirō Ozu",
+      "Kenji Mizoguchi",
+      "Hayao Miyazaki"
+    ],
+    "pregunta": "¿Quién dirigió la película japonesa Los siete samuráis (1954)?",
+    "respuesta_correcta": "Akira Kurosawa",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 290,
+    "pregunta": "¿Qué dramaturgo español escribió La vida es sueño?",
+    "respuesta_correcta": "Pedro Calderón de la Barca",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 291,
+    "opciones": [
+      "The Who",
+      "The Kinks",
+      "The Rolling Stones",
+      "Pink Floyd"
+    ],
+    "pregunta": "¿Qué banda de rock creó la ópera rock Tommy?",
+    "respuesta_correcta": "The Who",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 292,
+    "pregunta": "¿Qué director italiano dirigió 8½ y La dolce vita?",
+    "respuesta_correcta": "Federico Fellini",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 293,
+    "opciones": [
+      "Charles Chaplin",
+      "Buster Keaton",
+      "Harold Lloyd",
+      "Stan Laurel"
+    ],
+    "pregunta": "¿Qué actor de cine mudo creó al personaje del Vagabundo?",
+    "respuesta_correcta": "Charles Chaplin",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 294,
+    "pregunta": "¿Qué compositor alemán escribió la tetralogía El anillo del nibelungo?",
+    "respuesta_correcta": "Richard Wagner",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 295,
+    "opciones": [
+      "Hamlet",
+      "Otelo",
+      "Macbeth",
+      "El Rey Lear"
+    ],
+    "pregunta": "¿En qué obra de Shakespeare aparece el príncipe de Dinamarca?",
+    "respuesta_correcta": "Hamlet",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 296,
+    "pregunta": "¿Quién dirigió la película expresionista Metrópolis (1927)?",
+    "respuesta_correcta": "Fritz Lang",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 297,
+    "opciones": [
+      "Luciano Pavarotti",
+      "Plácido Domingo",
+      "José Carreras",
+      "Enrico Caruso"
+    ],
+    "pregunta": "¿Qué tenor italiano popularizó el aria Nessun dorma?",
+    "respuesta_correcta": "Luciano Pavarotti",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 298,
+    "pregunta": "¿Quién escribió la obra Esperando a Godot?",
+    "respuesta_correcta": "Samuel Beckett",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 299,
+    "opciones": [
+      "John Williams",
+      "Hans Zimmer",
+      "Ennio Morricone",
+      "James Horner"
+    ],
+    "pregunta": "¿Qué compositor creó la música de Tiburón, Star Wars y E.T.?",
+    "respuesta_correcta": "John Williams",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Espectáculos",
+    "dificultad": "dificil",
+    "id": 300,
+    "pregunta": "¿Quién dirigió la película Casablanca (1942)?",
+    "respuesta_correcta": "Michael Curtiz",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 301,
+    "opciones": [
+      "Eiichiro Oda",
+      "Masashi Kishimoto",
+      "Akira Toriyama",
+      "Hajime Isayama"
+    ],
+    "pregunta": "¿Quién es el autor de One Piece?",
+    "respuesta_correcta": "Eiichiro Oda",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 302,
+    "pregunta": "¿Quién es el protagonista de One Piece que quiere ser el Rey de los Piratas?",
+    "respuesta_correcta": "Monkey D. Luffy",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 303,
+    "opciones": [
+      "Masashi Kishimoto",
+      "Eiichiro Oda",
+      "Koyoharu Gotouge",
+      "Tsugumi Ohba"
+    ],
+    "pregunta": "¿Quién es el autor de Naruto?",
+    "respuesta_correcta": "Masashi Kishimoto",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 304,
+    "pregunta": "¿Cómo se llama la aldea ninja de Naruto Uzumaki?",
+    "respuesta_correcta": "Konoha",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 305,
+    "opciones": [
+      "Un shinigami",
+      "Un ninja",
+      "Un pirata",
+      "Un titán"
+    ],
+    "pregunta": "¿Qué es Ryuk en Death Note?",
+    "respuesta_correcta": "Un shinigami",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 306,
+    "pregunta": "¿Quién es el autor de Dragon Ball?",
+    "respuesta_correcta": "Akira Toriyama",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 307,
+    "opciones": [
+      "Son Goku",
+      "Vegeta",
+      "Naruto Uzumaki",
+      "Monkey D. Luffy"
+    ],
+    "pregunta": "¿Quién es el protagonista de Dragon Ball?",
+    "respuesta_correcta": "Son Goku",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 308,
+    "pregunta": "¿Qué título quiere conseguir Monkey D. Luffy en One Piece?",
+    "respuesta_correcta": "Rey de los Piratas",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 309,
+    "opciones": [
+      "Kurama",
+      "Shenlong",
+      "Ryuk",
+      "Muzan"
+    ],
+    "pregunta": "¿Cómo se llama el Zorro de Nueve Colas sellado en Naruto?",
+    "respuesta_correcta": "Kurama",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 310,
+    "pregunta": "¿Quién es el protagonista de Demon Slayer que busca curar a su hermana?",
+    "respuesta_correcta": "Tanjiro Kamado",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 311,
+    "opciones": [
+      "Hajime Isayama",
+      "Eiichiro Oda",
+      "Akira Toriyama",
+      "Masashi Kishimoto"
+    ],
+    "pregunta": "¿Quién es el autor de Attack on Titan?",
+    "respuesta_correcta": "Hajime Isayama",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 312,
+    "pregunta": "¿Cómo se llama al autor o dibujante profesional de manga?",
+    "respuesta_correcta": "Mangaka",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 313,
+    "opciones": [
+      "Shonen Jump",
+      "Bessatsu Shonen Magazine",
+      "V Jump",
+      "Garo"
+    ],
+    "pregunta": "¿En qué revista japonesa se publica One Piece desde 1997?",
+    "respuesta_correcta": "Shonen Jump",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 314,
+    "pregunta": "¿Cuántas Esferas del Dragón hay que reunir en Dragon Ball?",
+    "respuesta_correcta": "Siete",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 315,
+    "opciones": [
+      "Nezuko Kamado",
+      "Mikasa Ackerman",
+      "Nami",
+      "Sakura Haruno"
+    ],
+    "pregunta": "¿Cómo se llama la hermana demonio de Tanjiro en Demon Slayer?",
+    "respuesta_correcta": "Nezuko Kamado",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 316,
+    "pregunta": "¿Qué objeto sobrenatural encuentra Light Yagami en Death Note?",
+    "respuesta_correcta": "Death Note",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "facil",
+    "id": 317,
+    "opciones": [
+      "Chicos adolescentes",
+      "Chicas adolescentes",
+      "Hombres adultos",
+      "Niños pequeños"
+    ],
+    "pregunta": "¿A qué público se dirige principalmente el manga shonen?",
+    "respuesta_correcta": "Chicos adolescentes",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 318,
+    "opciones": [
+      "Piratas del Sombrero de Paja",
+      "Piratas de Barbablanca",
+      "Akatsuki",
+      "Cuerpo de Exploración"
+    ],
+    "pregunta": "¿Cómo se llama la tripulación de Luffy en One Piece?",
+    "respuesta_correcta": "Piratas del Sombrero de Paja",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 319,
+    "pregunta": "¿Quién es el maestro del Equipo 7 conocido como el Ninja que Copia en Naruto?",
+    "respuesta_correcta": "Kakashi Hatake",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 320,
+    "opciones": [
+      "Light Yagami",
+      "L",
+      "Near",
+      "Teru Mikami"
+    ],
+    "pregunta": "¿Quién es el protagonista humano que usa la Death Note?",
+    "respuesta_correcta": "Light Yagami",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 321,
+    "pregunta": "¿Cómo se llama el dragón que aparece al reunir las siete esferas en Dragon Ball?",
+    "respuesta_correcta": "Shenlong",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 322,
+    "opciones": [
+      "Eren Yeager",
+      "Levi Ackerman",
+      "Armin Arlert",
+      "Reiner Braun"
+    ],
+    "pregunta": "¿Quién es el protagonista de Attack on Titan que jura exterminar a los titanes?",
+    "respuesta_correcta": "Eren Yeager",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 323,
+    "pregunta": "¿Quién es el autor del manga Demon Slayer?",
+    "respuesta_correcta": "Koyoharu Gotouge",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 324,
+    "opciones": [
+      "Sharingan",
+      "Haki",
+      "Kamehameha",
+      "Respiración del Agua"
+    ],
+    "pregunta": "¿Cómo se llama el poder ocular del clan Uchiha en Naruto?",
+    "respuesta_correcta": "Sharingan",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 325,
+    "pregunta": "¿Quién es el espadachín de tres espadas de la tripulación de Luffy?",
+    "respuesta_correcta": "Roronoa Zoro",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 326,
+    "opciones": [
+      "Kamehameha",
+      "Rasengan",
+      "Chidori",
+      "Getsuga Tensho"
+    ],
+    "pregunta": "¿Cómo se llama la técnica de energía más famosa de Goku?",
+    "respuesta_correcta": "Kamehameha",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 327,
+    "pregunta": "¿Cómo se llaman las criaturas gigantes que amenazan a la humanidad en Attack on Titan?",
+    "respuesta_correcta": "Titanes",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 328,
+    "opciones": [
+      "Zenitsu Agatsuma",
+      "Inosuke Hashibira",
+      "Giyu Tomioka",
+      "Kyojuro Rengoku"
+    ],
+    "pregunta": "¿Quién es el compañero rubio y miedoso de Tanjiro que usa la Respiración del Rayo?",
+    "respuesta_correcta": "Zenitsu Agatsuma",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 329,
+    "pregunta": "¿Cómo se llama el misterioso detective rival de Light en Death Note?",
+    "respuesta_correcta": "L",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 330,
+    "opciones": [
+      "Shueisha",
+      "Kodansha",
+      "Shogakukan",
+      "Kadokawa"
+    ],
+    "pregunta": "¿Qué editorial japonesa publica One Piece, Naruto y Death Note en Shonen Jump?",
+    "respuesta_correcta": "Shueisha",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 331,
+    "pregunta": "¿Qué título recibe el líder de la aldea de Konoha en Naruto?",
+    "respuesta_correcta": "Hokage",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 332,
+    "opciones": [
+      "Nami",
+      "Nico Robin",
+      "Boa Hancock",
+      "Nezuko Kamado"
+    ],
+    "pregunta": "¿Quién es la navegante de los Piratas del Sombrero de Paja?",
+    "respuesta_correcta": "Nami",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 333,
+    "pregunta": "¿Cómo se llama el príncipe saiyajin rival de Goku en Dragon Ball?",
+    "respuesta_correcta": "Vegeta",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "media",
+    "id": 334,
+    "opciones": [
+      "Tankobon",
+      "One-shot",
+      "Mangaka",
+      "Anime"
+    ],
+    "pregunta": "¿Cómo se llama el tomo recopilatorio de capítulos de manga?",
+    "respuesta_correcta": "Tankobon",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 335,
+    "opciones": [
+      "Kodansha",
+      "Shueisha",
+      "Shogakukan",
+      "Hakusensha"
+    ],
+    "pregunta": "¿Qué editorial publica Attack on Titan en Bessatsu Shonen Magazine?",
+    "respuesta_correcta": "Kodansha",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 336,
+    "pregunta": "¿Cómo se llama el barco actual de los Piratas del Sombrero de Paja construido por Franky?",
+    "respuesta_correcta": "Thousand Sunny",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 337,
+    "opciones": [
+      "Takeshi Obata",
+      "Tsugumi Ohba",
+      "Masashi Kishimoto",
+      "Eiichiro Oda"
+    ],
+    "pregunta": "¿Quién ilustró el manga Death Note?",
+    "respuesta_correcta": "Takeshi Obata",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 338,
+    "pregunta": "¿Cuál es el nombre saiyajin original de Goku enviado a la Tierra?",
+    "respuesta_correcta": "Kakarotto",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 339,
+    "opciones": [
+      "Muzan Kibutsuji",
+      "Akaza",
+      "Rui",
+      "Kaigaku"
+    ],
+    "pregunta": "¿Quién es el primer demonio y antagonista principal de Demon Slayer?",
+    "respuesta_correcta": "Muzan Kibutsuji",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 340,
+    "pregunta": "¿Cómo se llama la primera muralla que protege a la humanidad en Attack on Titan?",
+    "respuesta_correcta": "Muralla María",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 341,
+    "opciones": [
+      "Seinen",
+      "Shonen",
+      "Shojo",
+      "Kodomo"
+    ],
+    "pregunta": "¿Cómo se llama la demografía de manga dirigida a hombres jóvenes y adultos?",
+    "respuesta_correcta": "Seinen",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 342,
+    "pregunta": "¿Cómo se llama el equipo ninja de Naruto, Sasuke y Sakura liderado por Kakashi?",
+    "respuesta_correcta": "Equipo 7",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 343,
+    "opciones": [
+      "Gomu Gomu no Mi",
+      "Mera Mera no Mi",
+      "Hana Hana no Mi",
+      "Yomi Yomi no Mi"
+    ],
+    "pregunta": "¿Cómo se llama la Fruta del Diablo que comió Luffy y le da elasticidad?",
+    "respuesta_correcta": "Gomu Gomu no Mi",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 344,
+    "pregunta": "¿Quién escribió el guion de Death Note?",
+    "respuesta_correcta": "Tsugumi Ohba",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 345,
+    "opciones": [
+      "1984",
+      "1997",
+      "1999",
+      "2003"
+    ],
+    "pregunta": "¿En qué año comenzó a publicarse Dragon Ball en Shonen Jump?",
+    "respuesta_correcta": "1984",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 346,
+    "pregunta": "¿Quién es el Pilar del Agua que perdona a Nezuko en Demon Slayer?",
+    "respuesta_correcta": "Giyu Tomioka",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 347,
+    "opciones": [
+      "Bessatsu Shonen Magazine",
+      "Shonen Jump",
+      "V Jump",
+      "Shonen Magazine Semanal"
+    ],
+    "pregunta": "¿En qué revista se publicó Attack on Titan de 2009 a 2021?",
+    "respuesta_correcta": "Bessatsu Shonen Magazine",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 348,
+    "pregunta": "¿Cómo se llama la demografía de manga dirigida a chicas adolescentes?",
+    "respuesta_correcta": "Shojo",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 349,
+    "pregunta": "¿Cuántos volúmenes tankobon tiene el manga original de Naruto?",
+    "respuesta_correcta": "72",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Manga",
+    "dificultad": "dificil",
+    "id": 350,
+    "pregunta": "¿En qué año comenzó a publicarse One Piece?",
+    "respuesta_correcta": "1997",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 351,
+    "opciones": [
+      "Hayao Miyazaki",
+      "Isao Takahata",
+      "Satoshi Kon",
+      "Mamoru Hosoda"
+    ],
+    "pregunta": "¿Quién dirigió la película El viaje de Chihiro?",
+    "respuesta_correcta": "Hayao Miyazaki",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 352,
+    "pregunta": "¿De qué pueblo es originario Ash Ketchum en Pokémon?",
+    "respuesta_correcta": "Pueblo Paleta",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 353,
+    "opciones": [
+      "Eléctrico",
+      "Fuego",
+      "Agua",
+      "Planta"
+    ],
+    "pregunta": "¿De qué tipo es Pikachu en Pokémon?",
+    "respuesta_correcta": "Eléctrico",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 354,
+    "pregunta": "¿Cómo se llama la aldea ninja a la que pertenece Naruto?",
+    "respuesta_correcta": "Konoha",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 355,
+    "opciones": [
+      "Masashi Kishimoto",
+      "Eiichiro Oda",
+      "Akira Toriyama",
+      "Tite Kubo"
+    ],
+    "pregunta": "¿Quién es el autor del manga Naruto?",
+    "respuesta_correcta": "Masashi Kishimoto",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 356,
+    "pregunta": "¿Quién es el autor del manga Dragon Ball?",
+    "respuesta_correcta": "Akira Toriyama",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 357,
+    "opciones": [
+      "Siete",
+      "Tres",
+      "Cinco",
+      "Nueve"
+    ],
+    "pregunta": "¿Cuántas esferas del dragón hay que reunir para invocar al dragón?",
+    "respuesta_correcta": "Siete",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 358,
+    "pregunta": "¿Cómo se llama la protagonista de Sailor Moon en su vida civil?",
+    "respuesta_correcta": "Usagi Tsukino",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 359,
+    "opciones": [
+      "Luna",
+      "Artemis",
+      "Diana",
+      "Nyanko"
+    ],
+    "pregunta": "¿Cómo se llama la gata negra que guía a Sailor Moon?",
+    "respuesta_correcta": "Luna",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 360,
+    "pregunta": "¿A qué raza guerrera pertenece Goku en Dragon Ball?",
+    "respuesta_correcta": "Saiyan",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 361,
+    "opciones": [
+      "Studio Ghibli",
+      "Toei Animation",
+      "Madhouse",
+      "Studio Pierrot"
+    ],
+    "pregunta": "¿Qué estudio de animación produjo El viaje de Chihiro?",
+    "respuesta_correcta": "Studio Ghibli",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 362,
+    "pregunta": "¿Qué estudio animó las series Dragon Ball, Sailor Moon y One Piece?",
+    "respuesta_correcta": "Toei Animation",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 363,
+    "opciones": [
+      "Sin Cara",
+      "Haku",
+      "Kamaji",
+      "Boh"
+    ],
+    "pregunta": "¿Cómo se llama el espíritu enmascarado que sigue a Chihiro?",
+    "respuesta_correcta": "Sin Cara",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 364,
+    "pregunta": "¿Cómo se llama el Pokémon principal que acompaña siempre a Ash?",
+    "respuesta_correcta": "Pikachu",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 365,
+    "opciones": [
+      "Mi vecino Totoro",
+      "El castillo ambulante",
+      "Ponyo",
+      "Arrietty"
+    ],
+    "pregunta": "¿Qué película de Studio Ghibli tiene a Totoro como mascota del estudio?",
+    "respuesta_correcta": "Mi vecino Totoro",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 366,
+    "pregunta": "¿Cómo se llama el dragón eterno que concede deseos en Dragon Ball?",
+    "respuesta_correcta": "Shenlong",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "facil",
+    "id": 367,
+    "opciones": [
+      "Equipo Rocket",
+      "Akatsuki",
+      "Ejército Red Ribbon",
+      "Tropa Ginyu"
+    ],
+    "pregunta": "¿Qué equipo de villanos persigue a Ash para robarle a Pikachu?",
+    "respuesta_correcta": "Equipo Rocket",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 368,
+    "opciones": [
+      "Sen",
+      "Rin",
+      "Haku",
+      "Yuki"
+    ],
+    "pregunta": "¿Qué nombre le impone Yubaba a Chihiro cuando la contrata en la casa de baños?",
+    "respuesta_correcta": "Sen",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 369,
+    "pregunta": "¿Cómo se llama la bruja dueña de la casa de baños en El viaje de Chihiro?",
+    "respuesta_correcta": "Yubaba",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 370,
+    "opciones": [
+      "Dragón",
+      "Zorro",
+      "Gato",
+      "Fénix"
+    ],
+    "pregunta": "¿En qué animal se transforma Haku en El viaje de Chihiro?",
+    "respuesta_correcta": "Dragón",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 371,
+    "pregunta": "¿Quién es el maestro líder del Equipo 7 de Naruto?",
+    "respuesta_correcta": "Kakashi Hatake",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 372,
+    "opciones": [
+      "Ramen",
+      "Sushi",
+      "Curry",
+      "Onigiri"
+    ],
+    "pregunta": "¿Cuál es la comida favorita de Naruto?",
+    "respuesta_correcta": "Ramen",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 373,
+    "pregunta": "¿Cómo se llama el zorro de nueve colas sellado dentro de Naruto?",
+    "respuesta_correcta": "Kurama",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 374,
+    "opciones": [
+      "Maestro Roshi",
+      "Maestro Karin",
+      "Piccolo",
+      "Vegeta"
+    ],
+    "pregunta": "¿Quién creó la técnica Kamehameha que usa Goku?",
+    "respuesta_correcta": "Maestro Roshi",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 375,
+    "pregunta": "¿Cómo se llama la empresa de la familia de Bulma en Dragon Ball?",
+    "respuesta_correcta": "Capsule Corp",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 376,
+    "opciones": [
+      "Mamoru Chiba",
+      "Seiya Kou",
+      "Motoki Furuhata",
+      "Haruka Tenou"
+    ],
+    "pregunta": "¿Cuál es la identidad civil de Tuxedo Mask en Sailor Moon?",
+    "respuesta_correcta": "Mamoru Chiba",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 377,
+    "pregunta": "¿Cómo se llama el opening latino más famoso de la primera temporada de Pokémon?",
+    "respuesta_correcta": "Atrápalos ya",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 378,
+    "opciones": [
+      "Madhouse",
+      "Studio Ghibli",
+      "Toei Animation",
+      "Bones"
+    ],
+    "pregunta": "¿Qué estudio animó Death Note y la primera temporada de One-Punch Man?",
+    "respuesta_correcta": "Madhouse",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 379,
+    "pregunta": "¿Quién compuso la música de El viaje de Chihiro?",
+    "respuesta_correcta": "Joe Hisaishi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 380,
+    "opciones": [
+      "Rubio",
+      "Rojo",
+      "Azul",
+      "Verde"
+    ],
+    "pregunta": "¿De qué color se vuelve el cabello de Goku al transformarse en Super Saiyan?",
+    "respuesta_correcta": "Rubio",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 381,
+    "pregunta": "¿Cómo se llama el príncipe de los Saiyans rival de Goku?",
+    "respuesta_correcta": "Vegeta",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 382,
+    "opciones": [
+      "Satoshi",
+      "Takeshi",
+      "Shigeru",
+      "Daisuke"
+    ],
+    "pregunta": "¿Cuál es el nombre japonés original de Ash Ketchum?",
+    "respuesta_correcta": "Satoshi",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 383,
+    "pregunta": "¿Qué significa la palabra italiana Ghibli que da nombre al estudio?",
+    "respuesta_correcta": "Viento cálido del Sáhara",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "media",
+    "id": 384,
+    "opciones": [
+      "ROCKS",
+      "Haruka Kanata",
+      "GO!!!",
+      "Seishun Kyosokyoku"
+    ],
+    "pregunta": "¿Cuál fue el primer opening japonés del anime Naruto?",
+    "respuesta_correcta": "ROCKS",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 385,
+    "opciones": [
+      "2001",
+      "1999",
+      "2003",
+      "1997"
+    ],
+    "pregunta": "¿En qué año se estrenó en Japón El viaje de Chihiro?",
+    "respuesta_correcta": "2001",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 386,
+    "pregunta": "¿Qué premio ganó El viaje de Chihiro en los Óscar de 2003?",
+    "respuesta_correcta": "Óscar a Mejor película de animación",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 387,
+    "opciones": [
+      "025",
+      "001",
+      "150",
+      "151"
+    ],
+    "pregunta": "¿Qué número ocupa Pikachu en la Pokédex Nacional?",
+    "respuesta_correcta": "025",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 388,
+    "pregunta": "¿Quién es el padre de Naruto y qué número de Hokage fue?",
+    "respuesta_correcta": "Minato Namikaze, Cuarto Hokage",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 389,
+    "opciones": [
+      "Weekly Shonen Jump 1984",
+      "Shonen Magazine 1980",
+      "Shonen Sunday 1990",
+      "Jump SQ 2000"
+    ],
+    "pregunta": "¿En qué revista y año debutó el manga Dragon Ball?",
+    "respuesta_correcta": "Weekly Shonen Jump 1984",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 390,
+    "pregunta": "¿Quién es la autora del manga Sailor Moon?",
+    "respuesta_correcta": "Naoko Takeuchi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 391,
+    "opciones": [
+      "1985",
+      "1972",
+      "1948",
+      "1995"
+    ],
+    "pregunta": "¿En qué año se fundó Studio Ghibli?",
+    "respuesta_correcta": "1985",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 392,
+    "pregunta": "¿En qué año fue fundado el estudio Madhouse?",
+    "respuesta_correcta": "1972",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 393,
+    "opciones": [
+      "Moonlight Densetsu",
+      "Sailor Star Song",
+      "Heart Moving",
+      "Princess Moon"
+    ],
+    "pregunta": "¿Cómo se llama el opening original japonés de Sailor Moon?",
+    "respuesta_correcta": "Moonlight Densetsu",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 394,
+    "pregunta": "¿Cuál es el verdadero nombre de Haku, dios del río Kohaku?",
+    "respuesta_correcta": "Nigihayami Kohakunushi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 395,
+    "opciones": [
+      "Oso de Oro",
+      "Oso de Plata",
+      "Palma de Oro",
+      "León de Oro"
+    ],
+    "pregunta": "¿Qué premio ganó El viaje de Chihiro en el Festival de Berlín 2002?",
+    "respuesta_correcta": "Oso de Oro",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 396,
+    "pregunta": "¿En qué ojo lleva Kakashi implantado el Sharingan?",
+    "respuesta_correcta": "Izquierdo",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 397,
+    "opciones": [
+      "1948",
+      "1956",
+      "1972",
+      "1985"
+    ],
+    "pregunta": "¿En qué año se originó Toei Animation como Nihon Doga?",
+    "respuesta_correcta": "1948",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 398,
+    "pregunta": "¿Qué opening 2 de Naruto interpreta Asian Kung-Fu Generation?",
+    "respuesta_correcta": "Haruka Kanata",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 399,
+    "pregunta": "¿Quiénes forman el trío del Equipo Rocket que persigue a Pikachu?",
+    "respuesta_correcta": "Jessie, James y Meowth",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Anime",
+    "dificultad": "dificil",
+    "id": 400,
+    "pregunta": "¿Cómo se llama el mago protagonista de El castillo ambulante de Ghibli?",
+    "respuesta_correcta": "Howl",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 401,
+    "opciones": [
+      "Hyrule",
+      "Termina",
+      "Lorule",
+      "Koholint"
+    ],
+    "pregunta": "¿Cómo se llama el reino principal donde transcurre The Legend of Zelda?",
+    "respuesta_correcta": "Hyrule",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 402,
+    "opciones": [
+      "Fontanero",
+      "Carpintero",
+      "Médico",
+      "Piloto"
+    ],
+    "pregunta": "¿Cuál es la profesión del personaje Mario de Nintendo?",
+    "respuesta_correcta": "Fontanero",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 403,
+    "opciones": [
+      "1984",
+      "1979",
+      "1989",
+      "1994"
+    ],
+    "pregunta": "¿En qué año fue creado el videojuego Tetris?",
+    "respuesta_correcta": "1984",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 404,
+    "opciones": [
+      "Sonic",
+      "Tails",
+      "Knuckles",
+      "Shadow"
+    ],
+    "pregunta": "¿Cómo se llama el erizo azul protagonista de los juegos de SEGA?",
+    "respuesta_correcta": "Sonic",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 405,
+    "opciones": [
+      "Link",
+      "Zelda",
+      "Ganon",
+      "Epona"
+    ],
+    "pregunta": "¿Cómo se llama el héroe protagonista de The Legend of Zelda?",
+    "respuesta_correcta": "Link",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 406,
+    "opciones": [
+      "Nintendo",
+      "SEGA",
+      "Sony",
+      "Atari"
+    ],
+    "pregunta": "¿Qué empresa creó Super Mario Bros?",
+    "respuesta_correcta": "Nintendo",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 407,
+    "opciones": [
+      "Poké Ball",
+      "Espada Maestra",
+      "Ocarina",
+      "Champiñón"
+    ],
+    "pregunta": "¿Qué objeto se utiliza para capturar y guardar Pokémon?",
+    "respuesta_correcta": "Poké Ball",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 408,
+    "opciones": [
+      "Bowser",
+      "Wario",
+      "Donkey Kong",
+      "Ganondorf"
+    ],
+    "pregunta": "¿Cómo se llama el villano principal que secuestra a la Princesa Peach en Super Mario?",
+    "respuesta_correcta": "Bowser",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 409,
+    "opciones": [
+      "Luigi",
+      "Wario",
+      "Toad",
+      "Yoshi"
+    ],
+    "pregunta": "¿Cómo se llama el hermano de Mario que viste de verde?",
+    "respuesta_correcta": "Luigi",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 410,
+    "opciones": [
+      "Tetris",
+      "Pac-Man",
+      "Pong",
+      "Frogger"
+    ],
+    "pregunta": "¿Qué juego consiste en encajar piezas de cuatro bloques que caen desde arriba?",
+    "respuesta_correcta": "Tetris",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 411,
+    "opciones": [
+      "Markus Persson",
+      "Shigeru Miyamoto",
+      "Satoshi Tajiri",
+      "Toru Iwatani"
+    ],
+    "pregunta": "¿Quién es el creador de Minecraft, conocido como Notch?",
+    "respuesta_correcta": "Markus Persson",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 412,
+    "opciones": [
+      "Sony",
+      "Nintendo",
+      "Microsoft",
+      "SEGA"
+    ],
+    "pregunta": "¿Qué empresa lanzó la consola PlayStation en 1994?",
+    "respuesta_correcta": "Sony",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 413,
+    "opciones": [
+      "Wii",
+      "GameCube",
+      "Nintendo 64",
+      "Nintendo DS"
+    ],
+    "pregunta": "¿Cómo se llama la consola de Nintendo lanzada en 2006 con control por movimiento?",
+    "respuesta_correcta": "Wii",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 414,
+    "opciones": [
+      "Blinky",
+      "Pinky",
+      "Inky",
+      "Clyde"
+    ],
+    "pregunta": "¿Cómo se llama el fantasma rojo de Pac-Man?",
+    "respuesta_correcta": "Blinky",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 415,
+    "opciones": [
+      "1980",
+      "1978",
+      "1982",
+      "1985"
+    ],
+    "pregunta": "¿En qué año se lanzó el arcade Pac-Man en Japón?",
+    "respuesta_correcta": "1980",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 416,
+    "opciones": [
+      "Shigeru Miyamoto",
+      "Satoshi Tajiri",
+      "Markus Persson",
+      "Nolan Bushnell"
+    ],
+    "pregunta": "¿Quién es el creador de Mario y de The Legend of Zelda?",
+    "respuesta_correcta": "Shigeru Miyamoto",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 417,
+    "opciones": [
+      "Eléctrico",
+      "Fuego",
+      "Agua",
+      "Planta"
+    ],
+    "pregunta": "¿De qué tipo es Pikachu en Pokémon?",
+    "respuesta_correcta": "Eléctrico",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 418,
+    "opciones": [
+      "Princesa Peach",
+      "Princesa Zelda",
+      "Princesa Daisy",
+      "Pauline"
+    ],
+    "pregunta": "¿Cómo se llama la princesa que Mario debe rescatar en la mayoría de sus juegos?",
+    "respuesta_correcta": "Princesa Peach",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 419,
+    "opciones": [
+      "Alekséi Pázhitnov",
+      "Shigeru Miyamoto",
+      "Nolan Bushnell",
+      "Toru Iwatani"
+    ],
+    "pregunta": "¿Quién creó Tetris en 1984?",
+    "respuesta_correcta": "Alekséi Pázhitnov",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 420,
+    "opciones": [
+      "1985",
+      "1981",
+      "1990",
+      "1983"
+    ],
+    "pregunta": "¿En qué año se lanzó Super Mario Bros para la NES en Japón?",
+    "respuesta_correcta": "1985",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 421,
+    "opciones": [
+      "Espada Maestra",
+      "Espada Oscura",
+      "Espada de Plata",
+      "Espada de Madera"
+    ],
+    "pregunta": "¿Cómo se llama la espada legendaria de Link en The Legend of Zelda?",
+    "respuesta_correcta": "Espada Maestra",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 422,
+    "opciones": [
+      "Ganondorf",
+      "Bowser",
+      "Dr. Robotnik",
+      "King K. Rool"
+    ],
+    "pregunta": "¿Cómo se llama el villano principal de The Legend of Zelda?",
+    "respuesta_correcta": "Ganondorf",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 423,
+    "opciones": [
+      "Game Boy",
+      "Game Gear",
+      "PSP",
+      "Nintendo DS"
+    ],
+    "pregunta": "¿Qué consola portátil de Nintendo se lanzó en 1989 junto a Tetris?",
+    "respuesta_correcta": "Game Boy",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 424,
+    "opciones": [
+      "Microsoft",
+      "Sony",
+      "Nintendo",
+      "SEGA"
+    ],
+    "pregunta": "¿Qué empresa creó la consola Xbox, lanzada en 2001?",
+    "respuesta_correcta": "Microsoft",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 425,
+    "opciones": [
+      "Trifuerza",
+      "Trifolio",
+      "Tridente",
+      "Triángulo"
+    ],
+    "pregunta": "¿Cómo se llama la reliquia dorada de tres triángulos en The Legend of Zelda?",
+    "respuesta_correcta": "Trifuerza",
+    "tipo": "opciones"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 426,
+    "pregunta": "¿Qué fontanero bigotudo es la mascota de Nintendo?",
+    "respuesta_correcta": "Mario",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 427,
+    "pregunta": "¿Cómo se llama el dinosaurio verde compañero de Mario?",
+    "respuesta_correcta": "Yoshi",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 428,
+    "pregunta": "¿Cómo se llama el gorila protagonista del arcade de 1981 donde debutó Mario?",
+    "respuesta_correcta": "Donkey Kong",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 429,
+    "pregunta": "¿Qué juego arcade de 1972 simula el tenis de mesa con dos paletas y una pelota?",
+    "respuesta_correcta": "Pong",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 430,
+    "pregunta": "¿Qué juego arcade de 1978 consiste en disparar a oleadas de alienígenas que descienden?",
+    "respuesta_correcta": "Space Invaders",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 431,
+    "pregunta": "¿Cómo se llama el creador de Pokémon?",
+    "respuesta_correcta": "Satoshi Tajiri",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 432,
+    "pregunta": "¿Cómo se llaman los tres Pokémon iniciales de la región de Kanto?",
+    "respuesta_correcta": "Bulbasaur, Charmander y Squirtle",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 433,
+    "pregunta": "¿Cómo se llama el profesor que entrega los Pokémon iniciales en Kanto?",
+    "respuesta_correcta": "Profesor Oak",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 434,
+    "pregunta": "¿Cómo se llama el dragón jefe final que habita en el End de Minecraft?",
+    "respuesta_correcta": "Enderdragón",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 435,
+    "pregunta": "¿Cómo se llama la criatura verde de Minecraft que explota al acercarse al jugador?",
+    "respuesta_correcta": "Creeper",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 436,
+    "pregunta": "¿Cómo se llama el caballo de Link en Ocarina of Time?",
+    "respuesta_correcta": "Epona",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 437,
+    "pregunta": "¿Qué juego de Zelda para Nintendo 64 se lanzó en 1998 y fue el primero en 3D?",
+    "respuesta_correcta": "Ocarina of Time",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 438,
+    "pregunta": "¿Qué personaje amarillo come puntos en un laberinto perseguido por fantasmas?",
+    "respuesta_correcta": "Pac-Man",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 439,
+    "pregunta": "¿Quién diseñó Pac-Man en 1980?",
+    "respuesta_correcta": "Toru Iwatani",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 440,
+    "pregunta": "¿Cómo se llama la heroína arqueóloga protagonista de Tomb Raider desde 1996?",
+    "respuesta_correcta": "Lara Croft",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 441,
+    "pregunta": "¿De qué color es Kirby, el personaje redondo de Nintendo?",
+    "respuesta_correcta": "Rosa",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 442,
+    "pregunta": "¿Cómo se llama la consola de Sony lanzada en 1994 que usaba CD-ROM?",
+    "respuesta_correcta": "PlayStation",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 443,
+    "pregunta": "¿Cómo se llamaba Mario cuando debutó en Donkey Kong en 1981?",
+    "respuesta_correcta": "Jumpman",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 444,
+    "pregunta": "¿Qué compañía japonesa creó a Sonic el erizo en 1991?",
+    "respuesta_correcta": "SEGA",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 445,
+    "pregunta": "¿Qué instrumento musical da nombre al juego Zelda: Ocarina of Time?",
+    "respuesta_correcta": "Ocarina",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 446,
+    "pregunta": "¿Qué objeto hace crecer a Mario al comerlo?",
+    "respuesta_correcta": "Champiñón",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "facil",
+    "id": 447,
+    "pregunta": "¿De qué color son las famosas tuberías por las que viaja Mario?",
+    "respuesta_correcta": "Verde",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "media",
+    "id": 448,
+    "pregunta": "¿Qué empresa estadounidense fundada por Nolan Bushnell creó Pong en 1972?",
+    "respuesta_correcta": "Atari",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 449,
+    "pregunta": "¿En qué año se lanzó la Game Boy en Japón?",
+    "respuesta_correcta": "1989",
+    "tipo": "abierta"
+  },
+  {
+    "categoria": "Videojuegos",
+    "dificultad": "dificil",
+    "id": 450,
+    "pregunta": "¿En qué año se lanzó oficialmente la versión completa 1.0 de Minecraft?",
+    "respuesta_correcta": "2011",
+    "tipo": "abierta"
+  }
+]

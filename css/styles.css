@@ -1,0 +1,816 @@
+/* ==========================================================
+   Carreras de Gurises — Sistema de diseño lúdico familiar
+   Mobile-first · CSS puro moderno · Alto contraste
+   ========================================================== */
+
+:root {
+  /* — Categorías exactas (contrato) — */
+  --geo: #2196F3;   /* Geografía */
+  --hist: #FFC107;  /* Historia (texto oscuro) */
+  --arte: #E91E63;  /* Artes y Letras */
+  --cien: #4CAF50;  /* Ciencias */
+  --dep: #FF9800;   /* Deportes */
+  --esp: #00BCD4;   /* Espectáculos */
+  --manga: #EF5350; /* Manga rojo suave */
+  --anime: #9C27B0; /* Anime */
+  --vg: #8BC34A;    /* Videojuegos lima */
+
+  /* — Base — */
+  --bg: #FFF8E7;
+  --bg-2: #FFEDC2;
+  --card: #FFFFFF;
+  --ink: #1A1A2E;
+  --ink-soft: #4A4A68;
+  --muted: #8A86A3;
+  --line: #F0E2C0;
+  --ok: #22C55E;
+  --ok-dark: #15803D;
+  --err: #EF4444;
+  --err-dark: #B91C1C;
+  --primary: #FF6B35;
+  --primary-dark: #D94F1E;
+  --secondary: #2D2A55;
+
+  /* — Superficie / sombras / radios — */
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+  --shadow-sm: 0 2px 8px rgba(26, 26, 46, 0.08);
+  --shadow-md: 0 8px 24px rgba(26, 26, 46, 0.1);
+  --shadow-lg: 0 16px 40px rgba(26, 26, 46, 0.14);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Fredoka", "Nunito", sans-serif;
+}
+
+/* — Reset mínimo — */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 480px;
+  min-height: 100dvh;
+  font-family: var(--font);
+  color: var(--ink);
+  background:
+    radial-gradient(420px 220px at 15% -40px, #fff 0%, transparent 70%),
+    radial-gradient(500px 260px at 95% 0%, #FFE9A8 0%, transparent 60%),
+    radial-gradient(600px 400px at 50% 110%, #FFD9C7 0%, transparent 55%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+  background-attachment: fixed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 32px;
+}
+
+img { max-width: 100%; display: block; }
+
+/* — Header sticky — */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 248, 231, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--line);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+
+header h1 span { color: var(--primary); }
+
+/* — Vistas SPA — */
+main {
+  padding: 16px 16px 0;
+}
+
+.view { display: none; }
+.view.active {
+  display: block;
+  animation: fadeSlideIn 0.38s ease both;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* — Hero — */
+.hero {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  padding: 22px 18px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 8px;
+  background: linear-gradient(90deg,
+    var(--geo) 0 11%, var(--hist) 11% 22%, var(--arte) 22% 33%,
+    var(--cien) 33% 44%, var(--dep) 44% 55%, var(--esp) 55% 66%,
+    var(--manga) 66% 77%, var(--anime) 77% 88%, var(--vg) 88% 100%);
+}
+
+.hero h2 {
+  margin: 8px 0 6px;
+  font-size: 1.65rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+}
+
+.hero p {
+  margin: 0 auto;
+  max-width: 32ch;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  text-wrap: pretty;
+}
+
+.hero-emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+
+/* — Cards genéricas — */
+.card {
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 16px;
+}
+
+/* — Formularios setup — */
+#view-setup .card + .card { margin-top: 14px; }
+
+#setup-form {
+  display: grid;
+  gap: 16px;
+}
+
+#setup-form fieldset {
+  border: 2px dashed var(--line);
+  border-radius: var(--r-md);
+  padding: 14px 12px;
+  margin: 0;
+  background: #FFFEFB;
+}
+
+#setup-form legend {
+  padding: 0 10px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  background: var(--ink);
+  color: #fff;
+  border-radius: var(--r-pill);
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  min-height: 56px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--ink);
+  background: #FFFDF5;
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 2px;
+  border-color: var(--ink);
+}
+
+#player-count,
+#points-goal {
+  accent-color: var(--primary);
+}
+
+#players-config {
+  display: grid;
+  gap: 10px;
+}
+
+#players-config .player-field {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 10px;
+  align-items: center;
+  background: var(--bg);
+  border-radius: var(--r-md);
+  padding: 8px;
+  border: 1.5px solid var(--line);
+}
+
+.player-avatar-preview {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid var(--line);
+}
+
+/* — Botones thumb-friendly — */
+button {
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.btn,
+button[type="submit"],
+#btn-spin,
+#btn-score,
+#btn-reveal,
+#btn-hit,
+#btn-miss,
+#btn-next,
+#btn-restart,
+#btn-new-players,
+#btn-close-score {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 56px;
+  padding: 14px 18px;
+  font-weight: 800;
+  font-size: 1.03rem;
+  letter-spacing: -0.01em;
+  color: #fff;
+  background: var(--ink);
+  border: 0;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.08s ease, filter 0.15s ease, background 0.15s ease;
+}
+
+.btn:active,
+button[type="submit"]:active,
+#btn-spin:active,
+#btn-score:active,
+#btn-reveal:active,
+#btn-hit:active,
+#btn-miss:active,
+#btn-next:active,
+#btn-restart:active,
+#btn-new-players:active,
+#btn-close-score:active { transform: scale(0.97); }
+
+button[type="submit"],
+#btn-spin,
+#btn-next,
+#btn-restart {
+  background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+}
+
+#btn-hit { background: linear-gradient(180deg, #2ED36B, var(--ok-dark)); }
+#btn-miss { background: linear-gradient(180deg, #F87171, var(--err-dark)); }
+
+#btn-score,
+#btn-new-players,
+#btn-close-score,
+#btn-reveal {
+  background: #fff;
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+#btn-score { width: auto; min-height: 44px; padding: 8px 14px; font-size: 0.95rem; }
+
+/* — Turno / HUD juego — */
+#view-game { display: none; }
+#view-game.active { display: block; }
+
+#turn-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--secondary);
+  color: #fff;
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  font-weight: 800;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 12px;
+}
+
+#turn-indicator .turn-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+  flex-shrink: 0;
+}
+
+/* — Ruleta 3 cols — */
+#roulette {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 12px 0 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.roulette-cell {
+  position: relative;
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.82rem;
+  line-height: 1.2;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-left-width: 8px;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  padding: 10px 8px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  user-select: none;
+}
+
+.roulette-cell small {
+  font-weight: 700;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.roulette-cell[data-categoria="Geografía"] {
+  border-left-color: var(--geo);
+  background: #E8F3FE;
+}
+.roulette-cell[data-categoria="Historia"] {
+  border-left-color: var(--hist);
+  background: #FFF6D6;
+  color: #4A3800;
+}
+.roulette-cell[data-categoria="Artes y Letras"] {
+  border-left-color: var(--arte);
+  background: #FDE6EE;
+}
+.roulette-cell[data-categoria="Ciencias y Naturaleza"] {
+  border-left-color: var(--cien);
+  background: #E7F5E8;
+}
+.roulette-cell[data-categoria="Ciencias"] {
+  border-left-color: var(--cien);
+  background: #E7F5E8;
+}
+.roulette-cell[data-categoria="Deportes"] {
+  border-left-color: var(--dep);
+  background: #FFF0DB;
+}
+.roulette-cell[data-categoria="Espectáculos"] {
+  border-left-color: var(--esp);
+  background: #DDF6FA;
+}
+.roulette-cell[data-categoria="Manga"] {
+  border-left-color: var(--manga);
+  background: #FDE9E9;
+}
+.roulette-cell[data-categoria="Anime"] {
+  border-left-color: var(--anime);
+  background: #F1E4F6;
+}
+.roulette-cell[data-categoria="Videojuegos"] {
+  border-left-color: var(--vg);
+  background: #EEF6DF;
+}
+
+/* estado girando: highlight pulsante */
+.roulette-cell.spinning {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 3px var(--ink), var(--shadow-md);
+  filter: saturate(1.3);
+  animation: pulseSpin 0.45s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+@keyframes pulseSpin {
+  from { box-shadow: 0 0 0 3px var(--ink), 0 0 0 6px rgba(255, 107, 53, 0.25); }
+  to { box-shadow: 0 0 0 3px var(--ink), 0 0 0 10px rgba(255, 107, 53, 0.45); }
+}
+
+.roulette-cell.selected {
+  transform: scale(1.08);
+  box-shadow: 0 0 0 3px var(--ink), var(--shadow-lg);
+  outline: 3px dashed var(--ink);
+  outline-offset: 3px;
+  z-index: 3;
+}
+
+.roulette-cell.dimmed { opacity: 0.45; filter: grayscale(0.4); }
+
+/* — Tarjeta pregunta — */
+#question-card {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: var(--r-lg);
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 18px 16px;
+  margin-top: 6px;
+  animation: cardIn 0.35s ease both;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(10px) rotate(-0.5deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+#question-card.hidden { display: none; }
+
+#q-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--ink);
+  border-radius: var(--r-pill);
+  padding: 6px 12px;
+  margin-bottom: 10px;
+}
+
+#q-category[data-categoria="Geografía"] { background: var(--geo); }
+#q-category[data-categoria="Historia"] { background: var(--hist); color: #1A1A2E; }
+#q-category[data-categoria="Artes y Letras"] { background: var(--arte); }
+#q-category[data-categoria="Ciencias y Naturaleza"] { background: var(--cien); }
+#q-category[data-categoria="Ciencias"] { background: var(--cien); }
+#q-category[data-categoria="Deportes"] { background: var(--dep); }
+#q-category[data-categoria="Espectáculos"] { background: var(--esp); color: #08363D; }
+#q-category[data-categoria="Manga"] { background: var(--manga); }
+#q-category[data-categoria="Anime"] { background: var(--anime); }
+#q-category[data-categoria="Videojuegos"] { background: var(--vg); color: #1A2E05; }
+
+#q-text {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+/* opciones múltiple choice */
+#q-options {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.opt-btn {
+  width: 100%;
+  min-height: 56px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  background: #FFFDF5;
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.opt-btn::before {
+  content: "●";
+  font-size: 0.8rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.opt-btn:hover { border-color: var(--ink); }
+.opt-btn:active { transform: scale(0.97); }
+
+.opt-btn.correct {
+  background: #DCFCE7;
+  border-color: var(--ok);
+  color: #14532D;
+  box-shadow: 0 0 0 2px var(--ok);
+}
+.opt-btn.correct::before { content: "✔"; color: var(--ok-dark); }
+
+.opt-btn.wrong {
+  background: #FEE2E2;
+  border-color: var(--err);
+  color: #7F1D1D;
+  box-shadow: 0 0 0 2px var(--err);
+  animation: shake 0.4s ease;
+}
+.opt-btn.wrong::before { content: "✖"; color: var(--err); }
+
+.opt-btn:disabled { cursor: default; opacity: 1; }
+.opt-btn.dim { opacity: 0.6; }
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* pregunta abierta + respuesta con blur */
+#q-open {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+#q-answer {
+  background: var(--bg);
+  border: 2px dashed var(--line);
+  border-radius: var(--r-md);
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  transition: filter 0.3s ease;
+}
+
+#q-answer.blurred {
+  filter: blur(8px);
+  user-select: none;
+  pointer-events: none;
+}
+
+#q-answer.revealed { filter: blur(0); }
+
+.answer-actions,
+.hitmiss-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#btn-next { margin-top: 12px; }
+
+/* — Scoreboard modal — */
+#scoreboard {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(26, 26, 46, 0.55);
+  padding: 16px;
+}
+
+#scoreboard.open { display: flex; }
+#scoreboard[open] { display: flex; }
+
+#scoreboard .sheet {
+  width: 100%;
+  max-width: 480px;
+  max-height: 82dvh;
+  overflow: auto;
+  background: var(--card);
+  border-radius: var(--r-lg);
+  border: 2px solid var(--ink);
+  box-shadow: var(--shadow-lg);
+  padding: 18px 16px 16px;
+  animation: fadeSlideIn 0.28s ease both;
+}
+
+#scoreboard h2 { margin: 0 0 10px; font-size: 1.2rem; }
+
+#score-list {
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+/* filas jugador + barra progreso + avatar */
+.p-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  gap: 10px;
+  align-items: center;
+  background: #FFFDF5;
+  border: 2px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 10px;
+}
+
+.p-row.leader { border-color: var(--ok); box-shadow: 0 0 0 2px var(--ok); }
+
+.p-avatar {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  background: var(--bg);
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.p-info { min-width: 0; }
+.p-name {
+  font-weight: 800;
+  font-size: 0.98rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.p-bar {
+  height: 10px;
+  background: #F1E7CC;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+  margin-top: 6px;
+}
+.p-bar > i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--ok), #86EFAC);
+  border-radius: inherit;
+  transition: width 0.5s ease;
+}
+.p-points { font-weight: 900; font-variant-numeric: tabular-nums; }
+
+/* — Victoria + confetti — */
+#view-victory {
+  text-align: center;
+}
+
+#view-victory .card {
+  position: relative;
+  overflow: hidden;
+  padding-top: 28px;
+}
+
+#winner-name {
+  margin: 6px 0 4px;
+  font-size: 1.9rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+#winner-stats {
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+#view-victory .actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.confetti-wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  top: -12px;
+  width: 10px;
+  height: 14px;
+  border-radius: 2px;
+  opacity: 0.95;
+  animation: confetti-fall linear infinite;
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(420px) rotate(720deg); opacity: 0.6; }
+}
+
+/* — Toast — */
+#toast {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 80;
+  max-width: min(440px, calc(100vw - 32px));
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--r-pill);
+  padding: 12px 18px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  text-align: center;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+#toast.success { background: var(--ok-dark); }
+#toast.error { background: var(--err-dark); }
+
+/* — Utilidades — */
+.hidden { display: none !important; }
+.center { text-align: center; }
+.stack { display: grid; gap: 12px; }
+.row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* — Focus visible alto contraste — */
+:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+}
+
+/* — Responsive >600px: centra y respira — */
+@media (min-width: 600px) {
+  body { max-width: 520px; }
+  main { padding: 22px 22px 0; }
+  .hero h2 { font-size: 1.9rem; }
+  #roulette { gap: 12px; }
+  .roulette-cell { min-height: 96px; font-size: 0.9rem; }
+  #scoreboard { align-items: center; }
+}
+
+/* — Movimiento reducido — */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .confetti { display: none; }
+  .view.active { animation: none; }
+}

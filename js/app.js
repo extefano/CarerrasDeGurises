@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const CATEGORY_NAMES = Object.keys(CATEGORIES);
   const MANTEQUITA = 'Mantequita';
   const MANTE_META = { color: '#FFD54F', icon: '🧈' };
+  const WHEEL_OPTIONS = [...CATEGORY_NAMES, MANTEQUITA];
+  const catMeta = (c) => CATEGORIES[c] || (c === MANTEQUITA ? MANTE_META : { color: '#999', icon: '❓' });
   const COSTS = { fifty: 2, removeOne: 1, call: 2, piquete: 3 };
   const AVATARS = ['😀', '😎', '🤓', '🥳', '😺', '🦊', '🐼', '🤖'];
   const COLORS = ['#2B8BEA', '#2ECC71', '#F7CA18', '#E03F8C', '#F39C12', '#00BCD4', '#9B59B6', '#1ABC9C'];
@@ -50,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confettiBox: $('confetti-box'), btnRestart: $('btn-restart'), btnNew: $('btn-new-players'),
     call: $('modal-call'), callCount: $('call-countdown'),
     piquete: $('modal-piquete'), piqueteList: $('piquete-list'), toast: $('toast'),
-    btnEnd: $('btn-end'), btnEndBoard: $('btn-end-board')
+    btnEndBoard: $('btn-end-board')
   };
 
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -212,13 +214,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function buildWheel() {
     if (!el.disc) return;
-    const step = 360 / CATEGORY_NAMES.length;
+    const step = 360 / WHEEL_OPTIONS.length;
     el.disc.innerHTML = '';
-    CATEGORY_NAMES.forEach((cat, i) => {
+    WHEEL_OPTIONS.forEach((cat, i) => {
       const a0 = i * step, a1 = a0 + step, mid = a0 + step / 2;
       const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       p.setAttribute('d', arcPath(160, 160, 150, a0, a1));
-      p.setAttribute('fill', CATEGORIES[cat].color);
+      p.setAttribute('fill', catMeta(cat).color);
       p.setAttribute('stroke', '#0f172a'); p.setAttribute('stroke-width', '3');
       el.disc.appendChild(p);
       const [tx, ty] = polar(160, 160, 100, mid);
@@ -226,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
       t.setAttribute('x', tx); t.setAttribute('y', ty); t.setAttribute('text-anchor', 'middle');
       t.setAttribute('dominant-baseline', 'middle'); t.setAttribute('font-size', '26');
       t.setAttribute('transform', 'rotate(' + mid + ' ' + tx + ' ' + ty + ')');
-      t.textContent = CATEGORIES[cat].icon;
+      t.textContent = catMeta(cat).icon;
       el.disc.appendChild(t);
     });
     const ring = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
@@ -254,8 +256,8 @@ document.addEventListener('DOMContentLoaded', () => {
     State.awaitingPick = false; State.piqueteVictim = null; State.answered = false;
     const isMante = Math.random() < 0.1;
     const cat = isMante ? MANTEQUITA : CATEGORY_NAMES[Math.floor(Math.random() * CATEGORY_NAMES.length)];
-    let targetIx = Math.max(0, CATEGORY_NAMES.indexOf(cat));
-    const step = 360 / CATEGORY_NAMES.length;
+    const targetIx = Math.max(0, WHEEL_OPTIONS.indexOf(cat));
+    const step = 360 / WHEEL_OPTIONS.length;
     const segCenter = targetIx * step + step / 2;
     const turns = 360 * 5;
     const jitter = (Math.random() - 0.5) * (step * 0.6);
@@ -664,7 +666,6 @@ document.addEventListener('DOMContentLoaded', () => {
     el.call?.addEventListener('close', () => { if (callId) { clearInterval(callId); callId = null; } paused = false; renderTimer(); });
     el.btnRestart?.addEventListener('click', restart);
     el.btnNew?.addEventListener('click', newPlayers);
-    el.btnEnd?.addEventListener('click', endGame);
     el.btnEndBoard?.addEventListener('click', endGame);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDlg(el.board); });
   }

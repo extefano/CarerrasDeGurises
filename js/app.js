@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function applyData(d) {
     if (!d || !Array.isArray(d.players) || !d.players.length) return false;
-    State.players = d.players.slice(0, 4).map((p, i) => normPlayer(typeof p === 'string' ? { name: p } : p, i));
+    State.players = d.players.slice(0, 10).map((p, i) => normPlayer(typeof p === 'string' ? { name: p } : p, i));
     if (!State.players.length) return false;
     State.current = Math.min(Math.max(0, Number(d.current) || 0), State.players.length - 1);
     const wm = d.winMode === 'puntos' ? 'puntos' : (d.winMode === 'medallas' ? 'clasico' : (d.winMode || 'clasico'));
@@ -566,7 +566,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function bind() {
     el.countGroup?.querySelectorAll('.btn-count').forEach((b) => b.addEventListener('click', () => {
-      State.count = Math.min(4, Math.max(1, Number(b.dataset.count) || 2));
+      State.count = Math.min(10, Math.max(1, Number(b.dataset.count) || 2));
       renderCount(); renderPlayerCards();
     }));
     el.form?.addEventListener('submit', (e) => {

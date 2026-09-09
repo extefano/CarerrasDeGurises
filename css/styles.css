@@ -83,7 +83,9 @@ body {
   padding: 10px 12px; font: inherit; font-weight: 800; background: #FFFEFB;
 }
 
-/* Setup: conteo, jugadores, modos */
+/* Setup: conteo, jugadores, modos (1 a 10) */
+#players-config { max-height: 340px; overflow-y: auto; padding-right: 2px; }
+#player-count-group .btn-count { min-height: 48px; font-size: 1.05rem; }
 .btn-count {
   min-height: 52px; font-family: Fredoka; font-size: 1.2rem; font-weight: 700;
   background: #fff; border: 2px solid var(--ink); border-radius: 14px; box-shadow: 3px 3px 0 #000;

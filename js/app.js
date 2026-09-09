@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     players: [], current: 0, winMode: 'clasico', pointsGoal: 10, timeLimit: 0,
     pools: {}, usedIds: new Set(), currentQ: null, currentCat: null,
     answered: false, awaitingPick: false, piqueteVictim: null,
-    count: 2, wheelAngle: 0, spinning: false
+    count: 2, wheelAngle: 0, spinning: false,
+    lastResult: null, lastResponderIdx: null
   };
   let ALL = [], toastT = null, timerId = null, timeLeft = 0, timerTotal = 0, paused = false, callId = null;
 
@@ -199,6 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     State.usedIds = new Set();
     State.currentQ = null; State.currentCat = null;
     State.answered = false; State.awaitingPick = false; State.piqueteVictim = null;
+    State.lastResult = null; State.lastResponderIdx = null;
     buildPools();
   }
 
@@ -338,14 +340,20 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTimer();
     }, 1000);
   }
+  function setNextLabel() {
+    if (!el.btnNext) return;
+    el.btnNext.textContent = State.lastResult === 'hit' ? '¡Seguís vos! Girar de nuevo 🎡' : 'Siguiente Turno ➡️';
+  }
   function onTimeout() {
     if (State.answered) return;
     State.answered = true; clearTimer(); renderTimer();
     el.qOptions?.querySelectorAll('.opt-btn').forEach((b) => { b.disabled = true; });
     const r = responder();
     if (r && State.currentCat) miss(r, State.currentCat);
-    toast('⏱️ ¡Tiempo! Cuenta como fallo.');
-    renderPowers(); show(el.btnNext);
+    State.lastResult = 'miss';
+    State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+    toast('⏱️ ¡Tiempo! Cuenta como fallo. Pasa el turno.');
+    renderPowers(); setNextLabel(); show(el.btnNext);
   }
 
   /* ---------- puntos / monedas ---------- */
@@ -434,9 +442,19 @@ document.addEventListener('DOMContentLoaded', () => {
       if (norm(txt) === norm(q.respuesta)) b.classList.add('correct');
     });
     const r = responder();
-    if (ok) { btn.classList.add('correct'); toast('¡Correcto! +1 punto 🏆' + hit()); }
-    else { btn.classList.add('wrong'); if (r) miss(r, State.currentCat); toast('Incorrecto. Era: ' + q.respuesta); }
-    renderPowers(); show(el.btnNext);
+    const responderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+    if (ok) {
+      btn.classList.add('correct');
+      const coins = hit();
+      State.lastResult = 'hit'; State.lastResponderIdx = responderIdx;
+      toast('¡Correcto! +1 punto 🏆' + coins + ' Mantenés tu turno 🎲');
+    }
+    else {
+      btn.classList.add('wrong'); if (r) miss(r, State.currentCat);
+      State.lastResult = 'miss'; State.lastResponderIdx = responderIdx;
+      toast('Incorrecto. Era: ' + q.respuesta + '. Pasa el turno.');
+    }
+    renderPowers(); setNextLabel(); show(el.btnNext);
   }
 
   /* ---------- powerups ---------- */
@@ -546,15 +564,25 @@ document.addEventListener('DOMContentLoaded', () => {
     toast(m === 'free' ? '🔪 ¡Piquete gratis a ' + vic.name + '!' : '🔪 ¡Piquete a ' + vic.name + ' por ' + COSTS.piquete + '🪙!');
   }
 
-  /* ---------- flujo ---------- */
-  function nextTurn() {
+  /* ---------- flujo (acierto = mantiene turno) ---------- */
+  function resetRound(advance) {
     if (!State.players.length) return;
     clearTimer();
-    State.current = (State.current + 1) % State.players.length;
+    if (advance) {
+      State.current = (State.current + 1) % State.players.length;
+    } else if (State.lastResponderIdx != null && State.players[State.lastResponderIdx]) {
+      State.current = State.lastResponderIdx; // quien acertó (incluye víctima del piquete) sigue
+    }
     State.currentQ = null; State.currentCat = null;
     State.answered = false; State.awaitingPick = false; State.piqueteVictim = null;
+    State.lastResult = null; State.lastResponderIdx = null;
     hide(el.manteNote); hide(el.picker);
     updateTurn(); save(); showScreen('wheel');
+  }
+  function nextTurn() { resetRound(true); }
+  function onBtnNext() {
+    if (State.lastResult === 'hit') resetRound(false);
+    else resetRound(true);
   }
   function restart() {
     State.players.forEach((p) => Object.assign(p, { points: 0, medals: [], coins: 0, streak: 0, best: 0, stats: {}, powerups: { fifty: true, removeOne: true, call: true, piquete: true } }));
@@ -609,21 +637,25 @@ document.addEventListener('DOMContentLoaded', () => {
       toast('¡Que empiece la carrera! 🎉');
     });
     el.btnSpin?.addEventListener('click', spin);
-    el.btnNext?.addEventListener('click', nextTurn);
+    el.btnNext?.addEventListener('click', onBtnNext);
     el.btnScore?.addEventListener('click', () => { renderBoard(); openDlg(el.board); });
     el.btnReveal?.addEventListener('click', () => { show(el.qAnswer); hide(el.btnReveal); show(el.btnHit); show(el.btnMiss); });
     el.btnHit?.addEventListener('click', () => {
       if (State.answered) return;
       State.answered = true; clearTimer(); renderTimer();
-      toast('¡Correcto! +1 punto 🏆' + hit());
-      hide(el.btnHit); hide(el.btnMiss); show(el.btnNext); renderPowers();
+      State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+      State.lastResult = 'hit';
+      toast('¡Correcto! +1 punto 🏆' + hit() + ' Mantenés tu turno 🎲');
+      hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
     el.btnMiss?.addEventListener('click', () => {
       if (State.answered) return;
       State.answered = true; clearTimer(); renderTimer();
       const r = responder(); if (r) miss(r, State.currentCat);
-      toast('Fallo registrado.');
-      hide(el.btnHit); hide(el.btnMiss); show(el.btnNext); renderPowers();
+      State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+      State.lastResult = 'miss';
+      toast('Fallo registrado. Pasa el turno.');
+      hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
     el.pwFifty?.addEventListener('click', useFifty);
     el.pwRemove?.addEventListener('click', useRemove);

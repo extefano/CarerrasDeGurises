@@ -3,188 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content="Carrera de Gurises: juego de preguntas y respuestas por categorías. Girá la ruleta, respondé y sumá puntos o medallas." />
-  <meta name="theme-color" content="#4f46e5" />
+  <meta name="description" content="Carrera de Gurises: trivia familiar. Girá la ruleta, respondé y ganá medallas o puntos." />
+  <meta name="theme-color" content="#2B8BEA" />
   <title>Carrera de Gurises 🎲</title>
-  <link rel="stylesheet" href="./css/styles.css?v=6" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css?v=7" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <div class="app-shell max-w-md mx-auto min-h-screen flex flex-col relative overflow-hidden">
+    <div class="bg-scene" aria-hidden="true"><div class="bg-forest"></div></div>
 
-  <main id="main-content">
-    <!-- VISTA 1: CONFIGURACIÓN -->
-    <section id="view-setup" class="view active" data-view="setup" aria-labelledby="setup-title">
-      <header class="hero">
-        <p class="hero-emoji" aria-hidden="true">🎲</p>
-        <h1 id="setup-title">Carrera de Gurises</h1>
-        <p class="subtitle">El juego de preguntas bien guri: girá, respondé y ganá 🏁</p>
-      </header>
+    <header class="topbar">
+      <span class="topbar-logo" aria-hidden="true">🎲</span>
+      <p class="topbar-title">CARRERA DE GURISES</p>
+      <span class="topbar-sub">para jugar en (fat)milia</span>
+    </header>
 
-      <form id="setup-form" novalidate>
-        <fieldset class="card">
-          <legend>Cantidad de jugadores (1 a 10)</legend>
-          <div class="stepper" role="group" aria-label="Cantidad de jugadores">
-            <button type="button" id="btn-minus" class="btn btn-stepper" data-action="dec" aria-label="Quitar un jugador">−</button>
-            <span id="player-count" role="status" aria-live="polite" aria-label="Cantidad de jugadores seleccionada">2</span>
-            <button type="button" id="btn-plus" class="btn btn-stepper" data-action="inc" aria-label="Agregar un jugador">+</button>
-          </div>
-          <div id="players-config" aria-live="polite">
-            <!-- JS genera aquí inputs de nombre + color por jugador -->
-          </div>
-        </fieldset>
-
-        <fieldset class="card">
-          <legend>Modo de victoria</legend>
-          <label class="radio-option">
-            <input type="radio" name="win-mode" value="puntos" checked />
-            <span>Por puntos ⭐</span>
-          </label>
-          <label class="radio-option">
-            <input type="radio" name="win-mode" value="medallas" />
-            <span>Por medallas 🏅</span>
-          </label>
-
-          <label for="points-goal" class="field-label">Meta de puntos</label>
-          <select id="points-goal" name="points-goal">
-            <option value="5">5 puntos</option>
-            <option value="10" selected>10 puntos</option>
-            <option value="15">15 puntos</option>
-            <option value="20">20 puntos</option>
-          </select>
-
-          <p class="note" id="medals-note">
-            🏅 <strong>Modo medallas:</strong> ganá una medalla por cada categoría acertada.
-            Quien complete todas las categorías primero, gana la carrera.
-          </p>
-        </fieldset>
-
-        <fieldset class="card">
-          <legend>Tiempo por pregunta ⏱️</legend>
-          <label for="time-limit" class="field-label">Límite de tiempo</label>
-          <select id="time-limit" name="time-limit">
-            <option value="0" selected>Sin límite</option>
-            <option value="15">15 segundos</option>
-            <option value="30">30 segundos</option>
-            <option value="60">60 segundos</option>
-          </select>
-          <p class="note">
-            ⏱️ Si se acaba el tiempo cuenta como fallo y corta tu racha.
-            🔥 1er acierto = 0 🪙, cada acierto seguido extra = +1 🪙 para comprar powerups.
-          </p>
-        </fieldset>
-
-        <button type="submit" class="btn btn-primary btn-large btn-block">¡Empezar a jugar! 🚀</button>
-      </form>
-    </section>
-
-    <!-- VISTA 2: JUEGO -->
-    <div id="view-game" class="view" data-view="game" hidden>
-      <header class="game-header">
-        <div id="turn-indicator" aria-live="polite" aria-atomic="true">
-          <span id="turn-avatar" class="avatar" aria-hidden="true"></span>
-          <span class="turn-text">Turno de <strong id="turn-name">Jugador 1</strong></span>
+    <main id="main-content" class="flex-1 px-4 pb-32 pt-3">
+      <!-- A. SETUP -->
+      <section id="screen-setup" aria-labelledby="setup-title">
+        <div class="hero-toon">
+          <p class="hero-emoji" aria-hidden="true">🎲</p>
+          <h1 id="setup-title" class="font-display tracking-wide font-extrabold">CARRERAS DE GURISES</h1>
+          <p class="subtitle">Girá la ruleta, respondé y ganá 🏁</p>
         </div>
-        <button type="button" id="btn-score" class="btn btn-secondary" aria-haspopup="dialog">📊 <span>Puntajes</span></button>
-      </header>
 
-      <div class="game-body">
-        <section id="roulette-section" aria-labelledby="roulette-title">
-          <h2 id="roulette-title">Girá la ruleta</h2>
-          <div id="roulette" class="roulette-grid" role="group" aria-label="Ruleta de categorías">
-            <button type="button" class="roulette-cell" data-categoria="Geografía"><span aria-hidden="true">🌍</span><span>Geografía</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Historia"><span aria-hidden="true">🏛️</span><span>Historia</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Artes y Letras"><span aria-hidden="true">🎨</span><span>Artes y Letras</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Ciencias y Naturaleza"><span aria-hidden="true">🔬</span><span>Ciencias y Naturaleza</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Deportes"><span aria-hidden="true">⚽</span><span>Deportes</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Espectáculos"><span aria-hidden="true">🎬</span><span>Espectáculos</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Manga"><span aria-hidden="true">📖</span><span>Manga</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Anime"><span aria-hidden="true">⛩️</span><span>Anime</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Videojuegos"><span aria-hidden="true">🎮</span><span>Videojuegos</span></button>
-            <button type="button" class="roulette-cell" data-categoria="Mantequita"><span aria-hidden="true">🧈</span><span>Mantequita</span></button>
-          </div>
-          <p class="note" id="mantequita-note" hidden>🧈 ¡Mantequita! Tocá una categoría para elegir 👇</p>
-          <button type="button" id="btn-spin" class="btn btn-primary btn-large btn-block">¡Girar! 🎡</button>
-        </section>
-
-        <section id="question-card" class="card" hidden aria-live="polite" aria-labelledby="q-text">
-          <span id="q-category" class="badge"></span>
-          <div id="q-timer" class="q-timer" hidden aria-live="polite">
-            <span id="q-timer-label">⏱️ 30s</span>
-            <div class="timer-track" aria-hidden="true"><div id="q-timer-bar" class="timer-bar"></div></div>
-          </div>
-          <p id="q-text"></p>
-          <div id="powerups" class="powerups" aria-label="Powerups">
-            <button type="button" id="pw-fifty" class="btn btn-power" title="50/50: quita 2 opciones incorrectas">➗ 50/50</button>
-            <button type="button" id="pw-remove" class="btn btn-power" title="Sacar una opción incorrecta">➖ Sacar 1</button>
-            <button type="button" id="pw-call" class="btn btn-power" title="Llamar a un familiar: 60s de consulta, pausa el timer">📞 Familiar</button>
-            <button type="button" id="pw-piquete" class="btn btn-power" title="El Piquete: un rival responde su categoría más débil">🔪 Piquete</button>
-          </div>
-          <p id="coins-hint" class="note coins-hint" aria-live="polite"></p>
-          <div id="q-options" role="group" aria-label="Opciones de respuesta">
-            <!-- JS genera botones de opción múltiple -->
-          </div>
-          <div id="q-open">
-            <button type="button" id="btn-reveal" class="btn btn-secondary">Ver respuesta 👀</button>
-            <p id="q-answer" hidden></p>
-            <div class="hit-miss-row">
-              <button type="button" id="btn-hit" class="btn btn-success">Acertó ✅</button>
-              <button type="button" id="btn-miss" class="btn btn-danger">Falló ❌</button>
+        <form id="setup-form" novalidate class="grid gap-4 mt-4">
+          <fieldset class="card-toon">
+            <legend class="legend-toon"><i class="fa-solid fa-users"></i> JUGADORES</legend>
+            <p class="label-sm">Select inv number of players</p>
+            <div id="player-count-group" class="grid grid-cols-4 gap-2" role="group" aria-label="Número de jugadores">
+              <button type="button" class="btn-count" data-count="1">1</button>
+              <button type="button" class="btn-count is-active" data-count="2">2</button>
+              <button type="button" class="btn-count" data-count="3">3</button>
+              <button type="button" class="btn-count" data-count="4">4</button>
             </div>
+            <div id="players-config" class="grid gap-2 mt-3" aria-live="polite"></div>
+          </fieldset>
+
+          <fieldset class="card-toon">
+            <legend class="legend-toon"><i class="fa-solid fa-gamepad"></i> GAME MODE</legend>
+            <div class="grid gap-2" role="radiogroup" aria-label="Modo de juego">
+              <label class="mode-card">
+                <input type="radio" name="win-mode" value="clasico" checked />
+                <span class="mode-body">
+                  <strong>Modo Clásico</strong>
+                  <small>Conseguir las 9 insignias de categoría 🏅</small>
+                </span>
+              </label>
+              <label class="mode-card">
+                <input type="radio" name="win-mode" value="puntos" />
+                <span class="mode-body">
+                  <strong>Carrera de Puntos</strong>
+                  <small>Primero en alcanzar 10 aciertos ⭐</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="card-toon">
+            <legend class="legend-toon"><i class="fa-solid fa-stopwatch"></i> TIEMPO ⏱️</legend>
+            <label for="time-limit" class="label-sm">Límite por pregunta</label>
+            <select id="time-limit" name="time-limit" class="input-toon">
+              <option value="0" selected>Sin límite</option>
+              <option value="15">15 segundos</option>
+              <option value="30">30 segundos</option>
+              <option value="60">60 segundos</option>
+            </select>
+            <p class="note">⏱️ Sin tiempo = fallo y corta racha. 🔥 1º acierto = 0 🪙, cada seguido = +1 🪙.</p>
+          </fieldset>
+
+          <button type="submit" id="btn-start" class="btn-play">¡A JUGAR! 🚀</button>
+        </form>
+      </section>
+
+      <!-- B. WHEEL -->
+      <section id="screen-wheel" class="hidden" aria-labelledby="wheel-title">
+        <div id="turn-indicator" class="turn-toon" aria-live="polite" aria-atomic="true">
+          <span id="turn-avatar" class="avatar-toon" aria-hidden="true">😀</span>
+          <span class="turn-txt">Turno de <strong id="turn-name">Jugador 1</strong><br /><small id="turn-meta">0 pts · 🪙 0</small></span>
+        </div>
+
+        <h2 id="wheel-title" class="wheel-title">Touch-interactive inspired category wheel</h2>
+        <div class="wheel-wrap">
+          <div id="wheel-pointer" class="wheel-pointer" aria-hidden="true">🔻</div>
+          <svg id="wheel-svg" viewBox="0 0 320 320" role="img" aria-label="Ruleta de categorías">
+            <g id="wheel-disc"></g>
+            <g id="wheel-hub">
+              <circle cx="160" cy="160" r="44" fill="#fff" stroke="#0f172a" stroke-width="5" />
+              <text x="160" y="176" text-anchor="middle" font-size="42">😊</text>
+            </g>
+          </svg>
+        </div>
+        <p id="roulette-hint" class="note center">🧈 1 de cada 10 giros sale <strong>Mantequita</strong> y elegís categoría.</p>
+        <p id="mantequita-note" class="mante-note hidden">🧈 ¡Mantequita! Tocá una categoría 👇</p>
+        <div id="mantequita-picker" class="picker-grid hidden" role="group" aria-label="Elegir categoría"></div>
+        <button type="button" id="btn-spin" class="btn-play">GIRAR RULETA 🎡</button>
+      </section>
+
+      <!-- C. QUESTION -->
+      <section id="screen-question" class="hidden" aria-labelledby="q-text">
+        <div class="turn-toon">
+          <span id="q-avatar" class="avatar-toon" aria-hidden="true">😀</span>
+          <span class="turn-txt"><strong id="q-player">Jugador 1</strong><br /><small id="q-category" class="badge-toon">🌍 Geografía</small></span>
+        </div>
+
+        <div id="q-timer" class="timer-toon hidden" aria-live="polite">
+          <span id="q-timer-label">⏱️ 30s</span>
+          <div class="timer-track" aria-hidden="true"><div id="q-timer-bar" class="timer-bar"></div></div>
+        </div>
+
+        <article class="card-toon q-card">
+          <p id="q-text" class="q-text"></p>
+        </article>
+
+        <div id="powerups" class="power-grid" aria-label="Powerups">
+          <button type="button" id="pw-fifty" class="btn-power">➗ 50/50</button>
+          <button type="button" id="pw-remove" class="btn-power">➖ Sacar 1</button>
+          <button type="button" id="pw-call" class="btn-power">📞 Familiar</button>
+          <button type="button" id="pw-piquete" class="btn-power">🔪 Piquete</button>
+        </div>
+        <p id="coins-hint" class="note center" aria-live="polite"></p>
+
+        <div id="q-options" class="grid gap-2 mt-2" role="group" aria-label="Opciones de respuesta"></div>
+
+        <div id="q-open" class="grid gap-2 mt-2">
+          <button type="button" id="btn-reveal" class="btn-white">Mostrar Respuesta 👀</button>
+          <p id="q-answer" class="answer-toon hidden"></p>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" id="btn-hit" class="btn-hit">Acertó ✅</button>
+            <button type="button" id="btn-miss" class="btn-miss">Falló ❌</button>
           </div>
-        </section>
+        </div>
 
-        <button type="button" id="btn-next" class="btn btn-primary btn-large btn-block" hidden>Siguiente turno ➡️</button>
-      </div>
+        <button type="button" id="btn-next" class="btn-play hidden mt-3">Siguiente Turno ➡️</button>
+      </section>
+    </main>
+
+    <footer class="footer-toon">
+      <small>🎲 Carrera de Gurises · Hecho con ❤️ para jugar en (fat)milia</small>
+    </footer>
+
+    <button type="button" id="btn-score" class="btn-fab" aria-haspopup="dialog" aria-label="Ver puntajes">🏆</button>
+  </div>
+
+  <!-- D. SCOREBOARD -->
+  <dialog id="modal-scoreboard" aria-labelledby="scoreboard-title">
+    <h2 id="scoreboard-title" class="font-display">📊 PROGRESO</h2>
+    <ul id="score-list" class="grid gap-2"></ul>
+    <form method="dialog">
+      <button type="submit" id="btn-close-score" class="btn-white w-full">Cerrar ✖️</button>
+    </form>
+  </dialog>
+
+  <!-- VICTORY -->
+  <dialog id="modal-victory" aria-labelledby="winner-name">
+    <div id="confetti-box" class="confetti-box" aria-hidden="true"></div>
+    <p class="hero-emoji center" aria-hidden="true">🏆</p>
+    <h2 class="font-display center">¡TENEMOS GANADOR!</h2>
+    <p id="winner-name" class="winner-name center" aria-live="polite"></p>
+    <p id="winner-stats" class="note center"></p>
+    <div class="grid gap-2 mt-3">
+      <button type="button" id="btn-restart" class="btn-play">Volver a Jugar 🔁</button>
+      <button type="button" id="btn-new-players" class="btn-white">Cambiar jugadores 👥</button>
     </div>
-
-    <!-- VISTA 3: VICTORIA -->
-    <section id="view-victory" class="view" data-view="victory" aria-labelledby="winner-name" hidden>
-      <p class="hero-emoji" aria-hidden="true">🏆</p>
-      <h2>¡Tenemos ganador!</h2>
-      <p id="winner-name" class="winner-name" aria-live="polite"></p>
-      <p id="winner-stats" class="winner-stats"></p>
-      <div class="victory-actions">
-        <button type="button" id="btn-restart" class="btn btn-primary btn-large">Jugar de nuevo 🔁</button>
-        <button type="button" id="btn-new-players" class="btn btn-secondary btn-large">Cambiar jugadores 👥</button>
-      </div>
-    </section>
-  </main>
-
-  <!-- MODAL PUNTAJES -->
-  <dialog id="scoreboard" aria-labelledby="scoreboard-title">
-    <h2 id="scoreboard-title">📊 Puntajes</h2>
-    <ul id="score-list"></ul>
-    <form method="dialog">
-      <button type="submit" id="btn-close-score" class="btn btn-secondary btn-block">Cerrar ✖️</button>
-    </form>
   </dialog>
 
-  <!-- MODAL LLAMAR -->
   <dialog id="modal-call" aria-labelledby="call-title">
-    <h2 id="call-title">📞 Llamá a un familiar</h2>
-    <p>Tenés <strong id="call-countdown">60</strong>s para consultar.<br />El timer de la pregunta está en pausa.</p>
+    <h2 id="call-title" class="font-display">📞 LLAMÁ A UN FAMILIAR</h2>
+    <p class="note">Tenés <strong id="call-countdown">60</strong>s para consultar. El timer está en pausa.</p>
     <form method="dialog">
-      <button type="submit" id="btn-close-call" class="btn btn-secondary btn-block">Volver a la pregunta ✅</button>
+      <button type="submit" id="btn-close-call" class="btn-white w-full">Volver ✅</button>
     </form>
   </dialog>
 
-  <!-- MODAL PIQUETE -->
   <dialog id="modal-piquete" aria-labelledby="piquete-title">
-    <h2 id="piquete-title">🔪 El Piquete</h2>
-    <p>Elegí a qué rival mandar a su categoría más débil:</p>
-    <ul id="piquete-list"></ul>
+    <h2 id="piquete-title" class="font-display">🔪 EL PIQUETE</h2>
+    <p class="note">Elegí a qué rival mandar a su categoría más débil:</p>
+    <ul id="piquete-list" class="grid gap-2"></ul>
     <form method="dialog">
-      <button type="submit" class="btn btn-secondary btn-block">Cancelar ✖️</button>
+      <button type="submit" class="btn-white w-full">Cancelar ✖️</button>
     </form>
   </dialog>
 
-  <!-- TOAST -->
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <footer>
-    <small>🎲 Carrera de Gurises · Hecho con ❤️ para jugar en (fat)milia</small>
-  </footer>
-
-  <script src="./js/app.js?v=6" defer></script>
+  <script src="./js/app.js?v=7" defer></script>
 </body>
 </html>

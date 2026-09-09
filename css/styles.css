@@ -209,6 +209,13 @@ body {
 .confetti-piece { position: absolute; top: -14px; width: 9px; height: 15px; border-radius: 2px; animation: confetti-fall linear forwards; }
 @keyframes confetti-fall { to { transform: translateY(420px) rotate(720deg); } }
 
+.btn-end {
+  width: 100%; min-height: 50px; margin-top: 10px; font-weight: 900;
+  background: #fff; color: #991b1b; border: 2px solid var(--ink); border-radius: 16px;
+  box-shadow: 3px 3px 0 #000; padding: 10px 14px;
+}
+.btn-end:active { transform: scale(.98); }
+
 /* FAB + toast + footer */
 .btn-fab {
   position: fixed; bottom: 84px; right: max(16px, calc(50% - 214px + 16px)); z-index: 50;

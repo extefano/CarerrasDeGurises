@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     victory: $('modal-victory'), winnerName: $('winner-name'), winnerStats: $('winner-stats'),
     confettiBox: $('confetti-box'), btnRestart: $('btn-restart'), btnNew: $('btn-new-players'),
     call: $('modal-call'), callCount: $('call-countdown'),
-    piquete: $('modal-piquete'), piqueteList: $('piquete-list'), toast: $('toast')
+    piquete: $('modal-piquete'), piqueteList: $('piquete-list'), toast: $('toast'),
+    btnEnd: $('btn-end'), btnEndBoard: $('btn-end-board')
   };
 
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -564,6 +565,38 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function newPlayers() { clearSave(); closeDlg(el.victory); State.players = []; State.current = 0; State.count = 2; renderCount(); renderPlayerCards(); showScreen('setup'); }
 
+  /* ---------- terminar partida ---------- */
+  function leader() {
+    if (!State.players.length) return null;
+    const rank = State.players.map((p, i) => ({ p, i }));
+    rank.sort((a, b) => {
+      if (State.winMode === 'puntos') {
+        return (b.p.points - a.p.points) || (b.p.medals.length - a.p.medals.length) || (b.p.coins - a.p.coins);
+      }
+      return (b.p.medals.length - a.p.medals.length) || (b.p.points - a.p.points) || (b.p.coins - a.p.coins);
+    });
+    return rank[0];
+  }
+  function endGame() {
+    if (!State.players.length) { toast('No hay partida en curso.'); return; }
+    if (State.spinning) { toast('Esperá a que termine el giro 🎡'); return; }
+    const top = leader();
+    if (!top) return;
+    if (!window.confirm('¿Terminar la partida ahora y coronar a ' + top.p.name + '?')) return;
+    clearTimer();
+    State.spinning = false;
+    State.answered = true;
+    State.awaitingPick = false;
+    hide(el.manteNote); hide(el.picker);
+    closeDlg(el.board); closeDlg(el.call); closeDlg(el.piquete);
+    if (el.winnerName) el.winnerName.textContent = '🏁 ' + top.p.name + ' 🏁';
+    if (el.winnerStats) el.winnerStats.textContent = top.p.points + ' pts · ' + top.p.medals.length + '/9 🏅 · 🪙 ' + top.p.coins + ' · racha x' + top.p.best + ' (partida terminada antes del final)';
+    launchConfetti();
+    openDlg(el.victory);
+    save();
+    toast('🏁 Partida terminada. ¡Ganó ' + top.p.name + '!');
+  }
+
   function bind() {
     el.countGroup?.querySelectorAll('.btn-count').forEach((b) => b.addEventListener('click', () => {
       State.count = Math.min(10, Math.max(1, Number(b.dataset.count) || 2));
@@ -599,6 +632,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el.call?.addEventListener('close', () => { if (callId) { clearInterval(callId); callId = null; } paused = false; renderTimer(); });
     el.btnRestart?.addEventListener('click', restart);
     el.btnNew?.addEventListener('click', newPlayers);
+    el.btnEnd?.addEventListener('click', endGame);
+    el.btnEndBoard?.addEventListener('click', endGame);
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDlg(el.board); });
   }
 

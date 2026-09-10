@@ -716,6 +716,18 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- en vivo P2P (invitados solo miran, anfitrión fijo, sin cuentas) ---------- */
   const NET_PREFIX = 'carrera-gurises-v1-';
   const CODEABC = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  // STUN + TURN gratuitos: sin relay, los NAT simétricos (típicos en datos
+  // móviles) impiden que el canal P2P se abra aunque la señalización llegue.
+  const RTC_CONFIG = {
+    iceServers: [
+      { urls: 'stun:stun.l.google.com:19302' },
+      { urls: 'stun:stun.relay.metered.ca:80' },
+      { urls: 'turn:global.relay.metered.ca:80', username: 'openrelayproject', credential: 'openrelayproject' },
+      { urls: 'turn:global.relay.metered.ca:80?transport=tcp', username: 'openrelayproject', credential: 'openrelayproject' },
+      { urls: 'turn:global.relay.metered.ca:443', username: 'openrelayproject', credential: 'openrelayproject' },
+      { urls: 'turns:global.relay.metered.ca:443?transport=tcp', username: 'openrelayproject', credential: 'openrelayproject' }
+    ]
+  };
   const net = { peer: null, conns: new Map(), code: null, hosting: false, guestPeer: null, guestConn: null, guestCode: null, guestTimer: null };
   const hasPeerLib = () => typeof window.Peer !== 'undefined';
   function genCode() { let s = ''; for (let i = 0; i < 5; i++) s += CODEABC[Math.floor(Math.random() * CODEABC.length)]; return s; }
@@ -754,7 +766,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   function updateShareUI() {
     if (el.liveBadge) el.liveBadge.classList.toggle('hidden', !(net.hosting || State.spectating));
-    if (el.shareCount) el.shareCount.textContent = String(net.conns.size);
+    let open = 0;
+    net.conns.forEach((c) => { try { if (c && c.open) open++; } catch { /* noop */ } });
+    if (el.shareCount) el.shareCount.textContent = String(open);
     if (el.shareCode) el.shareCode.textContent = net.code || '·····';
     if (el.shareQr) {
       if (net.code) el.shareQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(joinUrl(net.code));
@@ -769,11 +783,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (net.hosting) { updateShareUI(); openDlg(el.modalShare); return; }
     try {
       const code = genCode();
-      const peer = new window.Peer(NET_PREFIX + code);
+      const peer = new window.Peer(NET_PREFIX + code, { config: RTC_CONFIG, debug: 0 });
       net.peer = peer; net.code = code;
       peer.on('open', () => { net.hosting = true; updateShareUI(); openDlg(el.modalShare); net.sync(); toast('📡 Sala ' + code + ' en vivo'); });
       peer.on('connection', (c) => {
         net.conns.set(c.peer, c);
+        // Limpieza de intentos que nunca abren (cuentan como "fantasmas" si no)
+        setTimeout(() => {
+          try { if (!c.open) { net.conns.delete(c.peer); try { c.close(); } catch { /* noop */ } updateShareUI(); } } catch { /* noop */ }
+        }, 20000);
         c.on('open', () => { try { c.send(snapState()); } catch { /* noop */ } updateShareUI(); });
         c.on('data', (d) => { if (d && d.t === 'hello') { try { c.send(snapState()); } catch { /* noop */ } } });
         c.on('close', () => { net.conns.delete(c.peer); updateShareUI(); });
@@ -908,12 +926,23 @@ document.addEventListener('DOMContentLoaded', () => {
     net.guestCode = code;
     if (el.joinStatus) el.joinStatus.textContent = 'Conectando a ' + code + '…';
     try {
-      const peer = new window.Peer();
+      const peer = new window.Peer({ config: RTC_CONFIG, debug: 0 });
       net.guestPeer = peer;
+      // Si el canal directo no abre en 15s (NAT/red móvil), avisar en vez de
+      // quedar colgado en "Conectando…"
+      const openTimer = setTimeout(() => {
+        try {
+          if (net.guestPeer === peer && !(net.guestConn && net.guestConn.open)) {
+            if (el.joinStatus) el.joinStatus.textContent = 'No se pudo abrir el canal directo (las redes móviles suelen bloquearlo). Tocá Unirse de nuevo.';
+            if (State.spectating) showLost();
+          }
+        } catch { /* noop */ }
+      }, 15000);
       peer.on('open', () => {
         const c = peer.connect(NET_PREFIX + code, { reliable: true });
         net.guestConn = c;
         c.on('open', () => {
+          try { clearTimeout(openTimer); } catch { /* noop */ }
           try { c.send({ t: 'hello' }); } catch { /* noop */ }
           hideLost();
           if (el.joinStatus) el.joinStatus.textContent = '¡Conectado! 👀';

@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
     'Ciencias y Naturaleza': { color: '#2ECC71', icon: '🔬' },
     'Deportes': { color: '#F39C12', icon: '⚽' },
     'Espectáculos': { color: '#00BCD4', icon: '🎬' },
-    'Manga': { color: '#E74C3C', icon: '📖' },
-    'Anime': { color: '#9B59B6', icon: '⛩️' },
+    'Otaku': { color: '#9B59B6', icon: '⛩️' },
     'Videojuegos': { color: '#1ABC9C', icon: '🎮' }
   };
   const CATEGORY_NAMES = Object.keys(CATEGORIES);
+  const LEGACY_ALIAS = { 'Anime': 'Otaku', 'Manga': 'Otaku' };
   const MANTEQUITA = 'Mantequita';
   const MANTE_META = { color: '#FFD54F', icon: '🧈' };
-  const WHEEL_OPTIONS = [...CATEGORY_NAMES, MANTEQUITA];
+  const wheelOptions = () => [...State.activeCats, MANTEQUITA];
   const catMeta = (c) => CATEGORIES[c] || (c === MANTEQUITA ? MANTE_META : { color: '#999', icon: '❓' });
   const COSTS = { fifty: 2, removeOne: 1, call: 2, piquete: 3 };
   const AVATARS = ['😀', '😎', '🤓', '🥳', '😺', '🦊', '🐼', '🤖'];
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const State = {
     players: [], current: 0, winMode: 'clasico', pointsGoal: 10, timeLimit: 0,
+    activeCats: [...CATEGORY_NAMES],
     pools: {}, usedIds: new Set(), currentQ: null, currentCat: null,
     answered: false, awaitingPick: false, piqueteVictim: null,
     count: 2, wheelAngle: 0, spinning: false,
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function normPlayer(p, i) {
     const b = mkPlayer(String(p?.name ?? 'Jugador ' + (i + 1)).slice(0, 20), p?.avatar || AVATARS[i % AVATARS.length], p?.color || COLORS[i % COLORS.length]);
     b.points = Number(p?.points) || 0;
-    b.medals = Array.isArray(p?.medals) ? p.medals.filter((m) => CATEGORIES[m]) : [];
+    b.medals = Array.isArray(p?.medals) ? [...new Set(p.medals.map((m) => LEGACY_ALIAS[m] || m).filter((m) => CATEGORIES[m]))] : [];
     b.coins = Math.max(0, Number(p?.coins) || 0);
     b.streak = Math.max(0, Number(p?.streak) || 0);
     b.best = Math.max(0, Number(p?.best ?? p?.bestStreak) || 0);
@@ -90,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
         players: State.players, current: State.current, winMode: State.winMode,
-        pointsGoal: State.pointsGoal, timeLimit: State.timeLimit, usedIds: [...State.usedIds]
+        pointsGoal: State.pointsGoal, timeLimit: State.timeLimit, activeCats: State.activeCats, usedIds: [...State.usedIds]
       }));
     } catch { /* noop */ }
   }
@@ -103,6 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
     State.winMode = (wm === 'puntos') ? 'puntos' : 'clasico';
     State.pointsGoal = 10;
     State.timeLimit = [0, 15, 30, 60].includes(Number(d.timeLimit)) ? Number(d.timeLimit) : 0;
+    const validCats = [...new Set((Array.isArray(d.activeCats) ? d.activeCats : []).filter((c) => CATEGORIES[c]))];
+    State.activeCats = validCats.length >= 2 ? validCats : [...CATEGORY_NAMES];
     State.usedIds = new Set(Array.isArray(d.usedIds) ? d.usedIds : []);
     State.count = State.players.length;
     return true;
@@ -124,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!Array.isArray(list)) return [];
     return list.map((q, i) => ({
       _id: q.id ?? i,
-      categoria: String(q.categoria ?? q.category ?? ''),
+      categoria: LEGACY_ALIAS[String(q.categoria ?? q.category ?? '')] || String(q.categoria ?? q.category ?? ''),
       pregunta: String(q.pregunta ?? q.text ?? q.question ?? q.q ?? ''),
       tipo: String(q.tipo ?? q.type ?? (q.opciones || q.options ? 'opciones' : 'abierta')).toLowerCase().includes('abiert') ? 'abierta' : 'opciones',
       opciones: Array.isArray(q.opciones ?? q.options) ? (q.opciones ?? q.options).map(String) : [],
@@ -141,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function buildPools() {
     State.pools = {};
-    for (const c of CATEGORY_NAMES) {
+    for (const c of State.activeCats) {
       const ix = [];
       ALL.forEach((q, i) => { if (q.categoria === c && !State.usedIds.has(q._id)) ix.push(i); });
       State.pools[c] = shuffle(ix);
@@ -212,11 +215,51 @@ document.addEventListener('DOMContentLoaded', () => {
     const [x0, y0] = polar(cx, cy, r, a0), [x1, y1] = polar(cx, cy, r, a1);
     return 'M' + cx + ' ' + cy + ' L' + x0.toFixed(1) + ' ' + y0.toFixed(1) + ' A' + r + ' ' + r + ' 0 0 1 ' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' Z';
   }
+  function refreshWheelMeta() {
+    const hint = $('roulette-hint');
+    if (!hint) return;
+    hint.textContent = '🧈 1 de cada ' + wheelOptions().length + ' giros sale Mantequita y elegís categoría.';
+  }
+  function availableCatsFor(idx) {
+    if (State.winMode === 'puntos') return [...State.activeCats];
+    const p = State.players[idx];
+    if (!p) return [...State.activeCats];
+    const rest = State.activeCats.filter((c) => !p.medals.includes(c));
+    return rest.length ? rest : [...State.activeCats];
+  }
+  function renderCatSelect() {
+    const box = $('cat-select');
+    if (!box) return;
+    box.innerHTML = '';
+    CATEGORY_NAMES.forEach((cat) => {
+      const on = State.activeCats.includes(cat);
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'cat-toggle' + (on ? ' is-active' : '');
+      b.dataset.cat = cat;
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.style.borderLeft = '6px solid ' + CATEGORIES[cat].color;
+      b.textContent = CATEGORIES[cat].icon + ' ' + cat;
+      b.addEventListener('click', () => {
+        const ix = State.activeCats.indexOf(cat);
+        if (ix >= 0) {
+          if (State.activeCats.length <= 2) { toast('Elegí al menos 2 categorías.'); return; }
+          State.activeCats.splice(ix, 1);
+        } else {
+          State.activeCats.push(cat);
+          State.activeCats.sort((a, c) => CATEGORY_NAMES.indexOf(a) - CATEGORY_NAMES.indexOf(c));
+        }
+        renderCatSelect(); buildWheel(); renderPicker(); refreshWheelMeta();
+      });
+      box.appendChild(b);
+    });
+  }
   function buildWheel() {
     if (!el.disc) return;
-    const step = 360 / WHEEL_OPTIONS.length;
+    const opts = wheelOptions();
+    const step = 360 / opts.length;
     el.disc.innerHTML = '';
-    WHEEL_OPTIONS.forEach((cat, i) => {
+    opts.forEach((cat, i) => {
       const a0 = i * step, a1 = a0 + step, mid = a0 + step / 2;
       const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       p.setAttribute('d', arcPath(160, 160, 150, a0, a1));
@@ -235,11 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
     ring.setAttribute('cx', 160); ring.setAttribute('cy', 160); ring.setAttribute('r', 150);
     ring.setAttribute('fill', 'none'); ring.setAttribute('stroke', '#0f172a'); ring.setAttribute('stroke-width', '6');
     el.disc.appendChild(ring);
+    refreshWheelMeta();
   }
   function renderPicker() {
     if (!el.picker) return;
     el.picker.innerHTML = '';
-    CATEGORY_NAMES.forEach((cat) => {
+    availableCatsFor(State.current).forEach((cat) => {
       const b = document.createElement('button');
       b.type = 'button'; b.style.borderLeftColor = CATEGORIES[cat].color;
       b.innerHTML = '<span>' + CATEGORIES[cat].icon + '</span><br />' + esc(cat);
@@ -254,10 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el.btnSpin) el.btnSpin.disabled = true;
     hide(el.manteNote); hide(el.picker);
     State.awaitingPick = false; State.piqueteVictim = null; State.answered = false;
-    const isMante = Math.random() < 0.1;
-    const cat = isMante ? MANTEQUITA : CATEGORY_NAMES[Math.floor(Math.random() * CATEGORY_NAMES.length)];
-    const targetIx = Math.max(0, WHEEL_OPTIONS.indexOf(cat));
-    const step = 360 / WHEEL_OPTIONS.length;
+    const cands = availableCatsFor(State.current);
+    const opts = wheelOptions();
+    const cat = Math.random() < 1 / (cands.length + 1) ? MANTEQUITA : cands[Math.floor(Math.random() * cands.length)];
+    const targetIx = Math.max(0, opts.indexOf(cat));
+    const step = 360 / opts.length;
     const segCenter = targetIx * step + step / 2;
     const turns = 360 * 5;
     const jitter = (Math.random() - 0.5) * (step * 0.6);
@@ -298,14 +343,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (p && el.turnName) {
       el.turnAvatar.textContent = p.avatar;
       el.turnName.textContent = p.name;
-      if (el.turnMeta) el.turnMeta.textContent = p.points + ' pts · 🪙 ' + p.coins + ' · 🔥' + p.streak + (State.winMode === 'puntos' ? ' (meta 10)' : ' (' + p.medals.length + '/9 🏅)');
+      if (el.turnMeta) el.turnMeta.textContent = p.points + ' pts · 🪙 ' + p.coins + ' · 🔥' + p.streak + (State.winMode === 'puntos' ? ' (meta 10)' : ' (' + p.medals.length + '/' + State.activeCats.length + ' 🏅)');
     }
     renderBoard();
   }
-  function quesitosHTML(p) {
-    return CATEGORY_NAMES.map((c) => {
+  function quesitosHTML(p, pidx) {
+    return State.activeCats.map((c) => {
       const got = p.medals.includes(c);
-      return '<span class="quesito' + (got ? ' earned' : '') + '" style="' + (got ? 'background:' + CATEGORIES[c].color : '') + '" title="' + esc(c) + '">' + (got ? CATEGORIES[c].icon : '·') + '</span>';
+      if (got) return '<button type="button" class="quesito earned" data-pidx="' + pidx + '" data-cat="' + esc(c) + '" style="background:' + CATEGORIES[c].color + '" title="' + esc(c) + '">' + CATEGORIES[c].icon + '</button>';
+      return '<span class="quesito" title="' + esc(c) + '">·</span>';
     }).join('');
   }
   function renderBoard() {
@@ -316,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
       li.className = 'score-row-toon' + (i === State.current ? ' current' : '');
       li.innerHTML = '<span class="avatar-toon">' + esc(p.avatar) + '</span>' +
         '<span><strong>' + esc(p.name) + '</strong> · ' + p.points + ' pts · 🪙 ' + p.coins + ' · 🔥' + p.streak +
-        '<span class="quesitos">' + quesitosHTML(p) + '</span></span>';
+        '<span class="quesitos">' + quesitosHTML(p, i) + '</span></span>';
       el.scoreList.appendChild(li);
     });
   }
@@ -378,11 +424,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function miss(p, cat) { if (!p) return; p.streak = 0; stat(p, cat, false); save(); updateTurn(); renderPowers(); }
   function checkWin(p) {
-    const win = State.winMode === 'puntos' ? p.points >= State.pointsGoal : p.medals.length >= CATEGORY_NAMES.length;
+    const win = State.winMode === 'puntos' ? p.points >= State.pointsGoal : p.medals.length >= State.activeCats.length;
     if (win) {
       clearTimer();
       if (el.winnerName) el.winnerName.textContent = '🏆 ' + p.name + ' 🏆';
-      if (el.winnerStats) el.winnerStats.textContent = p.points + ' pts · ' + p.medals.length + '/9 🏅 · 🪙 ' + p.coins + ' · racha x' + p.best;
+      if (el.winnerStats) el.winnerStats.textContent = p.points + ' pts · ' + p.medals.length + '/' + State.activeCats.length + ' 🏅 · 🪙 ' + p.coins + ' · racha x' + p.best;
       launchConfetti();
       openDlg(el.victory);
       save();
@@ -527,13 +573,13 @@ document.addEventListener('DOMContentLoaded', () => {
   function weakest(ix) {
     const p = State.players[ix]; if (!p) return CATEGORY_NAMES[0];
     let worst = null, rate = 2;
-    for (const c of CATEGORY_NAMES) {
+    for (const c of State.activeCats) {
       const s = p.stats?.[c];
       if (s?.total > 0 && (s.ok / s.total) < rate) { rate = s.ok / s.total; worst = c; }
     }
     if (worst) return worst;
-    const nm = CATEGORY_NAMES.filter((c) => !p.medals.includes(c));
-    return (nm.length ? nm : CATEGORY_NAMES)[Math.floor(Math.random() * (nm.length || CATEGORY_NAMES.length))];
+    const nm = State.activeCats.filter((c) => !p.medals.includes(c));
+    return (nm.length ? nm : [...State.activeCats])[Math.floor(Math.random() * (nm.length || State.activeCats.length))];
   }
   function openPiquete() {
     if (State.answered || !State.currentQ || State.players.length < 2) return;
@@ -620,7 +666,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hide(el.manteNote); hide(el.picker);
     closeDlg(el.board); closeDlg(el.call); closeDlg(el.piquete);
     if (el.winnerName) el.winnerName.textContent = '🏁 ' + top.p.name + ' 🏁';
-    if (el.winnerStats) el.winnerStats.textContent = top.p.points + ' pts · ' + top.p.medals.length + '/9 🏅 · 🪙 ' + top.p.coins + ' · racha x' + top.p.best + ' (partida terminada antes del final)';
+    if (el.winnerStats) el.winnerStats.textContent = top.p.points + ' pts · ' + top.p.medals.length + '/' + State.activeCats.length + ' 🏅 · 🪙 ' + top.p.coins + ' · racha x' + top.p.best + ' (partida terminada antes del final)';
     launchConfetti();
     openDlg(el.victory);
     save();
@@ -667,14 +713,28 @@ document.addEventListener('DOMContentLoaded', () => {
     el.btnRestart?.addEventListener('click', restart);
     el.btnNew?.addEventListener('click', newPlayers);
     el.btnEndBoard?.addEventListener('click', endGame);
+    el.scoreList?.addEventListener('click', (e) => {
+      const b = e.target?.closest?.('button.quesito.earned');
+      if (!b || !el.scoreList.contains(b)) return;
+      const pidx = Number(b.dataset.pidx);
+      const cat = b.dataset.cat;
+      const p = State.players[pidx];
+      if (!p || !cat) return;
+      if (!window.confirm('¿Quitar la insignia de ' + cat + ' a ' + p.name + '?')) return;
+      const ix = p.medals.indexOf(cat);
+      if (ix >= 0) p.medals.splice(ix, 1);
+      save(); updateTurn();
+      toast('🏅 Insignia quitada a ' + p.name + ' (' + cat + ').');
+    });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDlg(el.board); });
   }
 
   async function init() {
-    bind(); buildWheel(); renderPicker(); renderCount(); renderPlayerCards();
+    bind(); renderCatSelect(); buildWheel(); renderPicker(); renderCount(); renderPlayerCards();
     const restored = load();
     if (restored) {
       if (el.timeLimit) el.timeLimit.value = String(State.timeLimit ?? 0);
+      renderCatSelect(); buildWheel(); renderPicker();
       renderCount(); renderPlayerCards(); updateTurn(); showScreen('wheel');
       toast('Partida restaurada ▶️');
     } else showScreen('setup');

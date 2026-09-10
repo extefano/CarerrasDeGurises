@@ -3306,7 +3306,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 301,
     "opciones": [
@@ -3320,7 +3320,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 302,
     "pregunta": "¿Quién es el protagonista de One Piece que quiere ser el Rey de los Piratas?",
@@ -3328,7 +3328,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 303,
     "opciones": [
@@ -3342,7 +3342,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 304,
     "pregunta": "¿Cómo se llama la aldea ninja de Naruto Uzumaki?",
@@ -3350,7 +3350,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 305,
     "opciones": [
@@ -3364,7 +3364,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 306,
     "pregunta": "¿Quién es el autor de Dragon Ball?",
@@ -3372,7 +3372,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 307,
     "opciones": [
@@ -3386,7 +3386,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 308,
     "pregunta": "¿Qué título quiere conseguir Monkey D. Luffy en One Piece?",
@@ -3394,7 +3394,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 309,
     "opciones": [
@@ -3408,7 +3408,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 310,
     "pregunta": "¿Quién es el protagonista de Demon Slayer que busca curar a su hermana?",
@@ -3416,7 +3416,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 311,
     "opciones": [
@@ -3430,7 +3430,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 312,
     "pregunta": "¿Cómo se llama al autor o dibujante profesional de manga?",
@@ -3438,7 +3438,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 313,
     "opciones": [
@@ -3452,7 +3452,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 314,
     "pregunta": "¿Cuántas Esferas del Dragón hay que reunir en Dragon Ball?",
@@ -3460,7 +3460,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 315,
     "opciones": [
@@ -3474,7 +3474,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 316,
     "pregunta": "¿Qué objeto sobrenatural encuentra Light Yagami en Death Note?",
@@ -3482,7 +3482,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 317,
     "opciones": [
@@ -3496,7 +3496,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 318,
     "opciones": [
@@ -3510,7 +3510,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 319,
     "pregunta": "¿Quién es el maestro del Equipo 7 conocido como el Ninja que Copia en Naruto?",
@@ -3518,7 +3518,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 320,
     "opciones": [
@@ -3532,7 +3532,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 321,
     "pregunta": "¿Cómo se llama el dragón que aparece al reunir las siete esferas en Dragon Ball?",
@@ -3540,7 +3540,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 322,
     "opciones": [
@@ -3554,7 +3554,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 323,
     "pregunta": "¿Quién es el autor del manga Demon Slayer?",
@@ -3562,7 +3562,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 324,
     "opciones": [
@@ -3576,7 +3576,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 325,
     "pregunta": "¿Quién es el espadachín de tres espadas de la tripulación de Luffy?",
@@ -3584,7 +3584,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 326,
     "opciones": [
@@ -3598,7 +3598,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 327,
     "pregunta": "¿Cómo se llaman las criaturas gigantes que amenazan a la humanidad en Attack on Titan?",
@@ -3606,7 +3606,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 328,
     "opciones": [
@@ -3620,7 +3620,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 329,
     "pregunta": "¿Cómo se llama el misterioso detective rival de Light en Death Note?",
@@ -3628,7 +3628,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 330,
     "opciones": [
@@ -3642,7 +3642,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 331,
     "pregunta": "¿Qué título recibe el líder de la aldea de Konoha en Naruto?",
@@ -3650,7 +3650,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 332,
     "opciones": [
@@ -3664,7 +3664,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 333,
     "pregunta": "¿Cómo se llama el príncipe saiyajin rival de Goku en Dragon Ball?",
@@ -3672,7 +3672,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 334,
     "opciones": [
@@ -3686,7 +3686,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 335,
     "opciones": [
@@ -3700,7 +3700,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 336,
     "pregunta": "¿Cómo se llama el barco actual de los Piratas del Sombrero de Paja construido por Franky?",
@@ -3708,7 +3708,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 337,
     "opciones": [
@@ -3722,7 +3722,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 338,
     "pregunta": "¿Cuál es el nombre saiyajin original de Goku enviado a la Tierra?",
@@ -3730,7 +3730,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 339,
     "opciones": [
@@ -3744,7 +3744,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 340,
     "pregunta": "¿Cómo se llama la primera muralla que protege a la humanidad en Attack on Titan?",
@@ -3752,7 +3752,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 341,
     "opciones": [
@@ -3766,7 +3766,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 342,
     "pregunta": "¿Cómo se llama el equipo ninja de Naruto, Sasuke y Sakura liderado por Kakashi?",
@@ -3774,7 +3774,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 343,
     "opciones": [
@@ -3788,7 +3788,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 344,
     "pregunta": "¿Quién escribió el guion de Death Note?",
@@ -3796,7 +3796,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 345,
     "opciones": [
@@ -3810,7 +3810,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 346,
     "pregunta": "¿Quién es el Pilar del Agua que perdona a Nezuko en Demon Slayer?",
@@ -3818,7 +3818,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 347,
     "opciones": [
@@ -3832,7 +3832,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 348,
     "pregunta": "¿Cómo se llama la demografía de manga dirigida a chicas adolescentes?",
@@ -3840,7 +3840,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 349,
     "pregunta": "¿Cuántos volúmenes tankobon tiene el manga original de Naruto?",
@@ -3848,7 +3848,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 350,
     "pregunta": "¿En qué año comenzó a publicarse One Piece?",
@@ -3856,7 +3856,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 351,
     "opciones": [
@@ -3870,7 +3870,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 352,
     "pregunta": "¿De qué pueblo es originario Ash Ketchum en Pokémon?",
@@ -3878,7 +3878,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 353,
     "opciones": [
@@ -3892,7 +3892,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 354,
     "pregunta": "¿Cómo se llama la aldea ninja a la que pertenece Naruto?",
@@ -3900,7 +3900,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 355,
     "opciones": [
@@ -3914,7 +3914,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 356,
     "pregunta": "¿Quién es el autor del manga Dragon Ball?",
@@ -3922,7 +3922,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 357,
     "opciones": [
@@ -3936,7 +3936,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 358,
     "pregunta": "¿Cómo se llama la protagonista de Sailor Moon en su vida civil?",
@@ -3944,7 +3944,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 359,
     "opciones": [
@@ -3958,7 +3958,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 360,
     "pregunta": "¿A qué raza guerrera pertenece Goku en Dragon Ball?",
@@ -3966,7 +3966,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 361,
     "opciones": [
@@ -3980,7 +3980,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 362,
     "pregunta": "¿Qué estudio animó las series Dragon Ball, Sailor Moon y One Piece?",
@@ -3988,7 +3988,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 363,
     "opciones": [
@@ -4002,7 +4002,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 364,
     "pregunta": "¿Cómo se llama el Pokémon principal que acompaña siempre a Ash?",
@@ -4010,7 +4010,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 365,
     "opciones": [
@@ -4024,7 +4024,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 366,
     "pregunta": "¿Cómo se llama el dragón eterno que concede deseos en Dragon Ball?",
@@ -4032,7 +4032,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 367,
     "opciones": [
@@ -4046,7 +4046,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 368,
     "opciones": [
@@ -4060,7 +4060,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 369,
     "pregunta": "¿Cómo se llama la bruja dueña de la casa de baños en El viaje de Chihiro?",
@@ -4068,7 +4068,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 370,
     "opciones": [
@@ -4082,7 +4082,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 371,
     "pregunta": "¿Quién es el maestro líder del Equipo 7 de Naruto?",
@@ -4090,7 +4090,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 372,
     "opciones": [
@@ -4104,7 +4104,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 373,
     "pregunta": "¿Cómo se llama el zorro de nueve colas sellado dentro de Naruto?",
@@ -4112,7 +4112,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 374,
     "opciones": [
@@ -4126,7 +4126,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 375,
     "pregunta": "¿Cómo se llama la empresa de la familia de Bulma en Dragon Ball?",
@@ -4134,7 +4134,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 376,
     "opciones": [
@@ -4148,7 +4148,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 377,
     "pregunta": "¿Cómo se llama el opening latino más famoso de la primera temporada de Pokémon?",
@@ -4156,7 +4156,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 378,
     "opciones": [
@@ -4170,7 +4170,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 379,
     "pregunta": "¿Quién compuso la música de El viaje de Chihiro?",
@@ -4178,7 +4178,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 380,
     "opciones": [
@@ -4192,7 +4192,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 381,
     "pregunta": "¿Cómo se llama el príncipe de los Saiyans rival de Goku?",
@@ -4200,7 +4200,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 382,
     "opciones": [
@@ -4214,7 +4214,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 383,
     "pregunta": "¿Qué significa la palabra italiana Ghibli que da nombre al estudio?",
@@ -4222,7 +4222,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 384,
     "opciones": [
@@ -4236,7 +4236,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 385,
     "opciones": [
@@ -4250,7 +4250,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 386,
     "pregunta": "¿Qué premio ganó El viaje de Chihiro en los Óscar de 2003?",
@@ -4258,7 +4258,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 387,
     "opciones": [
@@ -4272,7 +4272,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 388,
     "pregunta": "¿Quién es el padre de Naruto y qué número de Hokage fue?",
@@ -4280,7 +4280,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 389,
     "opciones": [
@@ -4294,7 +4294,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 390,
     "pregunta": "¿Quién es la autora del manga Sailor Moon?",
@@ -4302,7 +4302,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 391,
     "opciones": [
@@ -4316,7 +4316,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 392,
     "pregunta": "¿En qué año fue fundado el estudio Madhouse?",
@@ -4324,7 +4324,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 393,
     "opciones": [
@@ -4338,7 +4338,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 394,
     "pregunta": "¿Cuál es el verdadero nombre de Haku, dios del río Kohaku?",
@@ -4346,7 +4346,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 395,
     "opciones": [
@@ -4360,7 +4360,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 396,
     "pregunta": "¿En qué ojo lleva Kakashi implantado el Sharingan?",
@@ -4368,7 +4368,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 397,
     "opciones": [
@@ -4382,7 +4382,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 398,
     "pregunta": "¿Qué opening 2 de Naruto interpreta Asian Kung-Fu Generation?",
@@ -4390,7 +4390,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 399,
     "pregunta": "¿Quiénes forman el trío del Equipo Rocket que persigue a Pikachu?",
@@ -4398,7 +4398,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 400,
     "pregunta": "¿Cómo se llama el mago protagonista de El castillo ambulante de Ghibli?",
@@ -8274,7 +8274,7 @@
     "dificultad": "dificil"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 751,
     "opciones": [
@@ -8288,7 +8288,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 752,
     "pregunta": "¿Cómo se llama el gato robótico azul protagonista del manga Doraemon?",
@@ -8296,7 +8296,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 753,
     "opciones": [
@@ -8310,7 +8310,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 754,
     "pregunta": "¿Cómo se llama el niño dueño de Doraemon en el manga homónimo?",
@@ -8318,7 +8318,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 755,
     "opciones": [
@@ -8332,7 +8332,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 756,
     "pregunta": "¿Cómo se llama el protagonista del manga Capitán Tsubasa?",
@@ -8340,7 +8340,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 757,
     "opciones": [
@@ -8354,7 +8354,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 758,
     "pregunta": "¿Cómo se llama el caballero de Pegaso protagonista de Saint Seiya?",
@@ -8362,7 +8362,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 759,
     "opciones": [
@@ -8376,7 +8376,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 760,
     "pregunta": "¿Cómo se llama la protagonista de Sailor Moon?",
@@ -8384,7 +8384,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 761,
     "opciones": [
@@ -8398,7 +8398,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 762,
     "pregunta": "¿Cómo se llama el protagonista pelirrojo de Slam Dunk?",
@@ -8406,7 +8406,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 763,
     "opciones": [
@@ -8420,7 +8420,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 764,
     "pregunta": "¿Cómo se llama el niño detective protagonista del manga Detective Conan?",
@@ -8428,7 +8428,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 765,
     "opciones": [
@@ -8442,7 +8442,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 766,
     "pregunta": "¿Cómo se llama el joven mitad demonio protagonista del manga Inuyasha?",
@@ -8450,7 +8450,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 767,
     "opciones": [
@@ -8464,7 +8464,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 768,
     "opciones": [
@@ -8478,7 +8478,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 769,
     "pregunta": "¿Cómo se llaman los hermanos protagonistas de Fullmetal Alchemist?",
@@ -8486,7 +8486,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 770,
     "opciones": [
@@ -8500,7 +8500,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 771,
     "pregunta": "¿Cómo se llama el protagonista de Bleach que se convierte en shinigami sustituto?",
@@ -8508,7 +8508,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 772,
     "opciones": [
@@ -8522,7 +8522,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 773,
     "pregunta": "¿Quién es el autor de Hunter x Hunter?",
@@ -8530,7 +8530,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 774,
     "opciones": [
@@ -8544,7 +8544,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 775,
     "pregunta": "¿Quién es el autor de Fairy Tail?",
@@ -8552,7 +8552,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 776,
     "opciones": [
@@ -8566,7 +8566,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 777,
     "pregunta": "¿Quién es el autor de JoJo's Bizarre Adventure?",
@@ -8574,7 +8574,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 778,
     "opciones": [
@@ -8588,7 +8588,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 779,
     "pregunta": "¿Cómo se llama la academia de héroes de My Hero Academia?",
@@ -8596,7 +8596,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 780,
     "opciones": [
@@ -8610,7 +8610,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 781,
     "pregunta": "¿Cómo se llama el protagonista que hereda el One For All en My Hero Academia?",
@@ -8618,7 +8618,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 782,
     "pregunta": "¿Quién dibuja el manga One Punch Man a partir del webcómic de ONE?",
@@ -8626,7 +8626,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 783,
     "pregunta": "¿Cómo se llama el héroe calvo protagonista de One Punch Man?",
@@ -8634,7 +8634,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 784,
     "opciones": [
@@ -8648,7 +8648,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 785,
     "opciones": [
@@ -8662,7 +8662,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 786,
     "pregunta": "¿Cómo se llama el espadachín protagonista de Berserk?",
@@ -8670,7 +8670,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 787,
     "opciones": [
@@ -8684,7 +8684,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 788,
     "pregunta": "¿En qué ciudad futurista se ambienta el manga Akira?",
@@ -8692,7 +8692,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 789,
     "opciones": [
@@ -8706,7 +8706,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 790,
     "pregunta": "¿Cómo se llama la protagonista cíborg de Ghost in the Shell?",
@@ -8714,7 +8714,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 791,
     "opciones": [
@@ -8728,7 +8728,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 792,
     "pregunta": "¿En qué revista de Shogakukan se publica Detective Conan desde 1994?",
@@ -8736,7 +8736,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 793,
     "opciones": [
@@ -8750,7 +8750,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 794,
     "pregunta": "¿Cómo se llama el asesino protagonista del longevo manga de Takao Saito publicado desde 1968?",
@@ -8758,7 +8758,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 795,
     "opciones": [
@@ -8772,7 +8772,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 796,
     "pregunta": "¿Cómo se llama el creador del webcómic original de One Punch Man?",
@@ -8780,7 +8780,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 797,
     "opciones": [
@@ -8794,7 +8794,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 798,
     "pregunta": "¿Cómo se llama el vagabundo protagonista de Rurouni Kenshin?",
@@ -8802,7 +8802,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 799,
     "opciones": [
@@ -8816,7 +8816,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Manga",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 800,
     "pregunta": "¿Cómo se llama el manga de Osamu Tezuka sobre el ave inmortal, también conocido como Fénix?",
@@ -8824,7 +8824,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 801,
     "opciones": [
@@ -8838,7 +8838,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 802,
     "pregunta": "¿En qué año se estrenó el anime de One Piece en Japón?",
@@ -8846,7 +8846,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 803,
     "opciones": [
@@ -8860,7 +8860,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 804,
     "pregunta": "¿Cómo se llama el estudiante genio protagonista de Death Note que encuentra el cuaderno?",
@@ -8868,7 +8868,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 805,
     "opciones": [
@@ -8882,7 +8882,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 806,
     "pregunta": "¿Cómo se llama el protagonista pelinaranja de Bleach?",
@@ -8890,7 +8890,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 807,
     "opciones": [
@@ -8904,7 +8904,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 808,
     "pregunta": "¿En qué año se estrenó el anime Los Caballeros del Zodiaco (Saint Seiya)?",
@@ -8912,7 +8912,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 809,
     "opciones": [
@@ -8926,7 +8926,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 810,
     "pregunta": "¿Cómo se llama el niño torpe al que ayuda Doraemon?",
@@ -8934,7 +8934,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 811,
     "opciones": [
@@ -8948,7 +8948,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 812,
     "pregunta": "¿Cómo se llama el cazarrecompensas protagonista de Cowboy Bebop?",
@@ -8956,7 +8956,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 813,
     "opciones": [
@@ -8970,7 +8970,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 814,
     "pregunta": "¿Cómo se llama el protagonista de Demon Slayer que se une al Cuerpo para salvar a su hermana?",
@@ -8978,7 +8978,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 815,
     "opciones": [
@@ -8992,7 +8992,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 816,
     "pregunta": "¿Cómo se llama el héroe calvo de un solo golpe de One-Punch Man?",
@@ -9000,7 +9000,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "facil",
     "id": 817,
     "opciones": [
@@ -9014,7 +9014,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 818,
     "opciones": [
@@ -9028,7 +9028,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 819,
     "pregunta": "¿Qué rol ocupa Nami en la tripulación de Luffy en One Piece?",
@@ -9036,7 +9036,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 820,
     "opciones": [
@@ -9050,7 +9050,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 821,
     "pregunta": "¿Cómo se llama el shinigami adicto a las manzanas que deja caer el Death Note?",
@@ -9058,7 +9058,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 822,
     "opciones": [
@@ -9072,7 +9072,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 823,
     "pregunta": "¿Cómo se llama la shinigami que le da sus poderes a Ichigo en Bleach?",
@@ -9080,7 +9080,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 824,
     "opciones": [
@@ -9094,7 +9094,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 825,
     "pregunta": "¿Qué diosa reencarna en Saori Kido en Saint Seiya?",
@@ -9102,7 +9102,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 826,
     "opciones": [
@@ -9116,7 +9116,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 827,
     "pregunta": "¿Cuál es la comida favorita de Doraemon, unos pastelillos japoneses redondos?",
@@ -9124,7 +9124,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 828,
     "opciones": [
@@ -9138,7 +9138,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 829,
     "pregunta": "¿Cómo se llama la nave cazarrecompensas de Cowboy Bebop?",
@@ -9146,7 +9146,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 830,
     "opciones": [
@@ -9160,7 +9160,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 831,
     "pregunta": "¿Cómo se llama la hermana menor de Tanjiro convertida en demonio?",
@@ -9168,7 +9168,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 832,
     "opciones": [
@@ -9182,7 +9182,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 833,
     "pregunta": "¿Cómo se llama el discípulo cyborg de Saitama en One-Punch Man?",
@@ -9190,7 +9190,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "media",
     "id": 834,
     "opciones": [
@@ -9204,7 +9204,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 835,
     "pregunta": "¿Cómo se llama el segundo barco de los Sombrero de Paja construido por Franky?",
@@ -9212,7 +9212,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 836,
     "opciones": [
@@ -9226,7 +9226,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 837,
     "pregunta": "¿Qué letra identifica al detective rival de Kira en Death Note?",
@@ -9234,7 +9234,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 838,
     "opciones": [
@@ -9248,7 +9248,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 839,
     "pregunta": "¿Cómo se llama la Zanpakuto de Ichigo Kurosaki en Bleach?",
@@ -9256,7 +9256,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 840,
     "opciones": [
@@ -9270,7 +9270,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 841,
     "pregunta": "¿Cómo se llama el opening original de Saint Seiya interpretado por MAKE-UP?",
@@ -9278,7 +9278,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 842,
     "opciones": [
@@ -9292,7 +9292,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 843,
     "pregunta": "¿Quién creó la franquicia Mobile Suit Gundam en 1979?",
@@ -9300,7 +9300,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 844,
     "opciones": [
@@ -9314,7 +9314,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 845,
     "pregunta": "¿Cómo se llama la protagonista cyborg de la Sección 9 en Ghost in the Shell?",
@@ -9322,7 +9322,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 846,
     "opciones": [
@@ -9336,7 +9336,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 847,
     "pregunta": "¿Cómo se llama el castillo flotante de la primera película oficial de Studio Ghibli de 1986?",
@@ -9344,7 +9344,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 848,
     "opciones": [
@@ -9358,7 +9358,7 @@
     "tipo": "opciones"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 849,
     "pregunta": "¿Cómo se llama el opening de jazz de Cowboy Bebop interpretado por Seatbelts?",
@@ -9366,7 +9366,7 @@
     "tipo": "abierta"
   },
   {
-    "categoria": "Anime",
+    "categoria": "Otaku",
     "dificultad": "dificil",
     "id": 850,
     "pregunta": "¿Cómo se llama el primer opening de Attack on Titan interpretado por Linked Horizon?",

@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/styles.css?v=8" />
+  <link rel="stylesheet" href="./css/styles.css?v=9" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -59,7 +59,7 @@
                 <input type="radio" name="win-mode" value="clasico" checked />
                 <span class="mode-body">
                   <strong>Modo Clásico</strong>
-                  <small>Conseguir las 9 insignias de categoría 🏅</small>
+                  <small>Conseguir las insignias en juego 🏅</small>
                 </span>
               </label>
               <label class="mode-card">
@@ -70,6 +70,12 @@
                 </span>
               </label>
             </div>
+          </fieldset>
+
+          <fieldset class="card-toon">
+            <legend class="legend-toon">🎯 CATEGORÍAS</legend>
+            <p class="label-sm">Elegí las categorías en juego (mínimo 2)</p>
+            <div id="cat-select" class="cat-grid" role="group" aria-label="Categorías en juego"></div>
           </fieldset>
 
           <fieldset class="card-toon">
@@ -200,6 +206,6 @@
 
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="./js/app.js?v=8" defer></script>
+  <script src="./js/app.js?v=9" defer></script>
 </body>
 </html>

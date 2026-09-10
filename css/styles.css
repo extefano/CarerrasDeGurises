@@ -7,8 +7,7 @@
   --cien: #2ECC71;
   --dep: #F39C12;
   --esp: #00BCD4;
-  --manga: #E74C3C;
-  --anime: #9B59B6;
+  --otaku: #9B59B6;
   --vg: #1ABC9C;
   --mante: #FFD54F;
   --ink: #0f172a;
@@ -62,7 +61,7 @@ body {
 }
 .hero-toon::before {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 10px;
-  background: linear-gradient(90deg, var(--geo) 0 11%, var(--hist) 11% 22%, var(--arte) 22% 33%, var(--cien) 33% 44%, var(--dep) 44% 55%, var(--esp) 55% 66%, var(--manga) 66% 77%, var(--anime) 77% 88%, var(--vg) 88% 100%);
+  background: linear-gradient(90deg, var(--geo) 0 12.5%, var(--hist) 12.5% 25%, var(--arte) 25% 37.5%, var(--cien) 37.5% 50%, var(--dep) 50% 62.5%, var(--esp) 62.5% 75%, var(--otaku) 75% 87.5%, var(--vg) 87.5% 100%);
 }
 .hero-toon h1 { margin: 6px 0; font-size: 1.7rem; line-height: 1; text-shadow: 2px 2px 0 #FDE68A; }
 .hero-emoji { font-size: 2.4rem; margin: 0; }
@@ -109,6 +108,15 @@ body {
 .mode-card input:checked + .mode-body { background: #DCFCE7; outline: 3px solid var(--ink); }
 .mode-body strong { display: block; font-family: Fredoka; letter-spacing: .04em; }
 .mode-body small { font-weight: 700; opacity: .75; }
+
+/* Setup: selector de categorías (lo rellena el JS con .cat-toggle) */
+.cat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 8px; }
+.cat-toggle {
+  min-height: 52px; font-weight: 900; font-size: .82rem; background: #fff;
+  border: 2px solid var(--ink); border-left-width: 8px; border-radius: 14px;
+  box-shadow: 3px 3px 0 #000;
+}
+.cat-toggle[aria-pressed="false"] { opacity: .45; filter: grayscale(.7); box-shadow: none; }
 
 /* Botones principales */
 .btn-play {
@@ -204,6 +212,8 @@ body {
   filter: grayscale(1); opacity: .4;
 }
 .quesito.earned { filter: none; opacity: 1; transform: scale(1.05); }
+button.quesito { font: inherit; padding: 0; }
+button.quesito.earned { cursor: pointer; }
 .winner-name { font-family: Fredoka; font-size: 1.8rem; margin: 6px 0; }
 .confetti-box { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .confetti-piece { position: absolute; top: -14px; width: 9px; height: 15px; border-radius: 2px; animation: confetti-fall linear forwards; }

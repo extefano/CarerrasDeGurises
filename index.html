@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/styles.css?v=11" />
+  <link rel="stylesheet" href="./css/styles.css?v=12" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -24,6 +24,7 @@
       <p class="topbar-title">CARRERA DE GURISES</p>
       <span id="live-badge" class="live-badge hidden" aria-live="polite">🔴 EN VIVO</span>
       <button type="button" id="btn-share" class="topbar-share host-only" aria-label="Compartir partida en vivo">📡</button>
+      <button type="button" id="btn-goto-join" class="topbar-share" aria-label="Unirse a una partida en vivo">👀</button>
       <span class="topbar-sub">para jugar en (fat)milia</span>
     </header>
 
@@ -109,6 +110,7 @@
           </fieldset>
 
           <button type="submit" id="btn-start" class="btn-play">¡A JUGAR! 🚀</button>
+          <button type="button" id="btn-goto-join2" class="btn-white w-full">👀 Mirar una partida en vivo</button>
         </form>
       </section>
 
@@ -153,7 +155,7 @@
           <p id="q-text" class="q-text"></p>
         </article>
 
-        <div id="powerups" class="power-grid host-only" aria-label="Powerups">
+        <div id="powerups" class="power-grid" aria-label="Powerups">
           <button type="button" id="pw-fifty" class="btn-power">➗ 50/50</button>
           <button type="button" id="pw-remove" class="btn-power">➖ Sacar 1</button>
           <button type="button" id="pw-call" class="btn-power">📞 Familiar</button>
@@ -201,6 +203,8 @@
     <div class="share-qr"><img id="share-qr" alt="QR para unirse a la partida en vivo" width="180" height="180" /></div>
     <p id="share-url" class="note center share-url"></p>
     <p class="note center">👀 Espectadores: <strong id="share-count">0</strong></p>
+    <p id="share-net" class="note center" aria-live="polite"></p>
+    <p class="note center">💡 Si el WiFi de tu empresa bloquea la conexión, transmití con datos móviles. Solo se envían datos livianos (sin video ni audio).</p>
     <div class="grid gap-2 mt-3">
       <button type="button" id="btn-stop-share" class="btn-end w-full">Cerrar sala 🔌</button>
       <form method="dialog"><button type="submit" class="btn-white w-full">Cerrar ✖️</button></form>
@@ -252,6 +256,6 @@
 
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="./js/app.js?v=11" defer></script>
+  <script src="./js/app.js?v=12" defer></script>
 </body>
 </html>

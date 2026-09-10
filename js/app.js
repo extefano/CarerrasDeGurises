@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     join: $('screen-join'), joinCode: $('join-code'), joinStatus: $('join-status'),
     btnJoin: $('btn-join'), btnJoinCancel: $('btn-join-cancel'),
     guestNote: $('guest-note'), netLost: $('net-lost'), btnRejoin: $('btn-rejoin'),
-    btnLeave: $('btn-leave'), victoryGuestNote: $('victory-guest-note'), btnLeaveWin: $('btn-leave-win')
+    btnLeave: $('btn-leave'), victoryGuestNote: $('victory-guest-note'), btnLeaveWin: $('btn-leave-win'),
+    btnGotoJoin: $('btn-goto-join'), btnGotoJoin2: $('btn-goto-join2'), shareNet: $('share-net')
   };
 
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -371,6 +372,27 @@ document.addEventListener('DOMContentLoaded', () => {
       return '<span class="quesito" title="' + esc(c) + '">·</span>';
     }).join('');
   }
+  const PWEMOJI = { fifty: '➗', removeOne: '➖', call: '📞', piquete: '🔪' };
+  const PWNAMES = { fifty: '50/50', removeOne: 'Sacar 1', call: 'Familiar', piquete: 'Piquete' };
+  function powersHTML(p) {
+    const pw = p.powerups || {};
+    return '<span class="pw-list">' + Object.keys(PWEMOJI).map((k) => {
+      const free = pw[k] !== false;
+      return '<span class="pw' + (free ? '' : ' pw-off') + '" title="' + esc(PWNAMES[k] + (free ? ' gratis' : ' usado (recomprable por ' + (COSTS[k] || 0) + '🪙)')) + '">' + PWEMOJI[k] + '</span>';
+    }).join('') + '</span>';
+  }
+  function renderGuestPowers() {
+    if (!el.powerups) return;
+    show(el.powerups);
+    const map = [['pwFifty', 'fifty'], ['pwRemove', 'removeOne'], ['pwCall', 'call'], ['pwPiquete', 'piquete']];
+    map.forEach(([id, k]) => {
+      const b = el[id];
+      if (!b) return;
+      const free = !State.snapPowers || State.snapPowers[k] !== false;
+      b.textContent = PWEMOJI[k] + ' ' + PWNAMES[k] + (free ? ' · GRATIS' : ' · ' + COSTS[k] + '🪙');
+      b.disabled = true;
+    });
+  }
   function renderBoard() {
     if (!el.scoreList) return;
     el.scoreList.innerHTML = '';
@@ -379,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
       li.className = 'score-row-toon' + (i === State.current ? ' current' : '');
       li.innerHTML = '<span class="avatar-toon">' + esc(p.avatar) + '</span>' +
         '<span><strong>' + esc(p.name) + '</strong> · ' + p.points + ' pts · 🪙 ' + p.coins + ' · 🔥' + p.streak +
-        '<span class="quesitos">' + quesitosHTML(p, i) + '</span></span>';
+        '<span class="quesitos">' + quesitosHTML(p, i) + '</span>' + powersHTML(p) + '</span>';
       el.scoreList.appendChild(li);
     });
   }
@@ -578,6 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return 1;
   }
   function useFifty() {
+    if (State.spectating) return;
     if (State.answered || !State.currentQ) return;
     const m = consume(responder(), 'fifty');
     if (!m) return toast('Faltan 🪙 (' + COSTS.fifty + ').');
@@ -585,6 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPowers();
   }
   function useRemove() {
+    if (State.spectating) return;
     if (State.answered || !State.currentQ) return;
     const m = consume(responder(), 'removeOne');
     if (!m) return toast('Faltan 🪙 (' + COSTS.removeOne + ').');
@@ -592,6 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPowers();
   }
   function useCall() {
+    if (State.spectating) return;
     if (State.answered || !State.currentQ) return;
     const m = consume(responder(), 'call');
     if (!m) return toast('Faltan 🪙 (' + COSTS.call + ').');
@@ -620,6 +645,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return (nm.length ? nm : [...State.activeCats])[Math.floor(Math.random() * (nm.length || State.activeCats.length))];
   }
   function openPiquete() {
+    if (State.spectating) return;
     if (State.answered || !State.currentQ || State.players.length < 2) return;
     el.piqueteList.innerHTML = '';
     const atk = me();
@@ -739,7 +765,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return {
       t: 'state', v: 1, code: net.code,
       winMode: State.winMode, pointsGoal: State.pointsGoal,
-      players: State.players.map((p) => ({ name: p.name, avatar: p.avatar, color: p.color, points: p.points, medals: [...p.medals], coins: p.coins, streak: p.streak, best: p.best })),
+      players: State.players.map((p) => ({ name: p.name, avatar: p.avatar, color: p.color, points: p.points, medals: [...p.medals], coins: p.coins, streak: p.streak, best: p.best, powers: { ...p.powerups } })),
+      powers: (() => { try { const r = responder(); return r ? { ...r.powerups } : null; } catch { return null; } })(),
       current: State.current, cats: [...State.activeCats],
       phase: (el.victory && el.victory.open) ? 'victory' : (State.currentQ ? 'question' : 'wheel'),
       cat: State.currentCat, answered: State.answered,
@@ -785,7 +812,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const code = genCode();
       const peer = new window.Peer(NET_PREFIX + code, { config: RTC_CONFIG, debug: 0 });
       net.peer = peer; net.code = code;
-      peer.on('open', () => { net.hosting = true; updateShareUI(); openDlg(el.modalShare); net.sync(); toast('📡 Sala ' + code + ' en vivo'); });
+      peer.on('open', () => { net.hosting = true; updateShareUI(); if (el.shareNet) el.shareNet.textContent = 'Señalización OK · sala abierta ✅'; openDlg(el.modalShare); net.sync(); toast('📡 Sala ' + code + ' en vivo'); });
       peer.on('connection', (c) => {
         net.conns.set(c.peer, c);
         // Limpieza de intentos que nunca abren (cuentan como "fantasmas" si no)
@@ -801,7 +828,7 @@ document.addEventListener('DOMContentLoaded', () => {
       peer.on('disconnected', () => { try { peer.reconnect(); } catch { /* noop */ } });
       peer.on('error', (e) => {
         if (e && e.type === 'unavailable-id') { try { peer.destroy(); } catch { /* noop */ } net.peer = null; net.code = null; startShare(); }
-        else toast('📡 Error de red. Reintentá.');
+        else { if (el.shareNet) el.shareNet.textContent = 'Error de señalización ❌'; toast('📡 Error de red. Reintentá.'); }
       });
     } catch { toast('📡 No se pudo compartir.'); }
   }
@@ -849,8 +876,10 @@ document.addEventListener('DOMContentLoaded', () => {
     State.winMode = s.winMode === 'puntos' ? 'puntos' : 'clasico';
     State.players = (s.players || []).map((p, i) => Object.assign(
       mkPlayer(String(p.name || ('Jugador ' + (i + 1))).slice(0, 20), p.avatar || AVATARS[i % AVATARS.length], p.color || COLORS[i % COLORS.length]),
-      { points: Number(p.points) || 0, medals: Array.isArray(p.medals) ? p.medals.filter((m) => CATEGORIES[m]) : [], coins: Number(p.coins) || 0, streak: Number(p.streak) || 0, best: Number(p.best) || 0 }
+      { points: Number(p.points) || 0, medals: Array.isArray(p.medals) ? p.medals.filter((m) => CATEGORIES[m]) : [], coins: Number(p.coins) || 0, streak: Number(p.streak) || 0, best: Number(p.best) || 0,
+        powerups: (() => { const d = { fifty: true, removeOne: true, call: true, piquete: true }; if (p.powers && typeof p.powers === 'object') { for (const k of Object.keys(d)) d[k] = p.powers[k] !== false; } return d; })() }
     ));
+    State.snapPowers = (s.powers && typeof s.powers === 'object') ? s.powers : null;
     State.current = Math.min(Math.max(0, Number(s.current) || 0), Math.max(0, State.players.length - 1));
     const cats = (s.cats || []).filter((c) => CATEGORIES[c]);
     State.activeCats = cats.length >= 2 ? cats : [...CATEGORY_NAMES];
@@ -903,6 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       if (el.coinsHint) el.coinsHint.textContent = '👀 Mirando en vivo';
+      renderGuestPowers();
       showScreen('question');
       guestTimerStart(s.timer);
     } else {
@@ -980,6 +1010,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (code) joinRoom(code);
     else if (el.joinStatus) el.joinStatus.textContent = '';
   }
+  function gotoJoin() {
+    if (net.hosting) { toast('Estás transmitiendo 📡'); return; }
+    enterSpectating(null);
+  }
   function leaveSpectating() {
     cleanupGuest(); hideLost();
     State.spectating = false;
@@ -1048,6 +1082,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el.btnRejoin?.addEventListener('click', () => { hideLost(); joinRoom(net.guestCode || el.joinCode?.value); });
     el.btnLeave?.addEventListener('click', leaveSpectating);
     el.btnLeaveWin?.addEventListener('click', leaveSpectating);
+    el.btnGotoJoin?.addEventListener('click', gotoJoin);
+    el.btnGotoJoin2?.addEventListener('click', gotoJoin);
     el.scoreList?.addEventListener('click', (e) => {
       if (State.spectating) return;
       const b = e.target?.closest?.('button.quesito.earned');

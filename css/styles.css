@@ -212,6 +212,10 @@ body {
   filter: grayscale(1); opacity: .4;
 }
 .quesito.earned { filter: none; opacity: 1; transform: scale(1.05); }
+.pw-list { display: inline-flex; gap: 6px; margin-left: 6px; font-size: .85rem; }
+.pw { filter: none; opacity: 1; }
+.pw-off { filter: grayscale(1); opacity: .4; }
+#share-net { min-height: 1.2em; }
 button.quesito { font: inherit; padding: 0; }
 button.quesito.earned { cursor: pointer; }
 .winner-name { font-family: Fredoka; font-size: 1.8rem; margin: 6px 0; }

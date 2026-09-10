@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     victory: $('modal-victory'), winnerName: $('winner-name'), winnerStats: $('winner-stats'),
     confettiBox: $('confetti-box'), btnRestart: $('btn-restart'), btnNew: $('btn-new-players'),
     call: $('modal-call'), callCount: $('call-countdown'),
-    piquete: $('modal-piquete'), piqueteList: $('piquete-list'), toast: $('toast'),
+    piquete: $('modal-piquete'), piqueteList: $('piquete-list'), piqueteDesc: $('piquete-desc'), toast: $('toast'),
     btnEndBoard: $('btn-end-board'),
     btnShare: $('btn-share'), liveBadge: $('live-badge'), modalShare: $('modal-share'),
     shareCode: $('share-code'), shareQr: $('share-qr'), shareUrl: $('share-url'),
@@ -450,11 +450,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (State.answered) return;
     State.answered = true; clearTimer(); renderTimer();
     el.qOptions?.querySelectorAll('.opt-btn').forEach((b) => { b.disabled = true; });
-    const r = responder();
-    if (r && State.currentCat) miss(r, State.currentCat);
-    State.lastResult = 'miss'; State.lastPicked = null;
-    State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
-    toast('⏱️ ¡Tiempo! Cuenta como fallo. Pasa el turno.');
+    if (State.piqueteVictim != null) {
+      const lost = piqueteMiss();
+      State.lastResult = 'miss'; State.lastPicked = null;
+      State.lastResponderIdx = State.current;
+      toast(lost && lost.had ? '⏱️ ¡Tiempo! ' + lost.vic.name + ' pierde la insignia de ' + State.currentCat + ' ❌' : '⏱️ ¡Tiempo! Cuenta como fallo. Pasa el turno.');
+    } else {
+      const r = responder();
+      if (r && State.currentCat) miss(r, State.currentCat);
+      State.lastResult = 'miss'; State.lastPicked = null;
+      State.lastResponderIdx = State.current;
+      toast('⏱️ ¡Tiempo! Cuenta como fallo. Pasa el turno.');
+    }
     renderPowers(); setNextLabel(); show(el.btnNext);
   }
 
@@ -464,8 +471,8 @@ document.addEventListener('DOMContentLoaded', () => {
     p.stats[cat] = p.stats[cat] || { ok: 0, total: 0 };
     p.stats[cat].total += 1; if (ok) p.stats[cat].ok += 1;
   }
-  function hit() {
-    const r = responder();
+  function hitPlayer(idx) {
+    const r = State.players[idx];
     if (!r || !State.currentCat) return '';
     r.points += 1;
     if (!r.medals.includes(State.currentCat)) r.medals.push(State.currentCat);
@@ -475,6 +482,28 @@ document.addEventListener('DOMContentLoaded', () => {
     stat(r, State.currentCat, true);
     save(); updateTurn(); renderPowers(); checkWin(r);
     return msg;
+  }
+  function hit() {
+    return hitPlayer(State.piqueteVictim != null ? State.piqueteVictim : State.current);
+  }
+  // Piquete-apuesta: la víctima la emboca → punto/medalla/racha para el atacante;
+  // la víctima la erra → pierde la insignia de esa categoría (si la tenía).
+  function piqueteHit() {
+    const atk = me(), vic = State.players[State.piqueteVictim];
+    if (!atk || vic == null || !State.currentCat) return '';
+    const coins = hitPlayer(State.current);
+    stat(vic, State.currentCat, true);
+    save(); updateTurn();
+    return coins;
+  }
+  function piqueteMiss() {
+    const vic = State.players[State.piqueteVictim];
+    if (vic == null || !State.currentCat) return null;
+    const had = vic.medals.includes(State.currentCat);
+    if (had) vic.medals.splice(vic.medals.indexOf(State.currentCat), 1);
+    vic.streak = 0; stat(vic, State.currentCat, false);
+    save(); updateTurn(); renderPowers();
+    return { vic, had };
   }
   function miss(p, cat) { if (!p) return; p.streak = 0; stat(p, cat, false); save(); updateTurn(); renderPowers(); }
   function checkWin(p) {
@@ -545,18 +574,33 @@ document.addEventListener('DOMContentLoaded', () => {
       if (norm(txt) === norm(q.respuesta)) b.classList.add('correct');
     });
     const r = responder();
-    const responderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+    const isPiquete = State.piqueteVictim != null && State.players[State.piqueteVictim];
+    const responderIdx = isPiquete ? State.piqueteVictim : State.current;
     const pickedTxt = btn.querySelector('span:last-child')?.textContent || btn.textContent;
     if (ok) {
       btn.classList.add('correct');
-      const coins = hit();
-      State.lastResult = 'hit'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
-      toast('¡Correcto! +1 punto 🏆' + coins + ' Mantenés tu turno 🎲');
+      if (isPiquete) {
+        const atk = me(), vic = State.players[State.piqueteVictim];
+        const coins = piqueteHit();
+        State.lastResult = 'hit'; State.lastResponderIdx = State.current; State.lastPicked = String(pickedTxt);
+        toast('🔪 ¡' + vic.name + ' la embocó! Punto para vos, ' + atk.name + ' 🏆' + coins);
+      } else {
+        const coins = hit();
+        State.lastResult = 'hit'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
+        toast('¡Correcto! +1 punto 🏆' + coins + ' Mantenés tu turno 🎲');
+      }
     }
     else {
-      btn.classList.add('wrong'); if (r) miss(r, State.currentCat);
-      State.lastResult = 'miss'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
-      toast('Incorrecto. Era: ' + q.respuesta + '. Pasa el turno.');
+      btn.classList.add('wrong');
+      if (isPiquete) {
+        const lost = piqueteMiss();
+        State.lastResult = 'miss'; State.lastResponderIdx = State.current; State.lastPicked = String(pickedTxt);
+        toast(lost && lost.had ? '🔪 ¡' + lost.vic.name + ' la erró! Pierde la insignia de ' + State.currentCat + ' ❌' : 'Incorrecto. Era: ' + q.respuesta + '. Pasa el turno.');
+      } else {
+        if (r) miss(r, State.currentCat);
+        State.lastResult = 'miss'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
+        toast('Incorrecto. Era: ' + q.respuesta + '. Pasa el turno.');
+      }
     }
     renderPowers(); setNextLabel(); show(el.btnNext);
   }
@@ -633,29 +677,22 @@ document.addEventListener('DOMContentLoaded', () => {
     toast(m === 'free' ? '📞 ¡Gratis! Timer en pausa.' : '📞 ¡Por ' + COSTS.call + '🪙! Timer en pausa.');
     renderPowers();
   }
-  function weakest(ix) {
-    const p = State.players[ix]; if (!p) return CATEGORY_NAMES[0];
-    let worst = null, rate = 2;
-    for (const c of State.activeCats) {
-      const s = p.stats?.[c];
-      if (s?.total > 0 && (s.ok / s.total) < rate) { rate = s.ok / s.total; worst = c; }
-    }
-    if (worst) return worst;
-    const nm = State.activeCats.filter((c) => !p.medals.includes(c));
-    return (nm.length ? nm : [...State.activeCats])[Math.floor(Math.random() * (nm.length || State.activeCats.length))];
-  }
+  // Piquete-apuesta: se manda la pregunta vigente (u otra de la misma categoría)
+  // a la víctima elegida. Si la emboca, el punto es del atacante; si la erra,
+  // la víctima pierde la insignia de esa categoría.
   function openPiquete() {
     if (State.spectating) return;
-    if (State.answered || !State.currentQ || State.players.length < 2) return;
-    el.piqueteList.innerHTML = '';
+    if (State.answered || !State.currentQ || !State.currentCat || State.players.length < 2) return;
     const atk = me();
+    const meta = catMeta(State.currentCat);
+    if (el.piqueteDesc) el.piqueteDesc.textContent = 'Mandale esta pregunta de ' + meta.icon + ' ' + State.currentCat + ' a quien elijas: si la erra pierde esa insignia ❌, si la emboca el punto es tuyo 🏆.';
+    el.piqueteList.innerHTML = '';
     State.players.forEach((p, i) => {
       if (i === State.current) return;
-      const w = weakest(i);
       const li = document.createElement('li');
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'btn-white w-full';
-      b.textContent = '🔪 ' + p.name + ' → ' + (CATEGORIES[w]?.icon || '') + ' ' + w + (atk && !atk.powerups.piquete ? ' · ' + COSTS.piquete + '🪙' : ' · GRATIS');
+      b.textContent = '🔪 ' + p.name + (atk && !atk.powerups.piquete ? ' · ' + COSTS.piquete + '🪙' : ' · GRATIS');
       b.addEventListener('click', () => doPiquete(i));
       li.appendChild(b); el.piqueteList.appendChild(li);
     });
@@ -663,17 +700,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function doPiquete(ix) {
     const atk = me(), vic = State.players[ix];
-    if (!atk || !vic) return;
+    if (!atk || !vic || !State.currentCat) return;
     const m = consume(atk, 'piquete');
     if (!m) return toast('Faltan 🪙 (' + COSTS.piquete + ').');
     closeDlg(el.piquete);
-    const w = weakest(ix);
-    State.piqueteVictim = ix; State.currentCat = w; State.answered = false;
-    const q = draw(w);
-    if (!q) { State.piqueteVictim = null; return toast('Sin preguntas para ' + w); }
+    const cat = State.currentCat;
+    State.piqueteVictim = ix; State.answered = false;
+    const q = draw(cat);
+    if (!q) { State.piqueteVictim = null; return toast('Sin preguntas para ' + cat); }
     State.currentQ = q; save();
-    renderQuestion(q, w);
-    toast(m === 'free' ? '🔪 ¡Piquete gratis a ' + vic.name + '!' : '🔪 ¡Piquete a ' + vic.name + ' por ' + COSTS.piquete + '🪙!');
+    renderQuestion(q, cat);
+    toast(m === 'free' ? '🔪 ¡Piquete gratis! ' + vic.name + ' responde por vos.' : '🔪 ¡Piquete a ' + vic.name + ' por ' + COSTS.piquete + '🪙!');
   }
 
   /* ---------- flujo (acierto = mantiene turno) ---------- */
@@ -683,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (advance) {
       State.current = (State.current + 1) % State.players.length;
     } else if (State.lastResponderIdx != null && State.players[State.lastResponderIdx]) {
-      State.current = State.lastResponderIdx; // quien acertó (incluye víctima del piquete) sigue
+      State.current = State.lastResponderIdx; // quien se llevó el punto sigue (en piquete, el atacante)
     }
     State.currentQ = null; State.currentCat = null;
     State.answered = false; State.awaitingPick = false; State.piqueteVictim = null;
@@ -1045,18 +1082,33 @@ document.addEventListener('DOMContentLoaded', () => {
     el.btnHit?.addEventListener('click', () => {
       if (State.answered) return;
       State.answered = true; clearTimer(); renderTimer();
-      State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
-      State.lastResult = 'hit'; State.lastPicked = null;
-      toast('¡Correcto! +1 punto 🏆' + hit() + ' Mantenés tu turno 🎲');
+      if (State.piqueteVictim != null && State.players[State.piqueteVictim]) {
+        const atk = me(), vic = State.players[State.piqueteVictim];
+        const coins = piqueteHit();
+        State.lastResponderIdx = State.current;
+        State.lastResult = 'hit'; State.lastPicked = null;
+        toast('🔪 ¡' + vic.name + ' la embocó! Punto para vos, ' + atk.name + ' 🏆' + coins);
+      } else {
+        State.lastResponderIdx = State.current;
+        State.lastResult = 'hit'; State.lastPicked = null;
+        toast('¡Correcto! +1 punto 🏆' + hit() + ' Mantenés tu turno 🎲');
+      }
       hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
     el.btnMiss?.addEventListener('click', () => {
       if (State.answered) return;
       State.answered = true; clearTimer(); renderTimer();
-      const r = responder(); if (r) miss(r, State.currentCat);
-      State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
-      State.lastResult = 'miss'; State.lastPicked = null;
-      toast('Fallo registrado. Pasa el turno.');
+      if (State.piqueteVictim != null && State.players[State.piqueteVictim]) {
+        const lost = piqueteMiss();
+        State.lastResponderIdx = State.current;
+        State.lastResult = 'miss'; State.lastPicked = null;
+        toast(lost && lost.had ? '🔪 ¡' + lost.vic.name + ' la erró! Pierde la insignia de ' + State.currentCat + ' ❌' : 'Fallo registrado. Pasa el turno.');
+      } else {
+        const r = responder(); if (r) miss(r, State.currentCat);
+        State.lastResponderIdx = State.current;
+        State.lastResult = 'miss'; State.lastPicked = null;
+        toast('Fallo registrado. Pasa el turno.');
+      }
       hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
     el.pwFifty?.addEventListener('click', useFifty);

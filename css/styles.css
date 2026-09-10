@@ -226,6 +226,36 @@ button.quesito.earned { cursor: pointer; }
 }
 .btn-end:active { transform: scale(.98); }
 
+/* Compartir en vivo */
+.topbar-share {
+  margin-left: 8px; width: 40px; height: 40px; font-size: 1.2rem; flex-shrink: 0;
+  background: #fff; border: 2px solid var(--ink); border-radius: 50%; box-shadow: 2px 2px 0 #000;
+}
+.live-badge {
+  margin-left: 8px; font-size: .68rem; font-weight: 900; letter-spacing: .06em;
+  background: var(--err); color: #fff; border: 2px solid var(--ink); border-radius: 999px;
+  padding: 2px 8px; animation: livePulse 1.4s ease-in-out infinite; white-space: nowrap;
+}
+@keyframes livePulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.08); } }
+.spectating .host-only { display: none !important; }
+#modal-share {
+  border: 2px solid var(--ink); border-radius: 22px; background: #fff; color: var(--ink);
+  padding: 16px; width: min(430px, calc(100vw - 32px)); box-shadow: 6px 6px 0 #000; margin: auto;
+}
+#modal-share::backdrop { background: rgba(15,23,42,.6); }
+.share-code {
+  font-family: Fredoka; font-size: 2.4rem; letter-spacing: .25em; margin: 8px 0;
+  background: #FEF9C3; border: 2px dashed var(--ink); border-radius: 14px; padding: 6px;
+}
+.share-qr { display: grid; place-items: center; margin: 8px 0; }
+.share-qr img { border: 2px solid var(--ink); border-radius: 14px; background: #fff; }
+.share-url { word-break: break-all; }
+.net-lost {
+  position: fixed; inset: 0; z-index: 90; display: grid; place-items: center;
+  background: rgba(15,23,42,.55); padding: 20px;
+}
+.net-lost .card-toon { width: min(380px, calc(100vw - 40px)); }
+
 /* FAB + toast + footer */
 .btn-fab {
   position: fixed; bottom: 84px; right: max(16px, calc(50% - 214px + 16px)); z-index: 50;

@@ -29,9 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
     pools: {}, usedIds: new Set(), currentQ: null, currentCat: null,
     answered: false, awaitingPick: false, piqueteVictim: null,
     count: 2, wheelAngle: 0, spinning: false,
-    lastResult: null, lastResponderIdx: null
+    lastResult: null, lastResponderIdx: null, lastPicked: null, revealed: false,
+    spectating: false
   };
   let ALL = [], toastT = null, timerId = null, timeLeft = 0, timerTotal = 0, paused = false, callId = null;
+  let timerDeadline = 0, timerRemaining = 0;
 
   const $ = (id) => document.getElementById(id);
   const el = {
@@ -53,7 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     confettiBox: $('confetti-box'), btnRestart: $('btn-restart'), btnNew: $('btn-new-players'),
     call: $('modal-call'), callCount: $('call-countdown'),
     piquete: $('modal-piquete'), piqueteList: $('piquete-list'), toast: $('toast'),
-    btnEndBoard: $('btn-end-board')
+    btnEndBoard: $('btn-end-board'),
+    btnShare: $('btn-share'), liveBadge: $('live-badge'), modalShare: $('modal-share'),
+    shareCode: $('share-code'), shareQr: $('share-qr'), shareUrl: $('share-url'),
+    shareCount: $('share-count'), btnStopShare: $('btn-stop-share'),
+    join: $('screen-join'), joinCode: $('join-code'), joinStatus: $('join-status'),
+    btnJoin: $('btn-join'), btnJoinCancel: $('btn-join-cancel'),
+    guestNote: $('guest-note'), netLost: $('net-lost'), btnRejoin: $('btn-rejoin'),
+    btnLeave: $('btn-leave'), victoryGuestNote: $('victory-guest-note'), btnLeaveWin: $('btn-leave-win')
   };
 
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -63,9 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const responder = () => (State.piqueteVictim != null && State.players[State.piqueteVictim]) ? State.players[State.piqueteVictim] : me();
   const show = (n) => n?.classList.remove('hidden');
   const hide = (n) => n?.classList.add('hidden');
-  function toast(m) { if (!el.toast) return; el.toast.textContent = m; el.toast.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => el.toast.classList.remove('show'), 2600); }
+  function toast(m) {
+    if (!el.toast) return;
+    el.toast.textContent = m; el.toast.classList.add('show');
+    clearTimeout(toastT); toastT = setTimeout(() => el.toast.classList.remove('show'), 2600);
+    try { net.pushEvent(m); } catch { /* sin red: el juego local sigue */ }
+  }
   function showScreen(name) {
-    const map = { setup: el.setup, wheel: el.wheel, question: el.question };
+    const map = { setup: el.setup, join: el.join, wheel: el.wheel, question: el.question };
     for (const [k, n] of Object.entries(map)) { if (n) n.classList.toggle('hidden', k !== name); }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -88,12 +102,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return b;
   }
   function save() {
+    if (State.spectating) return; // los invitados no pisan su storage ni emiten
     try {
       localStorage.setItem(STORE_KEY, JSON.stringify({
         players: State.players, current: State.current, winMode: State.winMode,
         pointsGoal: State.pointsGoal, timeLimit: State.timeLimit, activeCats: State.activeCats, usedIds: [...State.usedIds]
       }));
     } catch { /* noop */ }
+    try { net.sync(); } catch { /* sin red: el juego local sigue */ }
   }
   function applyData(d) {
     if (!d || !Array.isArray(d.players) || !d.players.length) return false;
@@ -309,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const delta = turns + (360 - segCenter) - (State.wheelAngle % 360) + jitter;
     State.wheelAngle += delta;
     if (el.disc) el.disc.style.transform = 'rotate(' + State.wheelAngle + 'deg)';
+    try { net.pushSpin(State.wheelAngle); } catch { /* noop */ }
     updateTurn();
     setTimeout(() => {
       State.spinning = false;
@@ -380,7 +397,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function startTimer() {
     clearTimer(); State.answered = false;
     if (!State.timeLimit || !State.currentQ) { hide(el.qTimer); return; }
-    timeLeft = State.timeLimit; timerTotal = State.timeLimit; renderTimer();
+    timeLeft = State.timeLimit; timerTotal = State.timeLimit;
+    timerDeadline = Date.now() + State.timeLimit * 1000; timerRemaining = State.timeLimit;
+    renderTimer();
     timerId = setInterval(() => {
       if (paused) return;
       timeLeft -= 1;
@@ -388,9 +407,22 @@ document.addEventListener('DOMContentLoaded', () => {
       renderTimer();
     }, 1000);
   }
+  function timerSnap() {
+    if (!State.timeLimit || !State.currentQ) return null;
+    if (paused) return { total: timerTotal, paused: true, remaining: Math.max(0, Math.ceil(timerRemaining)), deadline: 0, answered: State.answered };
+    return { total: timerTotal, paused: false, remaining: Math.max(0, Math.ceil((timerDeadline - Date.now()) / 1000)), deadline: timerDeadline, answered: State.answered };
+  }
   function setNextLabel() {
     if (!el.btnNext) return;
     el.btnNext.textContent = State.lastResult === 'hit' ? '¡Seguís vos! Girar de nuevo 🎡' : 'Siguiente Turno ➡️';
+  }
+  function revealOpen() {
+    State.revealed = true;
+    show(el.qAnswer);
+    hide(el.btnReveal);
+    show(el.btnHit);
+    show(el.btnMiss);
+    try { net.sync(); } catch { /* noop */ }
   }
   function onTimeout() {
     if (State.answered) return;
@@ -398,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.qOptions?.querySelectorAll('.opt-btn').forEach((b) => { b.disabled = true; });
     const r = responder();
     if (r && State.currentCat) miss(r, State.currentCat);
-    State.lastResult = 'miss';
+    State.lastResult = 'miss'; State.lastPicked = null;
     State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
     toast('⏱️ ¡Tiempo! Cuenta como fallo. Pasa el turno.');
     renderPowers(); setNextLabel(); show(el.btnNext);
@@ -429,6 +461,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimer();
       if (el.winnerName) el.winnerName.textContent = '🏆 ' + p.name + ' 🏆';
       if (el.winnerStats) el.winnerStats.textContent = p.points + ' pts · ' + p.medals.length + '/' + State.activeCats.length + ' 🏅 · 🪙 ' + p.coins + ' · racha x' + p.best;
+      hide(el.victoryGuestNote); hide(el.btnLeaveWin);
       launchConfetti();
       openDlg(el.victory);
       save();
@@ -457,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (el.qPlayer) el.qPlayer.textContent = (State.piqueteVictim != null ? '🔪 Responde ' + r?.name + ': ' : 'Turno de ' + r?.name);
     if (el.qCat) { el.qCat.textContent = meta.icon + ' ' + cat; el.qCat.style.background = meta.color; }
     if (el.qText) el.qText.textContent = q.pregunta;
-    State.answered = false;
+    State.answered = false; State.revealed = false; State.lastPicked = null;
     showScreen('question');
     hide(el.btnNext);
     if (q.tipo === 'opciones') { show(el.qOptions); hide(el.qOpen); renderOpts(q); }
@@ -491,15 +524,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const r = responder();
     const responderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
+    const pickedTxt = btn.querySelector('span:last-child')?.textContent || btn.textContent;
     if (ok) {
       btn.classList.add('correct');
       const coins = hit();
-      State.lastResult = 'hit'; State.lastResponderIdx = responderIdx;
+      State.lastResult = 'hit'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
       toast('¡Correcto! +1 punto 🏆' + coins + ' Mantenés tu turno 🎲');
     }
     else {
       btn.classList.add('wrong'); if (r) miss(r, State.currentCat);
-      State.lastResult = 'miss'; State.lastResponderIdx = responderIdx;
+      State.lastResult = 'miss'; State.lastResponderIdx = responderIdx; State.lastPicked = String(pickedTxt);
       toast('Incorrecto. Era: ' + q.respuesta + '. Pasa el turno.');
     }
     renderPowers(); setNextLabel(); show(el.btnNext);
@@ -561,7 +595,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (State.answered || !State.currentQ) return;
     const m = consume(responder(), 'call');
     if (!m) return toast('Faltan 🪙 (' + COSTS.call + ').');
+    if (State.timeLimit && State.currentQ && !State.answered) {
+      timerRemaining = Math.max(0, Math.ceil((timerDeadline - Date.now()) / 1000)) || timerRemaining;
+    }
     paused = true;
+    try { net.sync(); } catch { /* noop */ }
     if (el.callCount) el.callCount.textContent = '60';
     openDlg(el.call);
     let left = 60;
@@ -623,7 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     State.currentQ = null; State.currentCat = null;
     State.answered = false; State.awaitingPick = false; State.piqueteVictim = null;
-    State.lastResult = null; State.lastResponderIdx = null;
+    State.lastResult = null; State.lastResponderIdx = null; State.lastPicked = null; State.revealed = false;
     hide(el.manteNote); hide(el.picker);
     updateTurn(); save(); showScreen('wheel');
   }
@@ -654,6 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return rank[0];
   }
   function endGame() {
+    if (State.spectating) return;
     if (!State.players.length) { toast('No hay partida en curso.'); return; }
     if (State.spinning) { toast('Esperá a que termine el giro 🎡'); return; }
     const top = leader();
@@ -667,10 +706,262 @@ document.addEventListener('DOMContentLoaded', () => {
     closeDlg(el.board); closeDlg(el.call); closeDlg(el.piquete);
     if (el.winnerName) el.winnerName.textContent = '🏁 ' + top.p.name + ' 🏁';
     if (el.winnerStats) el.winnerStats.textContent = top.p.points + ' pts · ' + top.p.medals.length + '/' + State.activeCats.length + ' 🏅 · 🪙 ' + top.p.coins + ' · racha x' + top.p.best + ' (partida terminada antes del final)';
+    hide(el.victoryGuestNote); hide(el.btnLeaveWin);
     launchConfetti();
     openDlg(el.victory);
     save();
     toast('🏁 Partida terminada. ¡Ganó ' + top.p.name + '!');
+  }
+
+  /* ---------- en vivo P2P (invitados solo miran, anfitrión fijo, sin cuentas) ---------- */
+  const NET_PREFIX = 'carrera-gurises-v1-';
+  const CODEABC = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
+  const net = { peer: null, conns: new Map(), code: null, hosting: false, guestPeer: null, guestConn: null, guestCode: null, guestTimer: null };
+  const hasPeerLib = () => typeof window.Peer !== 'undefined';
+  function genCode() { let s = ''; for (let i = 0; i < 5; i++) s += CODEABC[Math.floor(Math.random() * CODEABC.length)]; return s; }
+  function joinUrl(code) {
+    try { return location.origin + location.pathname + '?ver=' + code; }
+    catch { return '?ver=' + code; }
+  }
+  function snapState() {
+    return {
+      t: 'state', v: 1, code: net.code,
+      winMode: State.winMode, pointsGoal: State.pointsGoal,
+      players: State.players.map((p) => ({ name: p.name, avatar: p.avatar, color: p.color, points: p.points, medals: [...p.medals], coins: p.coins, streak: p.streak, best: p.best })),
+      current: State.current, cats: [...State.activeCats],
+      phase: (el.victory && el.victory.open) ? 'victory' : (State.currentQ ? 'question' : 'wheel'),
+      cat: State.currentCat, answered: State.answered,
+      awaitingPick: State.awaitingPick, pick: State.awaitingPick ? availableCatsFor(State.current) : null,
+      who: el.qPlayer ? el.qPlayer.textContent : '',
+      q: State.currentQ ? { pregunta: State.currentQ.pregunta, respuesta: State.currentQ.respuesta, tipo: State.currentQ.tipo, opciones: [...(State.currentQ.opciones || [])] } : null,
+      picked: State.lastPicked, result: State.lastResult, revealed: State.revealed,
+      timer: timerSnap(),
+      winner: (el.victory && el.victory.open) ? { name: el.winnerName ? el.winnerName.textContent : '', stats: el.winnerStats ? el.winnerStats.textContent : '' } : null
+    };
+  }
+  net.sync = function () {
+    if (!net.hosting || !net.peer) return;
+    const s = snapState();
+    net.conns.forEach((c) => { try { if (c && c.open) c.send(s); } catch { /* noop */ } });
+  };
+  net.pushEvent = function (m) {
+    if (!net.hosting || !net.peer || !m) return;
+    net.conns.forEach((c) => { try { if (c && c.open) c.send({ t: 'event', text: String(m) }); } catch { /* noop */ } });
+  };
+  net.pushSpin = function (angle) {
+    if (!net.hosting || !net.peer) return;
+    net.conns.forEach((c) => { try { if (c && c.open) c.send({ t: 'spin', angle }); } catch { /* noop */ } });
+  };
+  function updateShareUI() {
+    if (el.liveBadge) el.liveBadge.classList.toggle('hidden', !(net.hosting || State.spectating));
+    if (el.shareCount) el.shareCount.textContent = String(net.conns.size);
+    if (el.shareCode) el.shareCode.textContent = net.code || '·····';
+    if (el.shareQr) {
+      if (net.code) el.shareQr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=' + encodeURIComponent(joinUrl(net.code));
+      else el.shareQr.removeAttribute('src');
+    }
+    if (el.shareUrl) el.shareUrl.textContent = net.code ? joinUrl(net.code) : '';
+  }
+  function startShare() {
+    if (State.spectating) { toast('Estás mirando 👀'); return; }
+    if (!State.players.length) { toast('Empezá una partida primero 🎲'); return; }
+    if (!hasPeerLib()) { toast('Sin conexión para compartir 📡'); return; }
+    if (net.hosting) { updateShareUI(); openDlg(el.modalShare); return; }
+    try {
+      const code = genCode();
+      const peer = new window.Peer(NET_PREFIX + code);
+      net.peer = peer; net.code = code;
+      peer.on('open', () => { net.hosting = true; updateShareUI(); openDlg(el.modalShare); net.sync(); toast('📡 Sala ' + code + ' en vivo'); });
+      peer.on('connection', (c) => {
+        net.conns.set(c.peer, c);
+        c.on('open', () => { try { c.send(snapState()); } catch { /* noop */ } updateShareUI(); });
+        c.on('data', (d) => { if (d && d.t === 'hello') { try { c.send(snapState()); } catch { /* noop */ } } });
+        c.on('close', () => { net.conns.delete(c.peer); updateShareUI(); });
+        c.on('error', () => { net.conns.delete(c.peer); updateShareUI(); });
+        updateShareUI();
+      });
+      peer.on('disconnected', () => { try { peer.reconnect(); } catch { /* noop */ } });
+      peer.on('error', (e) => {
+        if (e && e.type === 'unavailable-id') { try { peer.destroy(); } catch { /* noop */ } net.peer = null; net.code = null; startShare(); }
+        else toast('📡 Error de red. Reintentá.');
+      });
+    } catch { toast('📡 No se pudo compartir.'); }
+  }
+  function stopShare(silent) {
+    net.conns.forEach((c) => { try { c.close(); } catch { /* noop */ } });
+    net.conns.clear();
+    if (net.peer) { try { net.peer.destroy(); } catch { /* noop */ } }
+    net.peer = null; net.code = null; net.hosting = false;
+    updateShareUI();
+    if (!silent) toast('📡 Sala cerrada.');
+  }
+  function guestStopTimer() { if (net.guestTimer) { clearInterval(net.guestTimer); net.guestTimer = null; } }
+  function guestTimerStart(t) {
+    guestStopTimer();
+    if (!el.qTimer) return;
+    if (!t || !t.total || t.answered) { hide(el.qTimer); return; }
+    show(el.qTimer);
+    const paint = (left) => {
+      el.qTimer.classList.toggle('danger', left <= 10);
+      if (el.qTimerLabel) el.qTimerLabel.textContent = '⏱️ ' + left + 's';
+      if (el.qTimerBar) el.qTimerBar.style.width = (t.total ? Math.max(0, left / t.total * 100) : 0) + '%';
+    };
+    if (t.paused) { paint(Math.max(0, t.remaining || 0)); return; }
+    const tick = () => {
+      const left = Math.max(0, Math.ceil((t.deadline - Date.now()) / 1000));
+      paint(left);
+      if (left <= 0 && net.guestTimer) { clearInterval(net.guestTimer); net.guestTimer = null; }
+    };
+    tick();
+    net.guestTimer = setInterval(tick, 1000);
+  }
+  function renderGuestPick(list) {
+    if (!el.picker) return;
+    el.picker.innerHTML = '';
+    (list || []).forEach((cat) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.disabled = true;
+      b.style.borderLeftColor = (CATEGORIES[cat] || {}).color || '#999';
+      b.innerHTML = '<span>' + ((CATEGORIES[cat] || {}).icon || '❓') + '</span><br />' + esc(cat);
+      el.picker.appendChild(b);
+    });
+  }
+  function applySnap(s) {
+    if (!s || s.t !== 'state') return;
+    State.winMode = s.winMode === 'puntos' ? 'puntos' : 'clasico';
+    State.players = (s.players || []).map((p, i) => Object.assign(
+      mkPlayer(String(p.name || ('Jugador ' + (i + 1))).slice(0, 20), p.avatar || AVATARS[i % AVATARS.length], p.color || COLORS[i % COLORS.length]),
+      { points: Number(p.points) || 0, medals: Array.isArray(p.medals) ? p.medals.filter((m) => CATEGORIES[m]) : [], coins: Number(p.coins) || 0, streak: Number(p.streak) || 0, best: Number(p.best) || 0 }
+    ));
+    State.current = Math.min(Math.max(0, Number(s.current) || 0), Math.max(0, State.players.length - 1));
+    const cats = (s.cats || []).filter((c) => CATEGORIES[c]);
+    State.activeCats = cats.length >= 2 ? cats : [...CATEGORY_NAMES];
+    State.currentCat = s.cat || null;
+    State.answered = !!s.answered;
+    buildWheel();
+    updateTurn();
+    hide(el.manteNote);
+    if (s.winner) {
+      guestStopTimer();
+      if (el.winnerName) el.winnerName.textContent = s.winner.name || '';
+      if (el.winnerStats) el.winnerStats.textContent = s.winner.stats || '';
+      show(el.victoryGuestNote); show(el.btnLeaveWin);
+      launchConfetti();
+      openDlg(el.victory);
+      return;
+    }
+    closeDlg(el.victory);
+    if (s.awaitingPick) {
+      guestStopTimer();
+      showScreen('wheel');
+      show(el.manteNote); renderGuestPick(s.pick); show(el.picker);
+      return;
+    }
+    hide(el.picker);
+    if (s.q && s.cat) {
+      const meta = catMeta(s.cat);
+      if (el.qAvatar) el.qAvatar.textContent = (State.players[State.current] || {}).avatar || '😀';
+      if (el.qPlayer) el.qPlayer.textContent = s.who || '';
+      if (el.qCat) { el.qCat.textContent = meta.icon + ' ' + s.cat; el.qCat.style.background = meta.color; }
+      if (el.qText) el.qText.textContent = s.q.pregunta;
+      hide(el.btnNext);
+      if (s.q.tipo === 'opciones') {
+        show(el.qOptions); hide(el.qOpen);
+        el.qOptions.innerHTML = '';
+        shuffle((s.q.opciones || []).slice(0, 4)).slice(0, 4).forEach((txt, i) => {
+          const b = document.createElement('button');
+          b.type = 'button'; b.className = 'opt-btn'; b.disabled = true;
+          b.innerHTML = '<span class="opt-letter">' + LETTERS[i] + '</span><span>' + esc(txt) + '</span>';
+          if (s.answered && norm(txt) === norm(s.q.respuesta)) b.classList.add('correct');
+          if (s.answered && s.result === 'miss' && s.picked && norm(txt) === norm(s.picked) && norm(txt) !== norm(s.q.respuesta)) b.classList.add('wrong');
+          el.qOptions.appendChild(b);
+        });
+      } else {
+        hide(el.qOptions); if (el.qOptions) el.qOptions.innerHTML = '';
+        show(el.qOpen);
+        if (el.qAnswer) {
+          if (s.revealed || s.answered) { el.qAnswer.textContent = s.q.respuesta; show(el.qAnswer); }
+          else { el.qAnswer.textContent = '🙈 El anfitrión aún no muestra la respuesta…'; show(el.qAnswer); }
+        }
+      }
+      if (el.coinsHint) el.coinsHint.textContent = '👀 Mirando en vivo';
+      showScreen('question');
+      guestTimerStart(s.timer);
+    } else {
+      guestStopTimer();
+      showScreen('wheel');
+    }
+  }
+  function showLost() { show(el.netLost); }
+  function hideLost() { hide(el.netLost); }
+  function cleanupGuest() {
+    guestStopTimer();
+    if (net.guestConn) { try { net.guestConn.close(); } catch { /* noop */ } }
+    if (net.guestPeer) { try { net.guestPeer.destroy(); } catch { /* noop */ } }
+    net.guestConn = null; net.guestPeer = null;
+  }
+  function joinRoom(raw) {
+    const code = String(raw || '').trim().toUpperCase().replace(/[^A-Z0-9]/g, '');
+    if (!code) { if (el.joinStatus) el.joinStatus.textContent = 'Poné el código de la sala.'; return; }
+    if (!hasPeerLib()) { if (el.joinStatus) el.joinStatus.textContent = 'Sin conexión 📡'; toast('Sin conexión para mirar 📡'); return; }
+    cleanupGuest(); hideLost();
+    net.guestCode = code;
+    if (el.joinStatus) el.joinStatus.textContent = 'Conectando a ' + code + '…';
+    try {
+      const peer = new window.Peer();
+      net.guestPeer = peer;
+      peer.on('open', () => {
+        const c = peer.connect(NET_PREFIX + code, { reliable: true });
+        net.guestConn = c;
+        c.on('open', () => {
+          try { c.send({ t: 'hello' }); } catch { /* noop */ }
+          hideLost();
+          if (el.joinStatus) el.joinStatus.textContent = '¡Conectado! 👀';
+        });
+        c.on('data', (d) => {
+          if (!d || typeof d !== 'object') return;
+          if (d.t === 'state') applySnap(d);
+          else if (d.t === 'event' && d.text) toast(String(d.text));
+          else if (d.t === 'spin' && typeof d.angle === 'number' && el.disc) {
+            el.disc.style.transform = 'rotate(' + d.angle + 'deg)';
+          }
+        });
+        c.on('close', () => { if (State.spectating) showLost(); });
+        c.on('error', () => { if (State.spectating) showLost(); });
+      });
+      peer.on('error', (e) => {
+        if (e && (e.type === 'peer-unavailable' || e.type === 'network' || e.type === 'server-error')) {
+          if (el.joinStatus) el.joinStatus.textContent = 'No se encontró la sala. Revisá el código.';
+          if (State.spectating) showLost();
+        }
+      });
+      peer.on('disconnected', () => { try { peer.reconnect(); } catch { /* noop */ } });
+    } catch {
+      if (el.joinStatus) el.joinStatus.textContent = 'No se pudo conectar.';
+    }
+  }
+  function enterSpectating(code) {
+    State.spectating = true;
+    document.body.classList.add('spectating');
+    closeDlg(el.board); closeDlg(el.victory);
+    show(el.guestNote);
+    updateShareUI();
+    showScreen('join');
+    if (el.joinCode && code) el.joinCode.value = code;
+    if (code) joinRoom(code);
+    else if (el.joinStatus) el.joinStatus.textContent = '';
+  }
+  function leaveSpectating() {
+    cleanupGuest(); hideLost();
+    State.spectating = false;
+    net.guestCode = null;
+    document.body.classList.remove('spectating');
+    closeDlg(el.victory); closeDlg(el.board);
+    hide(el.guestNote);
+    updateShareUI();
+    try { history.replaceState(null, '', location.pathname); } catch { /* noop */ }
+    showScreen('setup');
+    toast('Saliste del vivo 👀');
   }
 
   function bind() {
@@ -687,12 +978,12 @@ document.addEventListener('DOMContentLoaded', () => {
     el.btnSpin?.addEventListener('click', spin);
     el.btnNext?.addEventListener('click', onBtnNext);
     el.btnScore?.addEventListener('click', () => { renderBoard(); openDlg(el.board); });
-    el.btnReveal?.addEventListener('click', () => { show(el.qAnswer); hide(el.btnReveal); show(el.btnHit); show(el.btnMiss); });
+    el.btnReveal?.addEventListener('click', revealOpen);
     el.btnHit?.addEventListener('click', () => {
       if (State.answered) return;
       State.answered = true; clearTimer(); renderTimer();
       State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
-      State.lastResult = 'hit';
+      State.lastResult = 'hit'; State.lastPicked = null;
       toast('¡Correcto! +1 punto 🏆' + hit() + ' Mantenés tu turno 🎲');
       hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
@@ -701,7 +992,7 @@ document.addEventListener('DOMContentLoaded', () => {
       State.answered = true; clearTimer(); renderTimer();
       const r = responder(); if (r) miss(r, State.currentCat);
       State.lastResponderIdx = State.piqueteVictim != null ? State.piqueteVictim : State.current;
-      State.lastResult = 'miss';
+      State.lastResult = 'miss'; State.lastPicked = null;
       toast('Fallo registrado. Pasa el turno.');
       hide(el.btnHit); hide(el.btnMiss); renderPowers(); setNextLabel(); show(el.btnNext);
     });
@@ -709,11 +1000,27 @@ document.addEventListener('DOMContentLoaded', () => {
     el.pwRemove?.addEventListener('click', useRemove);
     el.pwCall?.addEventListener('click', useCall);
     el.pwPiquete?.addEventListener('click', openPiquete);
-    el.call?.addEventListener('close', () => { if (callId) { clearInterval(callId); callId = null; } paused = false; renderTimer(); });
+    el.call?.addEventListener('close', () => {
+      if (callId) { clearInterval(callId); callId = null; }
+      if (State.timeLimit && State.currentQ && !State.answered) {
+        timerDeadline = Date.now() + Math.max(0, timerRemaining) * 1000;
+      }
+      paused = false; renderTimer();
+      try { net.sync(); } catch { /* noop */ }
+    });
     el.btnRestart?.addEventListener('click', restart);
     el.btnNew?.addEventListener('click', newPlayers);
     el.btnEndBoard?.addEventListener('click', endGame);
+    el.btnShare?.addEventListener('click', startShare);
+    el.btnStopShare?.addEventListener('click', () => { stopShare(); closeDlg(el.modalShare); });
+    el.btnJoin?.addEventListener('click', () => joinRoom(el.joinCode?.value));
+    el.joinCode?.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); joinRoom(el.joinCode?.value); } });
+    el.btnJoinCancel?.addEventListener('click', leaveSpectating);
+    el.btnRejoin?.addEventListener('click', () => { hideLost(); joinRoom(net.guestCode || el.joinCode?.value); });
+    el.btnLeave?.addEventListener('click', leaveSpectating);
+    el.btnLeaveWin?.addEventListener('click', leaveSpectating);
     el.scoreList?.addEventListener('click', (e) => {
+      if (State.spectating) return;
       const b = e.target?.closest?.('button.quesito.earned');
       if (!b || !el.scoreList.contains(b)) return;
       const pidx = Number(b.dataset.pidx);
@@ -731,6 +1038,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function init() {
     bind(); renderCatSelect(); buildWheel(); renderPicker(); renderCount(); renderPlayerCards();
+    let joinCode = null;
+    try { joinCode = new URLSearchParams(location.search).get('ver'); } catch { joinCode = null; }
+    if (joinCode) {
+      await loadQuestions();
+      buildPools();
+      enterSpectating(joinCode);
+      return;
+    }
     const restored = load();
     if (restored) {
       if (el.timeLimit) el.timeLimit.value = String(State.timeLimit ?? 0);

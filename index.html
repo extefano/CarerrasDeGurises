@@ -7,11 +7,12 @@
   <meta name="theme-color" content="#2B8BEA" />
   <title>Carrera de Gurises 🎲</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./css/styles.css?v=9" />
+  <link rel="stylesheet" href="./css/styles.css?v=10" />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Saltar al contenido</a>
@@ -21,10 +22,27 @@
     <header class="topbar">
       <span class="topbar-logo" aria-hidden="true">🎲</span>
       <p class="topbar-title">CARRERA DE GURISES</p>
+      <span id="live-badge" class="live-badge hidden" aria-live="polite">🔴 EN VIVO</span>
+      <button type="button" id="btn-share" class="topbar-share host-only" aria-label="Compartir partida en vivo">📡</button>
       <span class="topbar-sub">para jugar en (fat)milia</span>
     </header>
 
     <main id="main-content" class="flex-1 px-4 pb-32 pt-3">
+      <!-- JOIN ESPECTADOR -->
+      <section id="screen-join" class="hidden" aria-labelledby="join-title">
+        <div class="card-toon center">
+          <p class="hero-emoji" aria-hidden="true">👀</p>
+          <h1 id="join-title" class="font-display tracking-wide font-extrabold">MIRAR PARTIDA</h1>
+          <p class="subtitle">Poné el código que te pasó el anfitrión</p>
+          <div class="grid gap-2 mt-3">
+            <input id="join-code" class="input-toon center" maxlength="5" placeholder="XXXXX" aria-label="Código de sala" style="text-transform:uppercase;letter-spacing:.3em;font-size:1.4rem;" />
+            <p id="join-status" class="note" aria-live="polite"></p>
+            <button type="button" id="btn-join" class="btn-play">Unirse 👀</button>
+            <button type="button" id="btn-join-cancel" class="btn-white">Volver ◀️</button>
+          </div>
+        </div>
+      </section>
+
       <!-- A. SETUP -->
       <section id="screen-setup" aria-labelledby="setup-title">
         <div class="hero-toon">
@@ -100,6 +118,7 @@
           <span id="turn-avatar" class="avatar-toon" aria-hidden="true">😀</span>
           <span class="turn-txt">Turno de <strong id="turn-name">Jugador 1</strong><br /><small id="turn-meta">0 pts · 🪙 0</small></span>
         </div>
+        <p id="guest-note" class="note center hidden">👀 Estás mirando en vivo. El anfitrión maneja el juego.</p>
 
         <h2 id="wheel-title" class="wheel-title">Touch-interactive inspired category wheel</h2>
         <div class="wheel-wrap">
@@ -115,7 +134,7 @@
         <p id="roulette-hint" class="note center">🧈 1 de cada 10 giros sale <strong>Mantequita</strong> y elegís categoría.</p>
         <p id="mantequita-note" class="mante-note hidden">🧈 ¡Mantequita! Tocá una categoría 👇</p>
         <div id="mantequita-picker" class="picker-grid hidden" role="group" aria-label="Elegir categoría"></div>
-        <button type="button" id="btn-spin" class="btn-play">GIRAR RULETA 🎡</button>
+        <button type="button" id="btn-spin" class="btn-play host-only">GIRAR RULETA 🎡</button>
       </section>
 
       <!-- C. QUESTION -->
@@ -134,7 +153,7 @@
           <p id="q-text" class="q-text"></p>
         </article>
 
-        <div id="powerups" class="power-grid" aria-label="Powerups">
+        <div id="powerups" class="power-grid host-only" aria-label="Powerups">
           <button type="button" id="pw-fifty" class="btn-power">➗ 50/50</button>
           <button type="button" id="pw-remove" class="btn-power">➖ Sacar 1</button>
           <button type="button" id="pw-call" class="btn-power">📞 Familiar</button>
@@ -145,15 +164,15 @@
         <div id="q-options" class="grid gap-2 mt-2" role="group" aria-label="Opciones de respuesta"></div>
 
         <div id="q-open" class="grid gap-2 mt-2">
-          <button type="button" id="btn-reveal" class="btn-white">Mostrar Respuesta 👀</button>
+          <button type="button" id="btn-reveal" class="btn-white host-only">Mostrar Respuesta 👀</button>
           <p id="q-answer" class="answer-toon hidden"></p>
-          <div class="grid grid-cols-2 gap-2">
+          <div class="grid grid-cols-2 gap-2 host-only">
             <button type="button" id="btn-hit" class="btn-hit">Acertó ✅</button>
             <button type="button" id="btn-miss" class="btn-miss">Falló ❌</button>
           </div>
         </div>
 
-        <button type="button" id="btn-next" class="btn-play hidden mt-3">Siguiente Turno ➡️</button>
+        <button type="button" id="btn-next" class="btn-play hidden mt-3 host-only">Siguiente Turno ➡️</button>
       </section>
     </main>
 
@@ -168,10 +187,24 @@
   <dialog id="modal-scoreboard" aria-labelledby="scoreboard-title">
     <h2 id="scoreboard-title" class="font-display">📊 PROGRESO</h2>
     <ul id="score-list" class="grid gap-2"></ul>
-    <button type="button" id="btn-end-board" class="btn-end btn-end-game w-full">Terminar partida 🏁</button>
+    <button type="button" id="btn-end-board" class="btn-end btn-end-game w-full host-only">Terminar partida 🏁</button>
     <form method="dialog">
       <button type="submit" id="btn-close-score" class="btn-white w-full">Cerrar ✖️</button>
     </form>
+  </dialog>
+
+  <!-- COMPARTIR EN VIVO -->
+  <dialog id="modal-share" aria-labelledby="share-title">
+    <h2 id="share-title" class="font-display center">📡 MIRAR EN VIVO</h2>
+    <p class="note center">Pasales este código o el QR a tu familia</p>
+    <p id="share-code" class="share-code center" aria-live="polite">·····</p>
+    <div class="share-qr"><img id="share-qr" alt="QR para unirse a la partida en vivo" width="180" height="180" /></div>
+    <p id="share-url" class="note center share-url"></p>
+    <p class="note center">👀 Espectadores: <strong id="share-count">0</strong></p>
+    <div class="grid gap-2 mt-3">
+      <button type="button" id="btn-stop-share" class="btn-end w-full">Cerrar sala 🔌</button>
+      <form method="dialog"><button type="submit" class="btn-white w-full">Cerrar ✖️</button></form>
+    </div>
   </dialog>
 
   <!-- VICTORY -->
@@ -181,9 +214,11 @@
     <h2 class="font-display center">¡TENEMOS GANADOR!</h2>
     <p id="winner-name" class="winner-name center" aria-live="polite"></p>
     <p id="winner-stats" class="note center"></p>
+    <p id="victory-guest-note" class="note center hidden">👀 Estás mirando en vivo. El anfitrión maneja la partida.</p>
     <div class="grid gap-2 mt-3">
-      <button type="button" id="btn-restart" class="btn-play">Volver a Jugar 🔁</button>
-      <button type="button" id="btn-new-players" class="btn-white">Cambiar jugadores 👥</button>
+      <button type="button" id="btn-restart" class="btn-play host-only">Volver a Jugar 🔁</button>
+      <button type="button" id="btn-new-players" class="btn-white host-only">Cambiar jugadores 👥</button>
+      <button type="button" id="btn-leave-win" class="btn-white hidden">Salir 👀</button>
     </div>
   </dialog>
 
@@ -204,8 +239,19 @@
     </form>
   </dialog>
 
+  <div id="net-lost" class="net-lost hidden" role="alert">
+    <div class="card-toon center">
+      <p class="hero-emoji" aria-hidden="true">📡</p>
+      <p><strong>Se perdió la conexión con el anfitrión.</strong></p>
+      <div class="grid gap-2 mt-3">
+        <button type="button" id="btn-rejoin" class="btn-play">Reintentar 🔁</button>
+        <button type="button" id="btn-leave" class="btn-white">Salir 👀</button>
+      </div>
+    </div>
+  </div>
+
   <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <script src="./js/app.js?v=9" defer></script>
+  <script src="./js/app.js?v=10" defer></script>
 </body>
 </html>
